@@ -1,0 +1,49 @@
+$mini: 400px !default;
+$phone: 540px !default;
+$phablet: 768px !default;
+$tablet: 960px !default;
+$laptop: 1280px !default;
+$desktop: 1600px !default;
+
+$query_mini: "max-width: " $mini;
+$query_phone: "max-width: " $phone;
+$query_phablet: "min-width: " ($phone + 1px) ") and (max-width: " ($phablet);
+$query_tablet: "min-width: " ($phablet + 1px) ") and (max-width: " ($tablet);
+$query_small: "max-width: " ($tablet);
+$query_large: "min-width: " ($tablet + 1px);
+$query_laptop: "min-width: " ($tablet + 1px) ") and (max-width: " ($laptop);
+$query_desktop: "min-width: " ($laptop + 1px) ") and (max-width: " ($desktop);
+$query_display: "min-width: " ($desktop + 1px) "";
+
+$query_small_device: "max-device-width: " ($tablet);
+$query_large_device: "min-device-width: " ($tablet + 1px);
+
+@mixin media-mini(){ @media ( $query_mini ) { @content; } }
+@mixin media-phone(){ @media ( $query_phone ) { @content; } }
+@mixin media-phablet(){ @media ( $query_phablet ) { @content; } }
+@mixin media-tablet(){ @media ( $query_tablet ) { @content; } }
+
+@mixin media-laptop(){ @media ( $query_laptop ) { @content; } }
+@mixin media-desktop(){ @media ( $query_desktop ) { @content; } }
+@mixin media-display(){ @media ( $query_display ) { @content; } }
+
+@mixin small(){ @media ( $query_small ) { @content; } }
+@mixin large(){ @media ( $query_large ) { @content; } }
+@mixin small-device(){ @media ( $query_small_device ) { @content; } }
+@mixin large-device(){ @media ( $query_large_device ) { @content; } }
+@mixin screen(){ @media screen { @content; } }
+@mixin print(){ @media print { @content; } }
+
+@include small(){ [data-large] { display: none !important; } }
+@include large(){ [data-small] { display: none !important; } }
+
+@include screen(){ [data-print] { display: none !important; } }
+@include print(){ [data-screen] { display: none !important; } }
+
+html.touchevents { [data-click] { display: none !important; } }
+html.no-touchevents { [data-touch] { display: none !important; } }
+
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}

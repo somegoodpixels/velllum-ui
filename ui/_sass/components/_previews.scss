@@ -1,0 +1,78 @@
+@mixin preview-layout($flexible:false){
+	.preview-content {
+		@include flex;
+		@include flex-row;
+		$shrink: 1;
+		@if $flexible {
+			@include flex-wrap;
+			$shrink: 0;
+		}
+		.preview-header { @include flex-width(1,$shrink,120px); }
+		.preview-body { @include flex-width(3,1,$component-break); }
+	}
+}
+
+.preview {
+	margin: $component-buffer 0;
+	@include flex;
+	@include flex-column;
+	.preview-content {
+		@include flex;
+		@include flex-column;
+		@include flex-height(1);
+		background: white;
+		@include shadow;
+		@include transitions;
+		border-radius: $component-border-radius;
+	}
+	.preview-header {
+		background-position: 50% 50%;
+		background-size: cover;
+		&:before {
+			content: '';
+			display: block;
+			padding-bottom: 50%;
+		}
+	}
+	.preview-body {
+		@include flex;
+		@include flex-column;
+		.preview-footer {
+			@include flex-height(0);
+			padding: $component-padding;
+		}
+		.preview-text {
+			@include flex-height(1);
+			padding: $component-padding;
+			@include compact;
+			~ .preview-footer {
+				padding-top: 0;
+			}
+		}
+	}
+	&.preview-link {
+		@include active {
+			.preview-content {
+				@include shadow(15px);
+			}
+		}
+	}
+	&.preview-vertical {
+		.preview-header {
+			@include flex-height(0);
+		}
+		.preview-body { @include flex-height(1); }
+		.preview-header-grow {
+			@include flex-height(1);
+			~ .preview-body {
+				@include flex-height(0);
+			}
+		}
+	}
+	&.preview-horizontal {
+		@include preview-layout;
+	}
+	&:not(.preview-vertical):not(.preview-horizontal) {
+		@include preview-layout(true);
+	}
+}

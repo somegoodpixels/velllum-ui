@@ -1,0 +1,12 @@
+.list-group {
+	@include simple-box-shadow;
+	@include round;
+	.list-group-item {
+		@include compact;
+		margin: 0;
+		border-width: 0 0 1px 0;
+		&:last-child {
+			border-width: 0;
+		}
+	}
+}

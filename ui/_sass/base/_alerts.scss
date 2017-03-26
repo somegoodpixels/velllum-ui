@@ -1,0 +1,14 @@
+
+.alert {
+	&.alert-default {
+		background: $silver-light;
+		color: $light;
+	}
+	padding: ($padding-base-vertical + 2) $padding-base-horizontal;
+	font-style: oblique;
+	margin-bottom: 12px;
+	strong {
+		color: inherit;
+		font-style: normal;
+	}
+}

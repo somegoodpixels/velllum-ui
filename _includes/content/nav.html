@@ -1,0 +1,49 @@
+<nav class="navigation">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="navigation-content">
+					<div class="navigation-brand">
+						<a class="navigation-brand-link" href="{{site.baseurl}}"><h4 class="brand">Since<b>Town<i>Hall</i></b></h4></a>
+					</div>
+					<div class="navigation-links">
+						<ul>
+							<li><a href="{{site.baseurl}}/senate" class="btn btn-text btn-sm">Senate</a></li>
+							<li><a href="{{site.baseurl}}/house" class="btn btn-text btn-sm">House of Representatives</a></li>
+							<li class="dropdown">
+								<span class="btn btn-text btn-sm" data-toggle="dropdown">States <i class="caret"></i></span>
+								<ul class="dropdown-menu">
+									{% for state in site.states %}
+										<li><a href="{{site.baseurl}}{{state.url}}">{{state.title}}</a></li>
+									{% endfor %}
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="navigation-links navigation-links-right">
+						<ul>
+							<li><a href="{{site.owner}}/{{site.repo}}" target="_blank" class="btn btn-text btn-icon btn-sm"><i data-icon="github"></i></span></a></li>
+						</ul>
+					</div>
+					<div class="navigation-menu">
+						<ul>
+							<li><a href="{{site.owner}}/{{site.repo}}" target="_blank" class="btn btn-text btn-icon btn-sm"><i data-icon="github"></i></span></a></li>
+							<li class="dropdown">
+								<span class="btn btn-text btn-icon btn-sm" data-toggle="dropdown"><i data-icon="dot-3"></i></span>
+								<ul class="dropdown-menu dropdown-menu-right">
+									<li><a href="{{site.baseurl}}/senate">Senate</a></li>
+									<li><a href="{{site.baseurl}}/house">House of Representatives</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">States</li>
+									{% for state in site.states %}
+										<li><a href="{{site.baseurl}}{{state.url}}">{{state.title}}</a></li>
+									{% endfor %}
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

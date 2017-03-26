@@ -1,0 +1,22 @@
+<h2 id="{{ entry.title | slugify }}" class="margin">
+	{{ entry.title | capitalize }}
+</h2>
+<div class="panel panel-large">
+	<div class="panel-body">
+		<div id="{{ entry.title | slugify }}-example">
+			{{ entry.content | markdownify }}
+		</div>
+	</div>
+	<div class="panel-footer {{ entry.title | slugify }}-code">
+		<a
+			href="#{{ entry.title | slugify }}-code"
+			data-target=".{{ entry.title | slugify }}-code"
+			data-toggle="slide"
+		>view code</a>
+	</div>
+	<div class="panel-footer panel-flush {{ entry.title | slugify }}-code hidden" id="{{ entry.title | slugify }}-code">
+		<div class="code code-large">
+			{% highlight html %}{{ entry.content }}{% endhighlight %}
+		</div>
+	</div>
+</div>

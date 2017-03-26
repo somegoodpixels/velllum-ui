@@ -1,0 +1,44 @@
+
+.row { margin: 0; }
+
+.container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+@include large(){
+	.container {
+		width: 90%;
+		max-width: 1320px;
+	}
+}
+
+@include small(){
+	.row {
+		padding-left: $margin-small;
+		padding-right: $margin-small;
+		> [class*="col-md-"],
+		> [class*="col-lg-"] {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		> [class*="col-md-"] + [class*="col-md-"],
+		> [class*="col-lg-"] + [class*="col-lg-"] {
+			padding-top: 50px;
+		}
+		+ .row {
+			padding-top: 50px;
+		}
+	}
+}
+
+@include large {
+	.row-flex {
+		@include flex;
+		&.row-flex-middle {
+			@include flex-middle;
+		}
+		.row-flex-first { @include flex-order(-9999); }
+		.row-flex-last { @include flex-order(9999); }
+	}
+}
