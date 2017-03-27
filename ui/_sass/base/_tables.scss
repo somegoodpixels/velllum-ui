@@ -76,7 +76,7 @@
 .table-responsive {
   border-radius: $border-radius-base;
   @include large(){ overflow: visible; }
-  @include small(){ @include scrolling; }
+  @include small(){ @include scroll; }
 }
 
 .table-alignment {
@@ -88,8 +88,6 @@
 
 .cell-link {
   display: block;
-  padding: $table-cell-padding $padding-base-horizontal; 
-  margin: $table-cell-padding*-1 $padding-base-horizontal*-1; 
   &:not(.alternate):not(.text-light) {  
     font-style: inherit;
     font-weight: inherit;

@@ -90,3 +90,8 @@ $(document).on('focus','.dropdown-menu-options input[type="checkbox"]',function(
 $(document).on('blur','.dropdown-menu-options input[type="checkbox"]',function(){
 	$(this).closest('.dropdown-menu-item').removeClass('active');
 });
+
+
+// ------------------------------------ CAROUSELS ------------------------------------
+
+$('[data-carousel]').carousel();

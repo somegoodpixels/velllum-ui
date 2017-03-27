@@ -1,6 +1,5 @@
 .list-group {
-	@include simple-box-shadow;
-	@include round;
+	@include component;
 	.list-group-item {
 		@include compact;
 		margin: 0;

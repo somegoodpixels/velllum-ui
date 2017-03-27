@@ -1,21 +1,27 @@
-.flex-row { @include flex; @include flex-row; }
-.flex-column { @include flex; @include flex-column; }
-.flex-wrap { @include flex-wrap; }
-
-.flex-row,
+.flex-row { @include flex-row; @include flex-wrap; }
 .flex-column {
-	&.flex-buffer {
-		margin: 0 $component-buffer/-2;
-		> * { margin: $component-buffer/2; }
+	@include flex-column;
+	@include flex(1,1,0);
+	min-width: $component-break + $component-buffer;
+	@for $i from 1 through 12 { &.flex-column-#{$i} { @include flex($i,1,0); } }
+}
+
+.flex-buffer {
+	margin: 0 $component-buffer/-2;
+	&.flex-item {
+		margin: $component-buffer/2;
 	}
 }
 
-.flex-row > .flex-grow.flex-shrink { @include flex-width(1,1); }
-.flex-row > .flex-grow:not(.flex-shrink) { @include flex-width(1,0); }
-.flex-row > .flex-shrink:not(.flex-grow) { @include flex-width(0,1); }
-.flex-row > *:not(.flex-grow):not(.flex-shrink) { @include flex-width(1,1,0); }
+.flex-column > .flex-item { @include flex(1,1,auto); }
+.flex-row > .flex-item { @include flex(1,0,$component-break); }
 
-.flex-column > .flex-grow.flex-shrink { @include flex-height(1,1); }
-.flex-column > .flex-grow:not(.flex-shrink) { @include flex-height(1,0); }
-.flex-column > .flex-shrink:not(.flex-grow) { @include flex-height(0,1); }
-.flex-column > *:not(.flex-grow):not(.flex-shrink) { @include flex-height(0,0,auto); }
+// .flex-row > .flex-grow.flex-shrink { @include flex(1,1); }
+// .flex-row > .flex-grow:not(.flex-shrink) { @include flex(1,0); }
+// .flex-row > .flex-shrink:not(.flex-grow) { @include flex(0,1); }
+// .flex-row > *:not(.flex-grow):not(.flex-shrink) { @include flex(1,1,0); }
+
+// .flex-column > .flex-grow.flex-shrink { @include flex(1,1); }
+// .flex-column > .flex-grow:not(.flex-shrink) { @include flex(1,0); }
+// .flex-column > .flex-shrink:not(.flex-grow) { @include flex(0,1); }
+// .flex-column > *:not(.flex-grow):not(.flex-shrink) { @include flex(0,0); }

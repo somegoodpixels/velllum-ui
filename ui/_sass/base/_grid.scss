@@ -31,14 +31,3 @@
 		}
 	}
 }
-
-@include large {
-	.row-flex {
-		@include flex;
-		&.row-flex-middle {
-			@include flex-middle;
-		}
-		.row-flex-first { @include flex-order(-9999); }
-		.row-flex-last { @include flex-order(9999); }
-	}
-}

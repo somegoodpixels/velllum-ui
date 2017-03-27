@@ -1,34 +1,32 @@
+
 .mosaic {
 	margin: 0 $component-buffer/-2;
-	.mosaic-columns {
-		@include flex;
+	@include flex-column;
+	@include flex-align(stretch);
+	.mosaic-row {
 		@include flex-row;
-		@include flex-stretch;
 		@include flex-wrap;
-	}
-	.mosaic-rows {
-		@include flex;
-		@include flex-column;
-		@include flex-stretch;
+		@include flex(1,1);
 	}
 	.mosaic-column {
-		@include flex-width(1,1,$component-break);
-		@for $i from 1 through 12 { &.mosaic-column-#{$i} { @include flex-width(#{$i},1); } }
-	}
-	.mosaic-row {
-		@include flex-height(1,1);
-		@for $i from 1 through 12 { &.mosaic-row-#{$i} { @include flex-height(#{$i},1); } }
+		@include flex-column;
+		@include flex(1,1,0);
+		min-width: $component-break + $component-buffer;
+		@for $i from 1 through 12 {
+			&.mosaic-column-#{$i} {
+				@include flex($i,1,0);
+			}
+		}
 	}
 	.mosaic-item {
-		padding: $component-buffer/2;
-		@include flex;
+		margin: $component-buffer/2;
 		@include flex-column;
-		@include flex-stretch;
 		> * {
-			@include flex-width(1,1,100%);
-			@include flex-height(1,1,100%);
+			@include flex(1,0);
 			margin: 0;
 		}
 	}
+	.mosaic-column > .mosaic-item { @include flex(1,1,auto); }
+	.mosaic-row > .mosaic-item { @include flex(1,0,$component-break); }
 }
 

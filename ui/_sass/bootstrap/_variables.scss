@@ -106,6 +106,12 @@ $borders:                mix($silver,$silver-dark);
 $line:                   $borders;
 
 //
+// Bezier
+// --------------------------------------------------
+$bezier: cubic-bezier(.25,0,0,1);
+$bezier-bounce: cubic-bezier(.25,0,0,1.375);
+
+//
 // Document
 // --------------------------------------------------
 $body-bg:                #fff;
@@ -139,6 +145,8 @@ $component-padding-large:        40px 50px;
 $component-break:                260px;
 $component-buffer:               30px;
 $component-border-radius:        3px;
+
+$margin-small: 7.5vw;
 
 //
 // Interactive Colors
@@ -191,67 +199,35 @@ $legend-border-color:            $line;
 $input-group-addon-bg:           $btn-default-bg;
 $input-caret:                    down-line;
 
-
-
-
-$dropdown-shadow: 0;
-$widget-shadow: 0;
-
-$margin-small: 7.5vw;
-
-
-//== Tables
 //
-//## Customizes the `.table` component with basic values, each used across all table variations.
+// Tables
+// --------------------------------------------------
+$table-cell-padding:             $padding-base-vertical $padding-base-horizontal;
+$table-condensed-cell-padding:   $padding-small-vertical $padding-small-horizontal;
+$table-bg:                       transparent;
+$table-bg-accent:                $silver-light;
+$table-bg-hover:                 $silver;
+$table-bg-active:                $table-bg-hover;
+$table-border-color:             $line;
 
-//** Padding for `<th>`s and `<td>`s.
-// $table-cell-padding:            8px
-//** Padding for cells in `.table-condensed`.
-// $table-condensed-cell-padding:  5px
-
-//** Default background color used for all tables.
-// $table-bg:                      transparent
-//** Background color used for `.table-striped`.
-// $table-bg-accent:               #f9f9f9
-//** Background color used for `.table-hover`.
-// $table-bg-hover:                #f5f5f5
-// $table-bg-active:               $table-bg-hover
-$table-border-color:            $line;
-
-
-//== Dropdowns
 //
-//## Dropdown menu container and contents.
-
-//** Background for the dropdown menu.
-// $dropdown-bg:                    #fff
-//** Dropdown menu `border-color`.
-// $dropdown-border:                rgba(0,0,0,.15)
-//** Dropdown menu `border-color` **for IE8**.
-// $dropdown-fallback-border:       #ccc
-//** Divider color for between dropdown items.
-// $dropdown-divider-bg:            #e5e5e5
-
+// Dropdowns
+// --------------------------------------------------
+$dropdown-bg:                    #fff;
+$dropdown-border:                transparent;
+$dropdown-fallback-border:       $dropdown-border;
+$dropdown-divider-bg:            $line;
 $dropdown-link-color:            $normal;
 $dropdown-link-hover-color:      $hover-text;
 $dropdown-link-hover-bg:         $hover-bg;
+$dropdown-link-active-color:     $component-active-color;
+$dropdown-link-active-bg:        $component-active-bg;
+$dropdown-link-disabled-color:   $light;
+$dropdown-header-color:          $light;
 
-//** Active dropdown menu item text color.
-// $dropdown-link-active-color:     $component-active-color
-//** Active dropdown menu item background color.
-// $dropdown-link-active-bg:        $component-active-bg
-
-//** Disabled dropdown menu item background color.
-// $dropdown-link-disabled-color:   $gray-light
-
-//** Text color for headers within dropdown menus.
-// $dropdown-header-color:          $gray-light
-
-//** Deprecated `$dropdown-caret-color` as of v3.1.0
-// $dropdown-caret-color:           #000
-
-
-//-- Z-index master list
+//
+// Z-Index
+// --------------------------------------------------
 $zindex-navbar:            1000;
 $zindex-dropdown:          1000;
 $zindex-popover:           1060;
@@ -259,11 +235,6 @@ $zindex-tooltip:           1070;
 $zindex-navbar-fixed:      1030;
 $zindex-modal-background:  1040;
 $zindex-modal:             1050;
-//
-// Warning: Avoid customizing these values. They're used for a bird's eye view
-// of components dependent on the z-axis and are designed to all work together.
-//
-// Note: These variables are not generated into the Customizer.
 
 
 //== Media queries breakpoints

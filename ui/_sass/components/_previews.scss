@@ -1,30 +1,22 @@
 @mixin preview-layout($flexible:false){
-	.preview-content {
-		@include flex;
-		@include flex-row;
-		$shrink: 1;
-		@if $flexible {
-			@include flex-wrap;
-			$shrink: 0;
-		}
-		.preview-header { @include flex-width(1,$shrink,120px); }
-		.preview-body { @include flex-width(3,1,$component-break); }
+	@include flex-row;
+	$shrink: 1;
+	@if $flexible {
+		@include flex-wrap;
+		$shrink: 0;
 	}
+	.preview-header { @include flex(1,$shrink,120px); }
+	.preview-body { @include flex(3,1,$component-break); }
 }
 
 .preview {
 	margin: $component-buffer 0;
-	@include flex;
+	background: white;
+	border-radius: $component-border-radius;
 	@include flex-column;
-	.preview-content {
-		@include flex;
-		@include flex-column;
-		@include flex-height(1);
-		background: white;
-		@include shadow;
-		@include transitions;
-		border-radius: $component-border-radius;
-	}
+	@include flex(1,0,auto);
+	@include shadow;
+	@include transitions;
 	.preview-header {
 		background-position: 50% 50%;
 		background-size: cover;
@@ -35,14 +27,14 @@
 		}
 	}
 	.preview-body {
-		@include flex;
 		@include flex-column;
+		@include flex(1,0,auto);
 		.preview-footer {
-			@include flex-height(0);
+			@include flex(0,0,auto);
 			padding: $component-padding;
 		}
 		.preview-text {
-			@include flex-height(1);
+			@include flex(1,0,auto);
 			padding: $component-padding;
 			@include compact;
 			~ .preview-footer {
@@ -52,20 +44,18 @@
 	}
 	&.preview-link {
 		@include active {
-			.preview-content {
-				@include shadow(15px);
-			}
+			@include shadow(15px);
 		}
 	}
 	&.preview-vertical {
 		.preview-header {
-			@include flex-height(0);
+			@include flex(0,0,auto);
 		}
-		.preview-body { @include flex-height(1); }
+		.preview-body { @include flex(1,0,auto); }
 		.preview-header-grow {
-			@include flex-height(1);
+			@include flex(1,0,auto);
 			~ .preview-body {
-				@include flex-height(0);
+				@include flex(0,0,auto);
 			}
 		}
 	}

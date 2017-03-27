@@ -22,13 +22,13 @@
 			padding: $component-padding-large;
 		}
 	}
-	@include flex;
 	@include flex-column;
 	> .panel-heading, > .panel-footer {
-		@include flex-height(0);
+		@include flex(0,0,auto);
 	}
 	> .panel-body {
-		@include flex-height(1);
+		@include flex(1,0,auto);
+		min-height: 80px;
 		> .panel-body-fill {
 			@include fill;
 			@include scroll;

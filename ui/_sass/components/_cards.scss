@@ -1,13 +1,12 @@
 .card {
 	@include component;
 	margin: 20px 0;
-	@include flex;
 	@include flex-column;
 	> .card-header, > .card-footer {
-		@include flex-height(0);
+		@include flex(0,0);
 	}
 	> .card-body {
-		@include flex-height(1);
+		@include flex(1,0);
 	}
 }
 
@@ -50,12 +49,12 @@
 }
 
 .card-toolbar {
-	@include flex;
+	@include flex-row;
 	@include flex-wrap;
 	padding: 0;
 	.card-control {
 		display: block;
-		@include flex-width(1);
+		@include flex(1,0,auto);
 	}
 	&.card-footer {
 		.card-control {

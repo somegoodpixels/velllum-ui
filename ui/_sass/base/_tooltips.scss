@@ -1,5 +1,5 @@
 .tooltip {
-	@include box-shadow($dropdown-shadow);
+	@include shadow;
 	padding: 0 !important;
 	@include round;
 	//margin: 0 !important;
