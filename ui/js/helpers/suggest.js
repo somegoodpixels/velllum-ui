@@ -1,3 +1,7 @@
+//
+// Suggest (@mentions)
+// --------------------------------------------------
+
 $('[data-suggest]').each(function(){
 	var data = $(this).data('suggest-data');
 	var start = $(this).data('suggest-start');

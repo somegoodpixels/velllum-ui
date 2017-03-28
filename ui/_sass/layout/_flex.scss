@@ -8,20 +8,10 @@
 
 .flex-buffer {
 	margin: 0 $component-buffer/-2;
-	&.flex-item {
+	.flex-item {
 		margin: $component-buffer/2;
 	}
 }
 
 .flex-column > .flex-item { @include flex(1,1,auto); }
 .flex-row > .flex-item { @include flex(1,0,$component-break); }
-
-// .flex-row > .flex-grow.flex-shrink { @include flex(1,1); }
-// .flex-row > .flex-grow:not(.flex-shrink) { @include flex(1,0); }
-// .flex-row > .flex-shrink:not(.flex-grow) { @include flex(0,1); }
-// .flex-row > *:not(.flex-grow):not(.flex-shrink) { @include flex(1,1,0); }
-
-// .flex-column > .flex-grow.flex-shrink { @include flex(1,1); }
-// .flex-column > .flex-grow:not(.flex-shrink) { @include flex(1,0); }
-// .flex-column > .flex-shrink:not(.flex-grow) { @include flex(0,1); }
-// .flex-column > *:not(.flex-grow):not(.flex-shrink) { @include flex(0,0); }

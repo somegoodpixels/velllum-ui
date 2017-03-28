@@ -7,7 +7,7 @@ order: 2
 
 <h6>Mosaic</h6>
 
-<div class="mosaic" style="height: 400px;">
+<div class="mosaic mosaic-buffer" style="height: 400px;">
 	<div class="mosaic-row">
 		<div class="mosaic-column mosaic-column-2">
 			<div class="mosaic-row">
@@ -41,7 +41,7 @@ order: 2
 
 <h6>Mosaic with Previews</h6>
 
-<div class="mosaic" style="min-height: 400px;">
+<div class="mosaic mosaic-buffer" style="min-height: 400px;">
 	<div class="mosaic-row">
 		<div class="mosaic-column mosaic-column-2">
 			<div class="mosaic-row">
@@ -119,7 +119,7 @@ order: 2
 
 <h6>Mosaic with Mixed Content</h6>
 
-<div class="mosaic">
+<div class="mosaic mosaic-buffer">
 	<div class="mosaic-row">
 		<div class="mosaic-column mosaic-column-2">
 			<div class="mosaic-row">

@@ -107,3 +107,9 @@
 		display: inline-block;
 	}
 }
+
+.suggest {
+	.dropdown-menu {
+		min-width: auto;
+	}
+}

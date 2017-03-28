@@ -32,10 +32,11 @@ collections:
     output: true
     permalink: /docs/:path/
   specs:
-    output: false
+    output: true
+    permalink: /specs/:path/
   examples:
     output: true
-    permalink: /docs/examples/:path/
+    permalink: /examples/:path/
 
 defaults:
 -
@@ -56,6 +57,12 @@ defaults:
     type: "examples"
   values:
     layout: "examples"
+-
+  scope:
+    path: ""
+    type: "specs"
+  values:
+    layout: "specs"
 
 
 

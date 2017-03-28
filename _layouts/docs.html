@@ -30,7 +30,7 @@
 						<h2 id="{{ type.name | slugify }}" class="h1 margin-bottom">{{ type.name | capitalize }}</h2>
 						{% assign entries = type.items | sort: "title" %}
 						{% for entry in entries %}
-							{% include spec.html %}
+							{% include content/spec.html %}
 						{% endfor %}
 					{% endfor %}
 				</div>

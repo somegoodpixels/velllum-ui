@@ -1,5 +1,8 @@
-$('[data-tokenfield]').tokenfield({});
+//
+// Tokenfield
+// --------------------------------------------------
 
+$('[data-tokenfield]').tokenfield({});
 
 $('[data-tokenfield]').each(function(){
 	var source = $(this).data('tokenfield-source');

@@ -92,9 +92,10 @@ $(document).ready(function(){ $('iframe[src*=vimeo], iframe[src*=youtube]').each
 
 // ------------------------------------ HELPERS ------------------------------------
 
-loadHelper('jqueryui.js','[data-autocomplete], [data-datepicker]','/ui/jqueryui/jquery-ui-1.12.1/jquery-ui.min.js','/ui/jqueryui/jquery-ui-1.12.1/jquery-ui.structure.min.css');
+loadHelper('jqueryui.js','[data-toggle="autocomplete"], [data-toggle="datepicker"]','/ui/jqueryui/jquery-ui-1.12.1/jquery-ui.min.js','/ui/jqueryui/jquery-ui-1.12.1/jquery-ui.structure.min.css');
 loadHelper('bootstrap.js',false,'/ui/bootstrap/js/bootstrap.min.js');
 loadHelper('suggest.js','[data-suggest]','/ui/suggest/js/bootstrap-suggest.js','/ui/suggest/css/bootstrap-suggest.css');
 loadHelper('validator.js','[data-toggle="validator"]','/ui/bootstrap-validator/dist/validator.min.js');
 loadHelper('forms.js');
 loadHelper('tokenfield.js',false,'/ui/tokenfield/dist/bootstrap-tokenfield.min.js');
+loadHelper('album.js','.album');

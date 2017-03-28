@@ -9,7 +9,7 @@ p { margin: $font-size-base*2 0; }
 	margin: 2em 0 .5em;
 }
 
-#{h()}, blockquote, ul, ol, p, form, .partial, .iframer {
+#{h()}, blockquote, ul, ol, p, form, hr {
 	&:first-child { margin-top: 0; }
 	&:last-child { margin-bottom: 0; }
 }

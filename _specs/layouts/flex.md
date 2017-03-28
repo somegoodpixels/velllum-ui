@@ -19,7 +19,7 @@ order: 4
 			<a href="#">Action</a>
 		</div>
 	</div>
-	<div class="card  flex-item flex-buffer">
+	<div class="card  flex-item">
 		<div class="card-header">
 			<h4>Card Title</h4>
 		</div>
@@ -36,7 +36,7 @@ order: 4
 
 <div class="flex-row flex-buffer">
 	<div class="flex-column">
-		<div class="card flex-column flex-grow flex-item flex-buffer">
+		<div class="card flex-column flex-grow flex-item ">
 			<div class="card-header">
 				<h4>Card Title</h4>
 			</div>
@@ -47,7 +47,7 @@ order: 4
 				<a href="#">Action</a>
 			</div>
 		</div>
-		<div class="card flex-column flex-grow flex-item flex-buffer">
+		<div class="card flex-column flex-grow flex-item ">
 			<div class="card-header">
 				<h4>Card Title</h4>
 			</div>
@@ -60,7 +60,7 @@ order: 4
 		</div>
 	</div>
 	<div class="flex-column">
-		<div class="card flex-column flex-grow flex-item flex-buffer">
+		<div class="card flex-column flex-grow flex-item ">
 			<div class="card-header">
 				<h4>Card Title</h4>
 			</div>
@@ -71,7 +71,7 @@ order: 4
 				<a href="#">Action</a>
 			</div>
 		</div>
-		<div class="card flex-column flex-grow flex-item flex-buffer">
+		<div class="card flex-column flex-grow flex-item ">
 			<div class="card-header">
 				<h4>Card Title</h4>
 			</div>

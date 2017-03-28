@@ -1,4 +1,7 @@
-// watch for change of input value for restyled file inputs
+//
+// File Input Buttons
+// --------------------------------------------------
+
 $(document).on('change','input[type="file"]',function(){
 	var btn = $(this).closest('.btn');
 	var files = this.files;
@@ -11,23 +14,9 @@ $(document).on('change','input[type="file"]',function(){
 	}
 });
 
-// track the value of a select — to style text if default
-$(document).on('change','select',function(){ var val = $(this).val(); var status = $(this).find('option:selected').attr('data-status') || ''; $(this).attr('data-status',status); });
+//
+// Set Focus on Ready
+// --------------------------------------------------
 
-// scroll to page section
-$(document).on('click','[data-focus]',function(e){
-	var target = $($(this).attr('data-focus'));
-	target.focus();
-	if ( $(this).attr('data-focus-hide') ) { $(this).remove(); }
-	return false;
-});
-
-// set focus
-$(document).ready(function(){
-	if ( !is_touch() ) {
-		var foc = $('.ready-focus').find('input, select, textarea').filter(':visible').filter(':first');
-		if ( foc ) { foc.focus(); }
-	}
-});
-
-
+var focus = $('.ready-focus').find('input, select, textarea').filter(':visible').filter(':first');
+if ( focus ) { focus.focus(); }

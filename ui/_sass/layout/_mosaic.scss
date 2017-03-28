@@ -1,6 +1,5 @@
 
 .mosaic {
-	margin: 0 $component-buffer/-2;
 	@include flex-column;
 	@include flex-align(stretch);
 	.mosaic-row {
@@ -19,7 +18,6 @@
 		}
 	}
 	.mosaic-item {
-		margin: $component-buffer/2;
 		@include flex-column;
 		> * {
 			@include flex(1,0);
@@ -28,5 +26,11 @@
 	}
 	.mosaic-column > .mosaic-item { @include flex(1,1,auto); }
 	.mosaic-row > .mosaic-item { @include flex(1,0,$component-break); }
+	&.mosaic-buffer {
+		margin: 0 $component-buffer/-2;
+		.mosaic-item {
+			margin: $component-buffer/2;
+		}
+	}
 }
 
