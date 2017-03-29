@@ -8,6 +8,7 @@
 
 @mixin component(){
   display: block;
+  border-width: 0;
   @include shadow();
   border-radius: $component-border-radius;
   @include transitions(.375s);

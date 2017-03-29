@@ -1,7 +1,12 @@
-$mini: 400px !default;
-$phone: 540px !default;
-$phablet: 768px !default;
-$tablet: 960px !default;
+// $screen-xs:                  400px;
+// $screen-sm:                  540px;
+// $screen-md:                  768px;
+// $screen-lg:                  960px;
+
+$mini: $screen-xs !default;
+$phone: $screen-sm !default;
+$phablet: $screen-md !default;
+$tablet: $screen-lg !default;
 $laptop: 1280px !default;
 $desktop: 1600px !default;
 

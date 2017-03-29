@@ -25,6 +25,8 @@ order: 99
 
 <p class="text-light"><strong>Light Paragraph:</strong> Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 
+<blockquote>Blockquote: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</blockquote>
+
 ---
 
 <h6>Color Variations</h6>
@@ -36,3 +38,5 @@ order: 99
 <p class="text-yellow">Yellow Text <span class="text-light text-italic">(same as orange)</span></p>
 <p class="text-green">Green Text</p>
 <p class="text-blue">Blue Text</p>
+
+

@@ -3,7 +3,7 @@
 	overflow: visible;
 	margin: 10px 0;
 	&, .progress-bar {
-		@include pill; 
+		border-radius: $progress-border-radius;
 		box-shadow: none;
 	}
 }

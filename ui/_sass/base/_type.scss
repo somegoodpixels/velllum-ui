@@ -14,8 +14,13 @@ p { margin: $font-size-base*2 0; }
 	&:last-child { margin-bottom: 0; }
 }
 
-p, ul, ol, dd { color: $normal; }
-strong, label { color: $dark; }
+blockquote {
+	padding: 0;
+	border: 0;
+}
+
+// p, ul, ol, dd { color: $normal; }
+// strong, label { color: $dark; }
 
 small, .small { @include font-size-small; }
 .text-small { color: inherit; @include font-size-small; }
@@ -56,7 +61,6 @@ a.inherit { color: inherit;
 		vertical-align: baseline;
 		font-style: normal;
 		letter-spacing: 0;
-		color: $light;
 		margin-right: 1em;
 		&:before { content: ' '; margin-left: .25em; }
 		strong {
@@ -95,7 +99,7 @@ dl {
 
 hr {
 	margin: 50px 0;
-	border-color: $line;
+	//border-color: $line;
 	background: transparent;
 	padding: 0;
 	&.silver { border-color: $silver; }

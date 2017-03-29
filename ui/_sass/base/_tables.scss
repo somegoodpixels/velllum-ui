@@ -64,14 +64,14 @@
 
 // styles for using alternate elements within tables, like <a href="#">anchors</a>
 .table { display: table; }
-.caption { display: table-caption; }
-.colgroup { display: table-column-group; }
-.thead { display: table-header-group; }
-.tfoot { display: table-footer-group; }
-.tbody { display: table-row-group; }
-.td { display: table-cell; }
-.col { display: table-column; }
-.tr { display: table-row; }
+.table-caption { display: table-caption; }
+.table-colgroup { display: table-column-group; }
+.table-thead { display: table-header-group; }
+.table-tfoot { display: table-footer-group; }
+.table-tbody { display: table-row-group; }
+.table-td { display: table-cell; }
+.table-col { display: table-column; }
+.table-tr { display: table-row; }
 
 .table-responsive {
   border-radius: $border-radius-base;

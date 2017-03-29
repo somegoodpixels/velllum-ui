@@ -1,12 +1,12 @@
 .label {
 	@include labels;
 	@include transitions;
-	background: transparent !important;
+	//background: transparent !important;
 	display: inline-block;
 	text-align: inherit;
 	padding: 6px 0;
 	border: 0;
-	&.label-default { color: $light; }
+	&.label-default { color: $label-color; }
 	&.label-success { color: #{dark($green)}; }
 	&.label-info { color: #{dark($blue)}; }
 	&.label-warning { color: #{dark($yellow)}; }
