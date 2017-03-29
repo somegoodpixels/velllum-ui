@@ -10,7 +10,8 @@
 		</style>
 	</head>
 	<body class="bg-silver-light">
-		{% assign specs = site.specs | where: 'type',page.type | sort: 'order' | reverse | group_by: 'section' %}
+		{% include content/nav.html %}
+		{% assign specs = site.specifications | where: 'type',page.type | sort: 'order' | reverse | group_by: 'section' %}
 		<div class="container" style="padding: 80px 0;">
 			<div class="row">
 				{% if page.type != 'layouts' %}

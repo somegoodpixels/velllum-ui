@@ -35,6 +35,9 @@ section: alignment
 	<div class="title-header">
 		<h3>Title with more text demonstrating wrapping at smaller widths</h3>
 	</div>
+	<div class="title-body">
+		<hr/>
+	</div>
 	<div class="title-actions">
 		<div class="btn-toolbar">
 			<div class="btn-group">
