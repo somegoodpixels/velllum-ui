@@ -42,7 +42,7 @@ $hover-text:             $dark;
 $active-bg:              $blue;
 $active-text:            white;
 $disabled-text:          $light;
-$disabled-bg:            $silver;
+$disabled-bg:            $silver-light;
 
 //
 // Fonts
@@ -415,142 +415,142 @@ $state-danger-border:            transparent;
 //
 // Labels
 // --------------------------------------------------
-$label-default-bg:            transparent;
-$label-primary-bg:            transparent;
-$label-success-bg:            transparent;
-$label-info-bg:               transparent;
-$label-warning-bg:            transparent;
-$label-danger-bg:             transparent;
-$label-color:                 $light;
+$label-default-bg:                     transparent;
+$label-primary-bg:                     transparent;
+$label-success-bg:                     transparent;
+$label-info-bg:                        transparent;
+$label-warning-bg:                     transparent;
+$label-danger-bg:                      transparent;
+$label-color:                          $light;
 
 //
 // Modals
 // --------------------------------------------------
-$modal-inner-padding:                    $component-padding-vertical $component-padding-horizontal $component-padding-horizontal;
-$modal-title-padding:                    $component-padding;
-$modal-content-bg:                       white;
-$modal-content-border-color:             transparent;
-$modal-content-fallback-border-color:    transparent;
-$modal-backdrop-bg:                      $navy;
-$modal-backdrop-opacity:                 .75;
-$modal-header-border-color:              $modal-content-border-color;
-$modal-footer-border-color:              $modal-content-border-color;
-$modal-lg:                               960px;
-$modal-md:                               640px;
-$modal-sm:                               320px;
+$modal-inner-padding:                  $component-padding-vertical $component-padding-horizontal $component-padding-horizontal;
+$modal-title-padding:                  $component-padding;
+$modal-content-bg:                     white;
+$modal-content-border-color:           transparent;
+$modal-content-fallback-border-color:  transparent;
+$modal-backdrop-bg:                    $navy;
+$modal-backdrop-opacity:               .75;
+$modal-header-border-color:            $modal-content-border-color;
+$modal-footer-border-color:            $modal-content-border-color;
+$modal-lg:                             960px;
+$modal-md:                             640px;
+$modal-sm:                             320px;
 
 //
 // Alerts
 // --------------------------------------------------
-$alert-padding:               ($padding-base-vertical + 1) $padding-base-horizontal;
-$alert-border-radius:         $border-radius-base;
-$alert-link-font-weight:      inherit;
+$alert-padding:                        ($padding-base-vertical + 1) $padding-base-horizontal;
+$alert-border-radius:                  $border-radius-base;
+$alert-link-font-weight:               inherit;
 
 //
 // Progress
 // --------------------------------------------------
-$progress-bg:                 $silver;
-$progress-bar-color:          $light;
-$progress-border-radius:      100px;
+$progress-bg:                          $silver;
+$progress-bar-color:                   $light;
+$progress-border-radius:               100px;
 
 //
 // List Groups
 // --------------------------------------------------
-$list-group-bg:                 white;
-$list-group-border:             $line;
-$list-group-border-radius:      $component-border-radius;
-$list-group-hover-bg:           $hover-bg;
-$list-group-active-color:       $component-active-color;
-$list-group-active-bg:          $component-active-bg;
-$list-group-active-border:      $outline;
-$list-group-active-text-color:  lightest($list-group-active-bg);
-$list-group-disabled-color:     $disabled-text;
-$list-group-disabled-bg:        $disabled-bg;
-$list-group-disabled-text-color: $list-group-disabled-color;
-$list-group-link-color:         $normal;
-$list-group-link-hover-color:   $hover-text;
-$list-group-link-heading-color: $dark;
+$list-group-bg:                        white;
+$list-group-border:                    $line;
+$list-group-border-radius:             $component-border-radius;
+$list-group-hover-bg:                  $hover-bg;
+$list-group-active-color:              $component-active-color;
+$list-group-active-bg:                 $component-active-bg;
+$list-group-active-border:             $outline;
+$list-group-active-text-color:         $component-active-color;
+$list-group-disabled-color:            $disabled-text;
+$list-group-disabled-bg:               $disabled-bg;
+$list-group-disabled-text-color:       $list-group-disabled-color;
+$list-group-link-color:                $normal;
+$list-group-link-hover-color:          $hover-text;
+$list-group-link-heading-color:        $dark;
 
 //
 // Panels
 // --------------------------------------------------
-$panel-inner-border:             transparent;
-$panel-footer-bg:                transparent;
-$panel-default-text:             $normal;
-$panel-default-heading-bg:       transparent;
-$panel-border-radius:            $component-border-radius;
+$panel-inner-border:                   transparent;
+$panel-footer-bg:                      transparent;
+$panel-default-text:                   $normal;
+$panel-default-heading-bg:             transparent;
+$panel-border-radius:                  $component-border-radius;
 
 
 //
 // Thumbnails
 // --------------------------------------------------
-$thumbnail-padding:           0;
-$thumbnail-bg:                white;
-$thumbnail-border:            transparent;
-$thumbnail-border-radius:     $component-border-radius;
-$thumbnail-caption-color:     $light;
-$thumbnail-caption-padding:   $component-padding;
+$thumbnail-padding:                    0;
+$thumbnail-bg:                         white;
+$thumbnail-border:                     transparent;
+$thumbnail-border-radius:              $component-border-radius;
+$thumbnail-caption-color:              $light;
+$thumbnail-caption-padding:            $component-padding;
 
 //
 // Wells
 // --------------------------------------------------
-$well-bg:                        $silver;
-$well-border:                    transparent;
+$well-bg:                              $silver;
+$well-border:                          transparent;
 
 //
 // Badges
 // --------------------------------------------------
-$badge-color:                 $light;
-$badge-bg:                    $silver;
-$badge-active-color:          $active-bg;
-$badge-active-bg:             $active-text;
-$badge-font-weight:           bold;
-$badge-line-height:           1;
-$badge-border-radius:         100px;
+$badge-color:                          $light;
+$badge-bg:                             $silver;
+$badge-active-color:                   $active-bg;
+$badge-active-bg:                      $active-text;
+$badge-font-weight:                    bold;
+$badge-line-height:                    1;
+$badge-border-radius:                  100px;
 
 //
 // Breadcrumbs
 // --------------------------------------------------
-$breadcrumb-padding-vertical:   $padding-large-vertical;
-$breadcrumb-padding-horizontal: $padding-large-horizontal;
-$breadcrumb-bg:                 $silver-light;
-$breadcrumb-color:              $light;
-$breadcrumb-active-color:       $dark;
-$breadcrumb-separator:          "/";
+$breadcrumb-padding-vertical:          $padding-large-vertical;
+$breadcrumb-padding-horizontal:        $padding-large-horizontal;
+$breadcrumb-bg:                        $silver-light;
+$breadcrumb-color:                     $light;
+$breadcrumb-active-color:              $dark;
+$breadcrumb-separator:                 "/";
 
 //
 // Carousels
 // --------------------------------------------------
-$carousel-text-shadow:                   none;
-$carousel-control-color:                 white;
-$carousel-control-width:                 120px;
-$carousel-control-opacity:               1;
-$carousel-indicator-active-bg:           white;
-$carousel-indicator-border-color:        transparent;
-$carousel-caption-color:                 white;
+$carousel-text-shadow:                 none;
+$carousel-control-color:               white;
+$carousel-control-width:               120px;
+$carousel-control-opacity:             1;
+$carousel-indicator-active-bg:         white;
+$carousel-indicator-border-color:      transparent;
+$carousel-caption-color:               white;
 
 //
 // Code
 // --------------------------------------------------
-$code-color:                  $dark;
-$code-bg:                     $silver;
-$kbd-color:                   $code-color;
-$kbd-bg:                      $code-bg;
-$pre-bg:                      $navy;
-$pre-color:                   white;
-$pre-border-color:            transparent;
-$pre-scrollable-max-height:   340px;
+$code-color:                           $dark;
+$code-bg:                              $silver;
+$kbd-color:                            $code-color;
+$kbd-bg:                               $code-bg;
+$pre-bg:                               $navy;
+$pre-color:                            white;
+$pre-border-color:                     transparent;
+$pre-scrollable-max-height:            340px;
 
 //
 // Type
 // --------------------------------------------------
-$component-offset-horizontal: 180px;
-$text-muted:                  $light;
-$abbr-border-color:           $line;
-$headings-small-color:        $light;
-$blockquote-small-color:      $light;
-$blockquote-font-size:        $font-size-base;
-$blockquote-border-color:     transparent;
-$dl-horizontal-offset:        $component-offset-horizontal;
-$dl-horizontal-breakpoint:    $component-break;;
-$hr-border:                   $line;
+$component-offset-horizontal:          180px;
+$text-muted:                           $light;
+$abbr-border-color:                    $line;
+$headings-small-color:                 $light;
+$blockquote-small-color:               $light;
+$blockquote-font-size:                 $font-size-base;
+$blockquote-border-color:              transparent;
+$dl-horizontal-offset:                 $component-offset-horizontal;
+$dl-horizontal-breakpoint:             $component-break;;
+$hr-border:                            $line;
