@@ -1,0 +1,46 @@
+$section-buffer: 10px;
+$section-basis: 960px;
+
+@mixin section-content-variant($class) {
+	&.sections-#{$class} .section .section-content,
+	.section .section-content.section-#{$class} {
+		@content;
+	}
+}
+
+.sections {
+	@include flex-row;
+	@include flex-wrap;
+	@include flex-align(stretch);
+	.section {
+		@include flex(1,1,100%);
+		@include flex-row;
+		@include flex-align(stretch);
+
+		&.section-full { @include flex(1,1,($section-basis/1)); min-width: percentage(1/1); }
+		&.section-half { @include flex(1,1,($section-basis/2)); min-width: percentage(1/2); }
+		&.section-third { @include flex(1,1,($section-basis/3)); min-width: percentage(1/3); }
+		&.section-quarter { @include flex(1,1,($section-basis/4)); min-width: percentage(1/4); }
+		&.section-fifth { @include flex(1,1,($section-basis/5)); min-width: percentage(1/5); }
+		&.section-sixth { @include flex(1,1,($section-basis/6)); min-width: percentage(1/6); }
+
+		@for $i from 1 through 12 {
+			&.section-#{$i} { @include flex(1,1,($i*$section-basis/12)); min-width: percentage($i/12); }
+		}
+		.section-content {
+			padding: $grid-gutter-width/2;
+			width: 100%;
+			@include flex-column;
+		}
+	}
+	@include section-content-variant(padding) { padding: 5vw; @include small{ padding-left: $margin-small; padding-right: $margin-small; } }
+	@include section-content-variant(tall) { padding-top: 20vw; padding-bottom: 20vw; }
+	@include section-content-variant(medium) { padding-top: 10vw; padding-bottom: 10vw; }
+	@include section-content-variant(middle) { @include flex-justify(center); }
+	@include section-content-variant(silver) { background: $silver-light; }
+	@include section-content-variant(radius) { border-radius: $border-radius-base; }
+	&.sections-buffer { &, .section { border: $section-buffer/2 solid transparent; } }
+	&.sections-outline { border: 0 solid transparent; border-width: 1px 1px 0 0;
+		.section { border: 0 solid transparent; border-width: 0 0 1px 1px; }
+	}
+}

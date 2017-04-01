@@ -9,9 +9,10 @@ $('.album').each(function(){
 		var item = $(this).closest('.album-image');
 		var width = $(this).attr('width');
 		var height = $(this).attr('height');
-		var ratio = width / height;
-		item.css('flex-grow',ratio);
-		item.css('flex-basis',(ratio*size)+'px');
+		var grow = width / height;
+		var shrink = 1;
+		var basis = (grow*size)+'px'
+		item.css('flex',grow +' '+ shrink +' '+ basis);
 	});
 	$(this).addClass('album-ready');
 });

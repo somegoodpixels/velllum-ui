@@ -9,14 +9,7 @@
 			.code pre { border-top-left-radius: 0; border-top-right-radius: 0; margin: 0; }
 		</style>
 	</head>
-	<body class="bg-silver-light">
-		<div class="container" style="padding: 80px 0;">
-			<div class="row">
-				<div class="col-md-12">
-					{% assign entry = page %}
-					{% include content/spec.html %}
-				</div>
-			</div>
-		</div>
+	<body>
+		{{ content }}
 	</body>
 </html>

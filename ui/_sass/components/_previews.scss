@@ -37,6 +37,7 @@
 			@include flex(1,0,auto);
 			padding: $component-padding;
 			@include compact;
+			#{h()} { margin-bottom: $component-padding-vertical; }
 			~ .preview-footer {
 				padding-top: 0;
 			}
