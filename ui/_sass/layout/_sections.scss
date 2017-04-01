@@ -33,12 +33,12 @@ $section-basis: 960px;
 			@include flex-column;
 		}
 	}
-	@include section-content-variant(padding) { padding: 5vw; @include small{ padding-left: $margin-small; padding-right: $margin-small; } }
-	@include section-content-variant(tall) { padding-top: 20vw; padding-bottom: 20vw; }
-	@include section-content-variant(medium) { padding-top: 10vw; padding-bottom: 10vw; }
-	@include section-content-variant(middle) { @include flex-justify(center); }
-	@include section-content-variant(silver) { background: $silver-light; }
-	@include section-content-variant(radius) { border-radius: $border-radius-base; }
+	@include section-content-variant("padding") { padding: 5vw; @include small{ padding-left: $margin-small; padding-right: $margin-small; } }
+	@include section-content-variant("tall") { padding-top: 20vw; padding-bottom: 20vw; }
+	@include section-content-variant("medium") { padding-top: 10vw; padding-bottom: 10vw; }
+	@include section-content-variant("middle") { @include flex-justify(center); }
+	@include section-content-variant("silver") { background: $silver-light; }
+	@include section-content-variant("radius") { border-radius: $border-radius-base; }
 	&.sections-buffer { &, .section { border: $section-buffer/2 solid transparent; } }
 	&.sections-outline { border: 0 solid transparent; border-width: 1px 1px 0 0;
 		.section { border: 0 solid transparent; border-width: 0 0 1px 1px; }
