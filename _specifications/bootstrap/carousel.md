@@ -12,15 +12,15 @@ section: sections
   </ol>
   <div class="carousel-inner">
     <div class="item active">
-      <img src="/ui/img/sample/slide-1.png" alt="Slide 1">
+      <img src="{{site.baseurl}}/ui/img/sample/slide-1.png" alt="Slide 1">
       <div class="carousel-caption">slide caption...</div>
     </div>
     <div class="item">
-      <img src="/ui/img/sample/slide-2.png" alt="Slide 2">
+      <img src="{{site.baseurl}}/ui/img/sample/slide-2.png" alt="Slide 2">
       <div class="carousel-caption">slide caption...</div>
     </div>
     <div class="item">
-      <img src="/ui/img/sample/slide-3.png" alt="Slide 3">
+      <img src="{{site.baseurl}}/ui/img/sample/slide-3.png" alt="Slide 3">
       <div class="carousel-caption">slide caption...</div>
     </div>
   </div>
