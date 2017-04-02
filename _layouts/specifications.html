@@ -5,10 +5,18 @@
 		{% include options/meta.html %}
 		{% include options/scripts.html %}
 		{% include options/styles.html %}
+		<style>
+			.code pre { border-top-left-radius: 0; border-top-right-radius: 0; margin: 0; }
+		</style>
 	</head>
-	<body>
-		{% assign entry = page %}
-		{% capture baseui %}="{{site.baseurl}}/ui{% endcapture %}
-		{{ entry.content | markdownify | replace: '="/ui',baseui }}
+	<body class="bg-silver-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					{% assign entry = page %}
+					{% include content/spec.html %}
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

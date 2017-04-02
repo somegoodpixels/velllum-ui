@@ -15,7 +15,7 @@
 		<div class="container" style="padding: 80px 0;">
 			<div class="row">
 				{% if page.type != 'layouts' %}
-					<div class="col-md-3">
+					<div class="col-lg-3">
 						<ul class="nav nav-pills nav-stacked">
 							{% for type in specs %}
 								<li>
@@ -25,7 +25,7 @@
 						</ul>
 					</div>
 				{% endif %}
-				<div class="{% if page.type != 'layouts' %}col-md-9{% else %}col-md-12{% endif %}">
+				<div class="{% if page.type != 'layouts' %}col-lg-9{% else %}col-lg-12{% endif %}">
 					{% for type in specs %}
 						<hr/>
 						<h2 id="{{ type.name | slugify }}" class="h1 margin-bottom">{{ type.name | capitalize }}</h2>

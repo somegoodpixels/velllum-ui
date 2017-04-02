@@ -19,15 +19,12 @@
 		padding-right: $margin-small;
 		> [class*="col-md-"],
 		> [class*="col-lg-"] {
-			padding-left: 0;
-			padding-right: 0;
+			padding: $component-buffer/2 0;
 		}
-		> [class*="col-md-"] + [class*="col-md-"],
-		> [class*="col-lg-"] + [class*="col-lg-"] {
-			padding-top: 50px;
-		}
-		+ .row {
-			padding-top: 50px;
-		}
+	}
+	.mobile-expand {
+		margin-left: $margin-small*-1;
+		margin-right: $margin-small*-1;
+		border-radius: 0;
 	}
 }

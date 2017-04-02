@@ -1,7 +1,7 @@
 <h2 id="{{ entry.title | slugify }}" class="margin">
 	<a href="{{site.baseurl}}{{entry.url}}">{{ entry.title | capitalize }}</a>
 </h2>
-<div class="panel panel-large panel-expand-small">
+<div class="panel panel-large mobile-expand">
 	<div class="panel-body">
 		<div id="{{ entry.title | slugify }}-example">
 			{% capture baseui %}="{{site.baseurl}}/ui{% endcapture %}

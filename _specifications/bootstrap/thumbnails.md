@@ -5,7 +5,7 @@ section: sections
 ---
 
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-lg-6">
 		<div class="thumbnail">
 			<img src="/ui/img/sample/sample-2.png" />
 			<div class="caption">
@@ -13,7 +13,7 @@ section: sections
 			</div>
 		</div>
 	</div>
-	 <div class="col-md-6">
+	 <div class="col-lg-6">
 		<div class="thumbnail">
 			<img src="/ui/img/sample/sample-2.png" />
 			<div class="caption">

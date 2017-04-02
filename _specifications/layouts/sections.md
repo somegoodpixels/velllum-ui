@@ -7,7 +7,7 @@ order: 2
 
 <h6>Sections with Buffer</h6>
 
-<div class="sections sections-buffer sections-silver sections-radius sections-padding">
+<div class="sections sections-buffer sections-silver sections-radius sections-padding mobile-expand">
 
 	<div class="section section-full">
 		<div class="section-content">
@@ -77,7 +77,7 @@ order: 2
 
 <h6>Sections in 12 Column Grids</h6>
 
-<div class="sections sections-outline sections-padding">
+<div class="sections sections-outline sections-padding mobile-expand">
 
 	<div class="section section-12">
 		<div class="section-content bg-silver-light section-tall section-middle">

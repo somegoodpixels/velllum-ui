@@ -25,13 +25,6 @@
 			padding: $component-padding-large;
 		}
 	}
-	@include small {
-		&.panel-expand-small {
-			margin-left: $margin-small*-1;
-			margin-right: $margin-small*-1;
-			border-radius: 0;
-		}
-	}
 	@include flex-column;
 	> .panel-heading, > .panel-footer {
 		@include flex(0,0,auto);
