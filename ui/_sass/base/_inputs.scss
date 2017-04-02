@@ -12,7 +12,7 @@
 .form-control {
 	@include box-shadow(none);
 	@include placeholder($input-color-placeholder);
-	@include transitions(.25s);
+	//@include transitions(.25s);
 	// disabled zooming on inputs
 	@if $font-size-base < 16 {
 		&:not(.input-sm):not(.input-lg):focus {
