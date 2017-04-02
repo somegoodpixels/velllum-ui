@@ -13,27 +13,27 @@ order: 2
 			<div class="mosaic-row">
 				<div class="mosaic-column">
 					<div class="mosaic-item">
-						<div class="well">...</div>
+						<div class="well">short row</div>
 					</div>
 					<div class="mosaic-item">
-						<div class="well">...</div>
+						<div class="well">short row</div>
 					</div>
 				</div>
 				<div class="mosaic-column">
 					<div class="mosaic-item">
-						<div class="well">...</div>
+						<div class="well">medium column</div>
 					</div>
 				</div>
 			</div>
 			<div class="mosaic-row">
 				<div class="mosaic-item">
-					<div class="well">...</div>
+					<div class="well">long row</div>
 				</div>
 			</div>
 		</div>
 		<div class="mosaic-column">
 			<div class="mosaic-item">
-				<div class="well">...</div>
+				<div class="well">tall column</div>
 			</div>
 		</div>
 	</div>
