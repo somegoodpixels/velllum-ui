@@ -4,12 +4,12 @@
 .container {
 	padding-left: 0;
 	padding-right: 0;
-}
-
-@include large(){
-	.container {
+	@include large(){
 		width: 90%;
 		max-width: 1320px;
+	}
+	@include small(){
+		width: auto;
 	}
 }
 
