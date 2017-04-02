@@ -13,6 +13,9 @@
 	}
 	> .panel-heading, > .panel-footer, > .panel-body, > .panel-body > .panel-body-fill {
 		padding: $component-padding;
+		@include small {
+			padding: ($margin-small*2/3) $margin-small !important;
+		}
 		&.panel-flush { padding: 0 !important; }
 		&.panel-flush-top { padding-top: 0 !important; }
 		&.panel-flush-bottom { padding-bottom: 0 !important; }
@@ -21,6 +24,11 @@
 		> .panel-heading, > .panel-footer, > .panel-body, > .panel-body > .panel-body-fill {
 			padding: $component-padding-large;
 		}
+	}
+	&.panel-expand-mobile {
+		margin-left: $margin-small*-1;
+		margin-right: $margin-small*-1;
+		border-radius: 0;
 	}
 	@include flex-column;
 	> .panel-heading, > .panel-footer {
