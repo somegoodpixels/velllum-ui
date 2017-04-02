@@ -1,6 +1,6 @@
 ---
 title: Mosaic
-type: layoutsx
+type: layouts
 section: grids
 order: 2
 ---

@@ -37,4 +37,8 @@ pre.code-medium,
 pre.code-large,
 .code-large pre {
 	padding: $component-padding-large;
+	@include small {
+		padding-left: $margin-small;
+		padding-right: $margin-small;
+	}
 }
