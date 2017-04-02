@@ -12,15 +12,15 @@
 .form-control {
 	@include box-shadow(none);
 	@include placeholder($input-color-placeholder);
-	//@include transitions(.25s);
+	@include transitions(.25s);
 	// disabled zooming on inputs
-	@if $font-size-base < 16 {
-		&:not(.input-sm):not(.input-lg):focus {
-			@media screen and (-webkit-min-device-pixel-ratio: 0) {
-				html.touch & { font-size: 16px !important; }
-			}
-		}
-	}
+	// @if $font-size-base < 16 {
+	// 	&:not(.input-sm):not(.input-lg):focus {
+	// 		@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	// 			html.touch & { font-size: 16px !important; }
+	// 		}
+	// 	}
+	// }
 	text-overflow: ellipsis;
 	color: $dark;
 	box-shadow: none;

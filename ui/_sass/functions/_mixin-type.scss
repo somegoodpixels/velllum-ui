@@ -9,8 +9,8 @@
 
 @mixin font-size-code(){ @include font-sizing($font-size-code); }
 @mixin font-size-small(){ @include font-sizing($font-size-small); }
-@mixin font-size-base(){ @include font-sizing($font-size-base); }
 
+@mixin font-size-base(){ @include font-sizing($font-size-base); @include small{ @include font-sizing($font-size-base-full); } }
 @mixin font-size-large(){ @include font-sizing($font-size-large); @include large{ @include font-sizing($font-size-large-full); } }
 @mixin font-size-larger(){ @include font-sizing($font-size-larger); @include large{ @include font-sizing($font-size-larger-full); } }
 @mixin font-size-largest(){ @include font-sizing($font-size-largest); @include large{ @include font-sizing($font-size-largest-full); } }
