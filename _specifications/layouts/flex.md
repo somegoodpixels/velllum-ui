@@ -1,6 +1,6 @@
 ---
 title: Flex
-type: layouts
+type: layoutsx
 section: grids
 order: 4
 ---
