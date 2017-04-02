@@ -4,7 +4,8 @@
 <div class="panel panel-large">
 	<div class="panel-body">
 		<div id="{{ entry.title | slugify }}-example">
-			{{ entry.content | markdownify | replace: 'href="/','href="+site.baseurl | replace: 'src="/','src="+site.baseurl }}
+			{% capture baseui %}="{{site.baseurl}}/ui{% endcapture %}
+			{{ entry.content | markdownify | replace: '="/ui',baseui }}
 		</div>
 	</div>
 	<div class="panel-footer {{ entry.title | slugify }}-code">
