@@ -13,9 +13,6 @@
 	}
 	> .panel-heading, > .panel-footer, > .panel-body, > .panel-body > .panel-body-fill {
 		padding: $component-padding;
-		@include small {
-			padding: ($margin-small*2/3) $margin-small !important;
-		}
 		&.panel-flush { padding: 0 !important; }
 		&.panel-flush-top { padding-top: 0 !important; }
 		&.panel-flush-bottom { padding-bottom: 0 !important; }
@@ -23,6 +20,9 @@
 	&.panel-large {
 		> .panel-heading, > .panel-footer, > .panel-body, > .panel-body > .panel-body-fill {
 			padding: $component-padding-large;
+			@include small {
+				padding: ($margin-small*2/3) $margin-small !important;
+			}
 		}
 	}
 	@include flex-column;

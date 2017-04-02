@@ -1,9 +1,11 @@
+$basis: $component-break + $component-buffer;
+
+
 .flex-row { @include flex-row; @include flex-wrap; }
 .flex-column {
 	@include flex-column;
-	@include flex(1,1,0);
-	min-width: $component-break + $component-buffer;
-	@for $i from 1 through 12 { &.flex-column-#{$i} { @include flex($i,1,0); } }
+	@include flex(1,1,$basis);
+	@for $i from 1 through 12 { &.flex-column-#{$i} { @include flex(1,1,$basis*$i); } }
 }
 
 .flex-buffer {

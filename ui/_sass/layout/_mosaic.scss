@@ -1,4 +1,4 @@
-
+$basis: $component-break + $component-buffer;
 
 .mosaic {
 	@include flex-column;
@@ -10,10 +10,10 @@
 	}
 	.mosaic-column {
 		@include flex-column;
-		@include flex(1,1,$component-break);
+		@include flex(1,1,$basis);
 		@for $i from 1 through 12 {
 			&.mosaic-column-#{$i} {
-				@include flex($i,1,$component-break*$i);
+				@include flex(1,1,$basis*$i);
 			}
 		}
 	}
