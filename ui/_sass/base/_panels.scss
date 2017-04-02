@@ -25,10 +25,12 @@
 			padding: $component-padding-large;
 		}
 	}
-	&.panel-expand-mobile {
-		margin-left: $margin-small*-1;
-		margin-right: $margin-small*-1;
-		border-radius: 0;
+	@include small {
+		&.panel-expand-small {
+			margin-left: $margin-small*-1;
+			margin-right: $margin-small*-1;
+			border-radius: 0;
+		}
 	}
 	@include flex-column;
 	> .panel-heading, > .panel-footer {
