@@ -2,14 +2,26 @@
 	@include shadow;
 	border-width: 0;
 	.navbar-nav > li > a { @include transitions; }
+	@include small{
+		.navbar-nav {
+			padding-bottom: 1rem;
+			> li > a { padding-left: $margin-small; padding-right: $margin-small; }
+		}
+	}
 	.navbar-brand {
 		@include font-size-base;
 		font-weight: bold;
 		line-height: $line-height-base !important;
+		@include small{
+			padding-left: $margin-small;
+		}
 	}
 	.navbar-toggle {
 		.icon-bar {
 			width: 18px;
+		}
+		@include small{
+			margin-right: $margin-small;
 		}
 	}
 	&.navbar-default {

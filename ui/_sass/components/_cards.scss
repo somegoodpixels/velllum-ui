@@ -35,7 +35,7 @@
 		display: block;
 		margin: 0 !important;
 		height: $input-height-large;
-		padding: ( ( $component-height-large - $font-size-base * $component-line-height ) / 2 - 1 ) $component-padding-horizontal;
+		padding: ( ( $component-height-large - $font-size-base * $component-line-height ) / 2 ) $component-padding-horizontal;
 		border-radius: 0;
 		width: 100%;
 	}

@@ -23,7 +23,7 @@ $('div.ti').addClass($('html').attr('class')).removeClass('wf-loading wf-inactiv
 // adds specialty classes to body
 $(document).on('ready',function(){ $('html').addClass('ready'); });
 $(window).on('load',function(){ $('html').addClass('loaded'); });
-if ( 'ontouchstart' in window ) { $('html').addClass('touch'); }
+if ( 'ontouchstart' in window ) { $('html').addClass('touch'); } else { $('html').addClass('click'); }
 function is_touch(){ return ( 'ontouchstart' in window ); }
 
 // ------------------------------------ TABS ------------------------------------

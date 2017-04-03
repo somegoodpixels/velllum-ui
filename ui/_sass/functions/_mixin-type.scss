@@ -7,11 +7,14 @@
 	line-height: ( $line-height-base - ( $ratio-clamp * .125 ) );
 }
 
+@mixin font-size-root(){ @include font-sizing($font-size-root); @include large{ @include font-sizing($font-size-root-full); } }
+
+@mixin font-size-label(){ @include font-sizing($font-size-label); }
 @mixin font-size-code(){ @include font-sizing($font-size-code); }
 @mixin font-size-small(){ @include font-sizing($font-size-small); }
 @mixin font-size-base(){ @include font-sizing($font-size-base); }
+@mixin font-size-large(){ @include font-sizing($font-size-large); }
 
-@mixin font-size-large(){ @include font-sizing($font-size-large); @include large{ @include font-sizing($font-size-large-full); } }
 @mixin font-size-larger(){ @include font-sizing($font-size-larger); @include large{ @include font-sizing($font-size-larger-full); } }
 @mixin font-size-largest(){ @include font-sizing($font-size-largest); @include large{ @include font-sizing($font-size-largest-full); } }
 @mixin font-size-huge(){ @include font-sizing($font-size-huge); @include large{ @include font-sizing($font-size-huge-full); } }
@@ -24,7 +27,6 @@
 @mixin font-size-h5(){ @include font-sizing($font-size-h5); @include large{ @include font-sizing($font-size-h5-full); } }
 @mixin font-size-h6(){ @include font-sizing($font-size-h6); @include large{ @include font-sizing($font-size-h6-full); } }
 
-html .velllum, html.velllum body { @include font-size-base; }
 
 @function h($from:false, $to:false) {
 	@if $from and $to {

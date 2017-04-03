@@ -1,6 +1,6 @@
 body { @include font-size-base; }
 
-p { margin: $font-size-base*2 0; }
+p { margin: 2rem 0; }
 .margin, .margin-top { margin-top: 2em; }
 .margin, .margin-bottom { margin-bottom: 2em; }
 

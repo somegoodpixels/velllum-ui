@@ -1,5 +1,6 @@
 .btn {
 	@include transitions(.25s);
+	border-width: 0;
 	&.btn-red { @include button-variant(white,$red,$red); }
 	&.btn-blue { @include button-variant(white,$blue,$blue); }
 	&.btn-navy { @include button-variant(white,$navy,$navy); }
