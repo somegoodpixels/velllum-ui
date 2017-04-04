@@ -15,6 +15,7 @@
   &:after {
     content: " "; // 1
     display: table; // 2
+    width: 100%;
   }
   &:after {
     clear: both;
