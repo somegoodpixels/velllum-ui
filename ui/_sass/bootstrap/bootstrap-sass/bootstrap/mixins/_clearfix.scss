@@ -14,8 +14,8 @@
   &:before,
   &:after {
     content: " "; // 1
-    display: table; // 2
-    width: 100%;
+    display: block; // 2
+    height: 0;
   }
   &:after {
     clear: both;
