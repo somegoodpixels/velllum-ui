@@ -14,8 +14,8 @@
 	&.btn-sm { height: $component-height-small; @include font-size-small; }
 	line-height: $component-line-height !important;
 	&.btn-pill { @include pill; }
-	
-	
+
+
 
 	&.btn-icon {
 		padding-left: .75em;
@@ -31,8 +31,8 @@
 	}
 	&.btn-icon-sm {
 		@include small{
-			padding-left: ( $padding-base-vertical + 2 );
-			padding-right: ( $padding-base-vertical + 2 );
+			padding-left: $padding-base-vertical;
+			padding-right: $padding-base-vertical;
 			[data-icon] { margin-right: 0; margin-left: 0; }
 		}
 	}
@@ -61,8 +61,8 @@
 	background-repeat: repeat;
 	background-position: 50% -1px;
 	background-size: 105% 200%;
-	
-	
+
+
 	&:hover, &:focus { background-position: 50% 95%; }
 
 	&.btn-block {
@@ -125,6 +125,12 @@
 	}
 }
 
+.btn-inliner {
+	.btn {
+		margin-bottom: .3rem;
+	}
+}
+
 
 table.table-hover {
 	tr:hover {
@@ -136,6 +142,6 @@ table.table-hover {
 
 .btn, .dropdown-inline {
 	& + & {
-		margin-left: .5em;
+		//margin-left: .125rem;
 	}
 }
