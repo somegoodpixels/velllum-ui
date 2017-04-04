@@ -21,7 +21,7 @@
 		> .panel-heading, > .panel-footer, > .panel-body, > .panel-body > .panel-body-fill {
 			padding: $component-padding-large;
 			@include small {
-				padding: ($margin-small*2/3) $margin-small !important;
+				padding: ($margin-small*2/3) $margin-small;
 			}
 		}
 	}
@@ -38,4 +38,3 @@
 		}
 	}
 }
-
