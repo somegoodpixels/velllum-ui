@@ -7,6 +7,30 @@
 	line-height: ( $line-height-base - ( $ratio-clamp * .125 ) );
 }
 
+@mixin scale-text($minfont,$maxfont,$min,$max){
+	$x1: $min;
+	$x2: $max;
+	$y1: $minfont;
+	$y2: $maxfont;
+
+	$sizeslope: ($y2 - $y1) / ($x2 - $x1);
+	$lineslope: ($line-height-max - $font-size-base-root*$line-height-base) / ($line-height-max - $font-size-base-root);
+
+	$size: calc( (100vw - #{$x1}) * #{$sizeslope} + #{$y1} );
+
+	font-size: $minfont;
+	line-height: calc( (#{$minfont} - $font-size-base-root) * #{$lineslope} + $font-size-base-root*$line-height-base );;
+
+	@media ( min-width: $x1 ) and ( max-width: $x2 ) {
+		font-size: $size;
+		line-height: calc( ( ( (100vw - #{$x1}) * #{$sizeslope} + #{$y1} ) - $font-size-base-root) * #{$lineslope} + $font-size-base-root*$line-height-base );
+	}
+	@media ( min-width: $x2 ) {
+		font-size: $maxfont;
+		line-height: calc( (#{$maxfont} - $font-size-base-root) * #{$lineslope} + $font-size-base-root*$line-height-base );
+	}
+}
+
 @mixin font-size-root(){ @include font-sizing($font-size-root); @include large{ @include font-sizing($font-size-root-full); } }
 
 @mixin font-size-label(){ @include font-sizing($font-size-label); }
@@ -26,6 +50,7 @@
 @mixin font-size-h4(){ @include font-sizing($font-size-h4); @include large{ @include font-sizing($font-size-h4-full); } }
 @mixin font-size-h5(){ @include font-sizing($font-size-h5); @include large{ @include font-sizing($font-size-h5-full); } }
 @mixin font-size-h6(){ @include font-sizing($font-size-h6); @include large{ @include font-sizing($font-size-h6-full); } }
+
 
 
 @function h($from:false, $to:false) {
