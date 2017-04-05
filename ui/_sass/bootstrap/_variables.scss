@@ -258,7 +258,7 @@ $screen-lg:                                      960px;
 // --------------------------------------------------
 $grid-columns:                                   12;
 $grid-gutter-width:                              $component-buffer;
-$grid-float-breakpoint:                          $screen-sm;
+$grid-float-breakpoint:                          $screen-lg;
 $grid-float-breakpoint-max:                      ($grid-float-breakpoint - 1);
 
 //
@@ -443,7 +443,7 @@ $modal-content-bg:                               white;
 $modal-content-border-color:                     transparent;
 $modal-content-fallback-border-color:            transparent;
 $modal-backdrop-bg:                              $navy;
-$modal-backdrop-opacity:                         .875;
+$modal-backdrop-opacity:                         .75;
 $modal-header-border-color:                      $modal-content-border-color;
 $modal-footer-border-color:                      $modal-content-border-color;
 $modal-lg:                                       960px;

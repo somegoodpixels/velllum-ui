@@ -45,7 +45,7 @@ a.inherit { color: inherit;
 }
 
 #{h()} {
-	> a { color: inherit; 
+	> a { color: inherit;
 		&:hover, &:active {
 			color: $link !important;
 		}
@@ -151,7 +151,7 @@ ul, ol { padding-left: 1.25em; }
 }
 
 .light,
-.text-light { 
+.text-light {
 	color: $light;
 	strong {
 		font-weight: inherit;
@@ -263,8 +263,5 @@ a { cursor: pointer; }
   -khtml-user-select: none;    /* Konqueror */
   -moz-user-select: none;      /* Firefox */
   -ms-user-select: none;       /* IE/Edge */
-  user-select: none;   
+  user-select: none;
 }
-
-
-
