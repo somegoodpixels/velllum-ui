@@ -4,7 +4,7 @@
 
 $('.album').each(function(){
 	var images = $(this).find('.album-image > img');
-	var size = $(this).hasClass('album-small') ? 20 : 30;
+	var size = $(this).hasClass('album-small') ? 15 : 25;
 	images.each(function(){
 		var item = $(this).closest('.album-image');
 		var width = $(this).attr('width');

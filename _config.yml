@@ -1,69 +1,58 @@
 # --------------------------------------------------
 # Site settings
+
 title: Velllum Interface Framework
 description: Clean Modular CSS Interface Framework for Responsive Web Apps
 owner: http://github.com/velllum
 repo: velllum-ui
 branch: gh-pages
+robots: false
 
 # --------------------------------------------------
 # Site imagery
+
 favicon: /ui/img/graph/favicon.png
 avatar: /ui/img/graph/avatar.png
 poster: /ui/img/graph/poster.jpg
 
 # --------------------------------------------------
 # the subpath of your site, e.g. /blog
+
 baseurl: "/velllum-ui"
 # css container
 namespace: velllum
 
 # --------------------------------------------------
 # Build settings
+
+includes_dir: _config/_includes
+layouts_dir: _config/_layouts
+
 sass:
   style: compressed
   sass_dir: ui/_sass
 
 collections:
-  pages:
+  styles:
+    output: true
+    permalink: /styles/:path/
+  content:
     output: true
     permalink: /:path/
-  documentation:
-    output: true
-    permalink: /documentation/:path/
-  specifications:
-    output: true
-    permalink: /documentation/:path/
-  examples:
-    output: true
-    permalink: /examples/:path/
 
 defaults:
 -
   scope:
     path: ""
-    type: "pages"
+    type: "styles"
   values:
-    layout: "pages"
+    layout: "style-spec"
 -
   scope:
     path: ""
-    type: "documentation"
+    type: "content"
   values:
-    layout: "documentation"
--
-  scope:
-    path: ""
-    type: "examples"
-  values:
-    layout: "examples"
--
-  scope:
-    path: ""
-    type: "specifications"
-  values:
-    layout: "specifications"
-
+    layout: "page"
 
 
 

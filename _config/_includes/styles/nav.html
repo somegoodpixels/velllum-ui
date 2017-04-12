@@ -10,9 +10,9 @@
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-    	{% assign docs = site.documentation | sort: 'order' %}
-    	{% for doc in docs %}
-      	<li><a href="{{site.baseurl}}{{doc.url}}">{{doc.title}}</a></li>
+    	{% assign styles = site.styles | where: 'type' , 'styleguide' | sort: 'order' %}
+    	{% for style in styles %}
+      	<li><a href="{{site.baseurl}}{{style.url}}">{{style.title}}</a></li>
       {% endfor %}
     </ul>
   </div>

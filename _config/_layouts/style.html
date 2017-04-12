@@ -10,14 +10,14 @@
 		</style>
 	</head>
 	<body class="bg-silver-light">
-		{% include specs/nav.html %}
-		{% assign specs = site.specifications | where: 'type',page.type | sort: 'order' | reverse | group_by: 'section' %}
+		{% include styles/nav.html %}
+		{% assign styles = site.styles | where: 'type' , page.styles | sort: 'order' | reverse | group_by: 'section' %}
 		<div class="container" style="padding: 80px 0;">
 			<div class="row">
-				{% if page.type != 'layouts' %}
+				{% if page.styles != 'layouts' %}
 					<div class="col-lg-3">
 						<ul class="nav nav-pills nav-stacked">
-							{% for type in specs %}
+							{% for type in styles %}
 								<li>
 									<a href="#{{ type.name | slugify }}">{{ type.name | capitalize }}</a>
 								</li>
@@ -25,13 +25,13 @@
 						</ul>
 					</div>
 				{% endif %}
-				<div class="{% if page.type != 'layouts' %}col-lg-9{% else %}col-lg-12{% endif %}">
-					{% for type in specs %}
+				<div class="{% if page.styles != 'layouts' %}col-lg-9{% else %}col-lg-12{% endif %}">
+					{% for type in styles %}
 						<hr/>
 						<h2 id="{{ type.name | slugify }}" class="h1 margin-bottom">{{ type.name | capitalize }}</h2>
 						{% assign entries = type.items | sort: "title" %}
 						{% for entry in entries %}
-							{% include specs/spec.html %}
+							{% include styles/spec.html %}
 						{% endfor %}
 					{% endfor %}
 				</div>
