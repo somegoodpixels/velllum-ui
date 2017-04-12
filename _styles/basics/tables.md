@@ -1,6 +1,6 @@
 ---
 title: Tables (standard)
-type: styles
+type: basics
 section: tables
 ---
 

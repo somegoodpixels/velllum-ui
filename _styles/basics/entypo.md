@@ -1,6 +1,6 @@
 ---
 title: Entypo Icons
-type: styles
+type: basics
 section: icons
 order: 97
 ---

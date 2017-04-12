@@ -1,6 +1,6 @@
 ---
 title: Colors
-type: styles
+type: basics
 section: color
 order: 100
 ---

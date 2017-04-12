@@ -1,9 +1,8 @@
 ---
 title: Buttons
-type: styles
+type: basics
 section: forms
 ---
-
 
 
 <h6>Button size variations</h6>

@@ -1,6 +1,6 @@
 ---
 title: Symbols
-type: styles
+type: basics
 section: icons
 order: 98
 ---

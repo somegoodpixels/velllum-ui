@@ -1,7 +1,7 @@
 ---
 title: Styles
 type: styleguide
-styles: styles
+styles: basics
 layout: style
 order: 0
 ---
