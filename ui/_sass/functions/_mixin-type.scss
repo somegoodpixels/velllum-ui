@@ -7,9 +7,9 @@
 	line-height: ( $line-height-base - ( $ratio-clamp * .125 ) );
 }
 
-@mixin scale-text($minfont,$maxfont,$min,$max){
-	$x1: $min;
-	$x2: $max;
+@mixin scale-text($minfont,$maxfont,$minscreen,$maxscreen){
+	$x1: $minscreen;
+	$x2: $maxscreen;
 	$y1: $minfont;
 	$y2: $maxfont;
 
