@@ -5,8 +5,9 @@
 
 .form-control, .input-group-addon { @include font-size-base; }
 .form-group-lg, .input-group-lg { .input-group-addon, .form-control { @include font-size-large; } }
+.input-lg { @include font-size-large; }
 .form-group-sm, .input-group-sm { .input-group-addon, .form-control { @include font-size-small; } }
-
+.input-sm { @include font-size-small; }
 
 
 .form-control {

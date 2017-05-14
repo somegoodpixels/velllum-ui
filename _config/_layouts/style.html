@@ -10,29 +10,34 @@
 		</style>
 	</head>
 	<body class="bg-silver-light">
-		{% include styles/nav.html %}
-		{% assign styles = site.styles | where: 'type' , page.styles | sort: 'order' | reverse | group_by: 'section' %}
 		<div class="container" style="padding: 80px 0;">
 			<div class="row">
-				{% if page.styles != 'layouts' %}
-					<div class="col-lg-3">
-						<ul class="nav nav-pills nav-stacked">
-							{% for type in styles %}
-								<li>
-									<a href="#{{ type.name | slugify }}">{{ type.name | capitalize }}</a>
-								</li>
-							{% endfor %}
-						</ul>
-					</div>
-				{% endif %}
-				<div class="{% if page.styles != 'layouts' %}col-lg-9{% else %}col-lg-12{% endif %}">
+				<div class="col-lg-3">
+					<ul class="nav nav-pills nav-stacked">
+						{% assign guides = site.styles | where: 'type' , 'styleguide' | sort: 'order' %}
+						{% for guide in guides %}
+							<li>
+								<a href="{{site.baseurl}}{{guide.url}}">{{guide.title}}</a>
+								{% if guide.url == page.url %}
+									<ul class="nav nav-pills nav-stacked">
+										{% assign styles = site.styles | where: 'type' , page.styles | sort: 'order' | reverse | group_by: 'section' %}
+										{% for type in styles %}
+											<li><a href="#{{ type.name | slugify }}">{{ type.name | capitalize }}</a></li>
+										{% endfor %}
+									</ul>
+								{% endif %}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="col-lg-9">
 					{% for type in styles %}
-						<hr/>
-						<h2 id="{{ type.name | slugify }}" class="h1 margin-bottom">{{ type.name | capitalize }}</h2>
+						<h3 id="{{ type.name | slugify }}" class="margin-bottom">{{ type.name | capitalize }}</h3>
 						{% assign entries = type.items | sort: "title" %}
 						{% for entry in entries %}
 							{% include styles/spec.html %}
 						{% endfor %}
+						<hr/>
 					{% endfor %}
 				</div>
 			</div>

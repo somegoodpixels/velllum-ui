@@ -17,9 +17,6 @@ function get_param(name) { var params = get_params(); return ( params[name] ) ? 
 
 // ------------------------------------ CLASSES ------------------------------------
 
-// adds modernizer classes to wrapper element
-$('div.ti').addClass($('html').attr('class')).removeClass('wf-loading wf-inactive');
-
 // adds specialty classes to body
 $(document).on('ready',function(){ $('html').addClass('ready'); });
 $(window).on('load',function(){ $('html').addClass('loaded'); });

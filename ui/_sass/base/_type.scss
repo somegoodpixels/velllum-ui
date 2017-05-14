@@ -5,7 +5,7 @@ p { margin: 2rem 0; }
 .margin, .margin-bottom { margin-bottom: 2em; }
 
 #{h()}, blockquote {
-	color: inherit;
+	//color: inherit;
 	margin: 2em 0 .5em;
 }
 
@@ -17,6 +17,7 @@ p { margin: 2rem 0; }
 blockquote {
 	padding: 0;
 	border: 0;
+	font-size: inherit;
 }
 
 // p, ul, ol, dd { color: $normal; }
