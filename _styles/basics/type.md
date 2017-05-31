@@ -13,7 +13,7 @@ order: 99
 <h5>h5. Heading <small>Secondary text</small></h5>
 <h6>h6. Heading <small>Secondary text</small></h6>
 
-<h1>Header leading is relative to font size.</h1>
+<h1>Header leading is relative to font size. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</h1>
 
 <h2>Header text is bold. <br/><em>Emphasis is light.</em> <br/>Breaks disappear on mobile.</h2>
 
