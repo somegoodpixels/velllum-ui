@@ -122,9 +122,8 @@ ul, ol { padding-left: 1.25em; }
 
 .nowrap {
 	white-space: nowrap;
-	@include media-mini(){ white-space: normal; }
+	@include mini(){ white-space: normal; }
 }
-//@include media-mini() { .nowrap { white-space: nowrap; } }
 .region[data-size="small"] { .nowrap { white-space: normal; } }
 
 .dot {
