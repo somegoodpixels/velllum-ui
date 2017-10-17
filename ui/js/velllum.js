@@ -8,6 +8,12 @@ function loadHelper(path,el,before,style){
 	if ( style ) { var head  = document.getElementsByTagName('head')[0]; var link  = document.createElement('link'); link.rel  = 'stylesheet'; link.type = 'text/css'; link.href = window.velllum.directory+style; link.media = 'all'; head.insertBefore( link, head.firstChild ); }
 }
 
+$(document).ready(function(){
+	if ( typeof window.velllum_ready === 'function' ) { 
+		window.velllum_ready();
+	}
+})
+
 // ------------------------------------ COOKIES ------------------------------------
 
 function set_cookie(name,value,days) { var d = new Date(); d.setTime(d.getTime() + ((days?days:60)*24*60*60*1000)); var expires = "expires="+ d.toUTCString(); document.cookie = name + "=" + value + ";" + expires + ";path=/"; }

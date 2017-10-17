@@ -61,7 +61,7 @@
 		// &:hover, &.active {
 		// 	background-color: $component-active-bg;
 		// }
-		.icon { margin-right: .25em; }
+		[data-icon], .icon { margin-right: .25em; }
 	}
 	.divider {
 		margin: 5px 0;
