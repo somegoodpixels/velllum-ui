@@ -19,24 +19,29 @@ poster: /ui/img/graph/poster.jpg
 # the subpath of your site, e.g. /blog
 
 baseurl: "/velllum-ui"
-# css container
-namespace: velllum
+
+# --------------------------------------------------
+# Google fonts
+
+google_fonts: false
+
 
 # --------------------------------------------------
 # Build settings
 
+destination: _config/_site
 includes_dir: _config/_includes
 layouts_dir: _config/_layouts
 
 sass:
-  style: compressed
-  sass_dir: ui/_sass
+#  style: compressed
+  sass_dir: _config/_includes
 
 collections:
-  styles:
+  docs:
     output: true
-    permalink: /styles/:path/
-  content:
+    permalink: /docs/:path/
+  pages:
     output: true
     permalink: /:path/
 
@@ -44,13 +49,13 @@ defaults:
 -
   scope:
     path: ""
-    type: "styles"
+    type: "docs"
   values:
-    layout: "style-spec"
+    layout: "doc"
 -
   scope:
     path: ""
-    type: "content"
+    type: "pages"
   values:
     layout: "page"
 

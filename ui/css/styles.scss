@@ -2,17 +2,17 @@
 # The main stylesheet
 ---
 
-$hybrid: false;
+@import "sass/effects/effects";
+@import "sass/variables/variables";
 
-@charset "utf-8";
-@import "effects/effects";
-@import "bootstrap/variables";
-@import "bootstrap/bootstrap-sass/bootstrap";
+@import "vendors/jqueryui/jquery-ui-1.12.1/jquery-ui.structure.min";
+@import "vendors/bootstrap/bootstrap-sass/bootstrap";
+@import "vendors/bootstrap-suggest/css/bootstrap-suggest";
 
-@import "functions/functions";
-@import "fonts/fonts";
-@import "base/base";
-@import "widgets/widgets";
-@import "components/components";
-@import "layout/layout";
-@import "custom/custom";
+@import "sass/functions/functions";
+@import "sass/fonts/fonts";
+@import "sass/base/base";
+@import "sass/components/components";
+@import "sass/layout/layout";
+@import "sass/widgets/widgets";
+@import "sass/custom/custom";

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US" class="{{site.namespace}}">
 	<head>
-		{% include options/settings.html %}
-		{% include options/meta.html %}
-		{% include options/scripts.html %}
-		{% include options/styles.html %}
+		{% include settings/meta.html %}
+		{% include settings/scripts.html %}
+		{% include settings/styles.html %}
 	</head>
 	<body>
+		{% include content/icons.html %}
 		<div class="page">
 			{{ content }}
 		</div>
