@@ -17,3 +17,5 @@ layout: raw
 
 {% include vendors/bootstrap-suggest/js/bootstrap-suggest.js %}
 {% include scripts/suggest.js %}
+
+{% include vendors/tiltjs/src/tilt.jquery.js %}

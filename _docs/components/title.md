@@ -1,6 +1,6 @@
 ---
 title: Titles
-type: layouts
+type: components
 section: alignment
 ---
 

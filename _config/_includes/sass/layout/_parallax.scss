@@ -1,0 +1,28 @@
+.parallax {
+	overflow: hidden;
+}
+
+.parallax-content {
+	@include fill;
+	perspective: 2px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.parallax-group {
+	transform-style: preserve-3d;
+}
+
+.parallax-layer {
+	transform: translateZ(0); z-index: 10;
+}
+
+@for $i from 1 through 10 {
+	.parallax-layer-#{$i} {
+		@include transform( translateZ( ( $i * -1px ) ) );
+		.parallax-scale & {
+			@include transform( translateZ( ( $i * -1px ) ) scale( ( $i + 1 ) ) );
+		}
+		z-index: ( 10 - $i );
+	}
+}
