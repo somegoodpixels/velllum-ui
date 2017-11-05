@@ -9,11 +9,13 @@
 }
 
 .parallax-group {
+	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
 
 .parallax-layer {
-	transform: translateZ(0); z-index: 10;
+	transform: @include transform( translateZ(0) );
+	z-index: 10;
 }
 
 @for $i from 1 through 10 {
