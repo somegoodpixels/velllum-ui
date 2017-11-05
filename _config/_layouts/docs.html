@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" class="{{site.namespace}}">
+	<head>
+		{% include settings/meta.html %}
+		{% include settings/scripts.html %}
+		{% include settings/styles.html %}
+	</head>
+	<body>
+		{% include content/icons.html %}
+		<div class="container" style="padding: 80px 0;">
+			<div class="row">
+				<div class="col-lg-3">
+					<ul class="nav nav-pills nav-stacked">
+						{% assign guides = site.docs | where: 'type' , 'styleguide' | sort: 'order' %}
+						{% for guide in guides %}
+							<li>
+								<a href="{{site.baseurl}}{{guide.url}}">{{guide.title}}</a>
+								{% if guide.url == page.url %}
+									<ul class="nav nav-pills nav-stacked">
+										{% assign styles = site.docs | where: 'type' , page.styles | sort: 'order' | reverse | group_by: 'section' %}
+										{% for type in styles %}
+											<li><a href="#{{ type.name | slugify }}">{{ type.name | capitalize }}</a></li>
+										{% endfor %}
+									</ul>
+								{% endif %}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="col-lg-9">
+					{% for type in styles %}
+						<h3 id="{{ type.name | slugify }}" class="margin-bottom">{{ type.name | capitalize }}</h3>
+						{% assign entries = type.items | sort: "title" %}
+						{% for entry in entries %}
+							{% include styles/spec.html %}
+						{% endfor %}
+						<hr/>
+					{% endfor %}
+				</div>
+			</div>
+		<div>
+	</body>
+</html>

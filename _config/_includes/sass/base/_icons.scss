@@ -1,0 +1,36 @@
+$icon-base: 24px;
+
+.icon {
+	font-size: $icon-base;
+	width: 1em;
+	height: 1em;
+	display: inline-block;
+	vertical-align: middle;
+	top: -1px;
+	-webkit-backface-visibility: hidden; 
+	@include transform(translateZ(0));
+
+	&.icon-left {
+		left: -1em*(3/24);
+	}
+	&.icon-right {
+		left: 1em*(3/24);
+	}
+	use {
+		fill: currentColor;
+	}
+	&.icon-middle {
+		margin-top: -.5em;
+		margin-bottom: -.5em;
+	}
+	&.icon-md {
+		$icon-scale: 1.5;
+		font-size: $icon-base*$icon-scale;
+		@include transform((scale($icon-scale) translateZ(0)),(0 0));
+	}
+	&.icon-lg {
+		$icon-scale: 2;
+		font-size: $icon-base*$icon-scale;
+		@include transform((scale($icon-scale) translateZ(0)),(0 0));
+	}
+}
