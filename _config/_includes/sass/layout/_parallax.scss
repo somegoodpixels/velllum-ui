@@ -14,7 +14,7 @@
 }
 
 .parallax-layer {
-	transform: @include transform( translateZ(0) );
+	@include transform( translateZ(0) );
 	z-index: 10;
 }
 
