@@ -5,7 +5,9 @@ section: sections
 order: 2
 ---
 
-<h6>Parallax</h6>
+###### Parallax
+
+Parallax works in Edge, but not IE, due to lack of preserve-3d support. Structure your layouts for progressive enhancement.
 
 <div class="parallax bg-silver" style="height:480px; border-radius: 4px;">
 	<div class="parallax-content">
