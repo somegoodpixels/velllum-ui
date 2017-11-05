@@ -1,4 +1,11 @@
 		{% comment %} WEBFONTS {% endcomment %}
-		{% if site.google_fonts %}<script>WebFontConfig={google:{families:['{{site.google_fonts}}']}},function(){var a=document.createElement("script");a.src="//ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js",a.type="text/javascript",a.async="true";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}();</script>{% endif %}
+		{% if site.google_fonts or site.typekit %}
+		<script>
+			WebFontConfig={
+				{% if site.google_fonts %}google:{families:['{{site.google_fonts}}']},{% endif %}
+				{% if site.typekit %}typekit:{id:'{{site.typekit}}'},{% endif %}
+			},function(){var a=document.createElement("script");a.src="//ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js",a.type="text/javascript",a.async="true";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}();
+		</script>
+		{% endif %}
 		{% comment %} SCRIPTS {% endcomment %}
 		<script async src="{{site.baseurl}}/ui/js/scripts.js"></script>

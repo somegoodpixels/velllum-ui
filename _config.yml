@@ -24,7 +24,7 @@ baseurl: "/velllum-ui"
 # Google fonts
 
 google_fonts: false
-
+typekit: false
 
 # --------------------------------------------------
 # Build settings
