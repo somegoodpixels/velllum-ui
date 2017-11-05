@@ -1,42 +1,38 @@
-
-@mixin font-sizing($size){
-	$ratio: $size / $font-size-base;
-	$ratio-clamp: clamp($ratio, 1, 2.5);
-	font-size: $size;
-	line-height: ( $line-height-base - ( $ratio-clamp * .125 ) );
+@mixin line-height($height){
+	$slope: -1 * ( 1 - $height ) / strip-unit( $line-height-max - 1rem );
+	line-height: calc( 1em + #{$slope} * ( #{$line-height-max} - 1em ) );
 }
 
-@mixin scale-text($minfont,$maxfont,$minscreen:$phone,$maxscreen:$laptop){
-	$base: strip-unit($font-size-root);
-	
-	$x1: $minscreen;
-	$x2: $maxscreen;
-	$y1: $minfont;
-	$y2: $maxfont;
-	
-	$x3: 1rem;
-	$x4: $line-height-max;
-	$y3: $line-height-base * 1em;
-	$y4: 1em;
-	
-	$m1: strip-unit($y2 - $y1) / strip-unit($x2 - $x1);
-	$m2: strip-unit($y4 - $y3) / strip-unit($x4 - $x3);
-
+@mixin scale-text($minfont,$maxfont:false,$minscreen:$phone,$maxscreen:$laptop){
 	font-size: $minfont;
-	font-size: calc( ( 100vw - #{$x2} ) * #{$m1} * #{$base} + #{$y2} );
-	line-height: calc( #{$y4} - #{$m2} * ( #{$x4} - 1em ) );
-
-	@media ( max-width: $minscreen ) { font-size: $minfont; }
-	@media ( min-width: $maxscreen ) { font-size: $maxfont; }
+	@if $maxfont and $minfont != $maxfont {
+		// y = m ( x - x1 ) + y1
+		// m = ( y2 - y1 ) / ( x2 - x1 )
+		// y = ( x - x1 ) ( y2 - y1 ) / ( x2 - x1 ) + y1
+		// y = ( 100vw - $minscreen ) ( $maxfont - $minfont ) / ( $maxscreen - $minscreen ) + $minfont
+		$screendiff: $maxscreen - $minscreen;
+		$fontdiff: $maxfont - $minfont;
+		// y = calc( ( 100vw - $minscreen ) ( $fontdiff ) / ( $screendiff ) + $minfont );
+		// y = calc( 100vw * $fontdiff / $screendiff - $minscreen * $fontdiff / $screendiff + $minfont )
+		$slope: strip-unit( $fontdiff / $screendiff );
+		// y = calc( 100vw * $slope - $minscreen * $slope + $minfont )
+		// y = calc( 100vw * #{$slope} - #{$minscreen} * #{$slope} + #{$minfont} )
+		@media ( min-width: $minscreen ) and ( max-width: ( $maxscreen - 1px ) ) {
+			$a: 100vw * $slope;
+			$b: $minscreen * $slope;
+			font-size: calc( #{$a} - #{$b} + #{$minfont} );
+		}
+		@media ( min-width: $maxscreen ) { font-size: $maxfont; }
+	}
 }
 
-@mixin font-size-root(){ @include font-sizing($font-size-root); @include large{ @include font-sizing($font-size-root-full); } }
+@mixin font-size-root(){ @include scale-text($font-size-root,$font-size-root-full); }
 
-@mixin font-size-label(){ @include font-sizing($font-size-label); }
-@mixin font-size-code(){ @include font-sizing($font-size-code); }
-@mixin font-size-small(){ @include font-sizing($font-size-small); }
-@mixin font-size-base(){ @include font-sizing($font-size-base); }
-@mixin font-size-large(){ @include font-sizing($font-size-large); }
+@mixin font-size-label(){ @include scale-text($font-size-label); }
+@mixin font-size-code(){ @include scale-text($font-size-code); }
+@mixin font-size-small(){ @include scale-text($font-size-small); }
+@mixin font-size-base(){ @include scale-text($font-size-base); }
+@mixin font-size-large(){ @include scale-text($font-size-large); }
 
 @mixin font-size-larger(){ @include scale-text($font-size-larger,$font-size-larger-full); }
 @mixin font-size-largest(){ @include scale-text($font-size-largest,$font-size-largest-full); }

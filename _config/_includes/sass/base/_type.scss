@@ -1,5 +1,7 @@
 body { @include font-size-base; }
 
+* { @include line-height($line-height-base); }
+
 p { margin: 2rem 0; }
 .margin, .margin-top { margin-top: 2em; }
 .margin, .margin-bottom { margin-bottom: 2em; }

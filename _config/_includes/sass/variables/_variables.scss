@@ -93,7 +93,7 @@ $font-size-h6-full:                              $font-size-base;
 $line-height-base:                               1.6;
 $line-height-computed:                           ( $line-height-base * $font-size-root-full );
 $line-height-computed:                           1.6rem;
-$headings-line-height:                           $line-height-base;
+$headings-line-height:                           false;
 $headings-font-weight:                           normal;
 $headings-font-family:                           $font-family-base;
 $headings-color:                                 $dark;
