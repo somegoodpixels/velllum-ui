@@ -24,10 +24,6 @@ section: sections
       <div class="carousel-caption">slide caption...</div>
     </div>
   </div>
-  <a class="left carousel-control" href="#carousel1" data-slide="prev">
-    <span data-symbol="previous" class="symbol-large"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel1" data-slide="next">
-    <span data-symbol="next" class="symbol-large"></span>
-  </a>
+  <a class="left carousel-control arrow-left arrow-large" href="#carousel1" data-slide="prev"></a>
+  <a class="right carousel-control arrow-right arrow-large" href="#carousel1" data-slide="next"></a>
 </div>

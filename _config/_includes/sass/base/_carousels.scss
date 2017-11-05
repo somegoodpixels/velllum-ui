@@ -1,8 +1,11 @@
 .carousel {
 	.carousel-control {
 		background: transparent;
-		[data-symbol] {
+		&:after {
 			@include middle;
+			width: 1em;
+			height: $line-height-base * 1em;
+			font-size: 2rem;
 		}
 	}
 	.carousel-indicators {
@@ -17,6 +20,13 @@
 			margin: 0 2px;
 			&.active {
 				opacity: 1;
+			}
+		}
+	}
+	.carousel-inner {
+		.item {
+			img {
+				width: 100%;
 			}
 		}
 	}
