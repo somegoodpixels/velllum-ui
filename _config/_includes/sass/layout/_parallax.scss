@@ -5,7 +5,8 @@
 .parallax-content {
 	@include fill;
 	perspective: 2px;
-	@include scroll(y);
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 .parallax-layer {
