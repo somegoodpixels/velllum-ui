@@ -3,48 +3,54 @@
 	line-height: calc( 1em + #{$slope} * ( #{$line-height-max} - 1em ) );
 }
 
-@mixin scale-text($minfont,$maxfont:false,$minscreen:$phone,$maxscreen:$laptop){
-	font-size: $minfont;
-	@if $maxfont and $minfont != $maxfont {
-		// y = m ( x - x1 ) + y1
-		// m = ( y2 - y1 ) / ( x2 - x1 )
-		// y = ( x - x1 ) ( y2 - y1 ) / ( x2 - x1 ) + y1
-		// y = ( 100vw - $minscreen ) ( $maxfont - $minfont ) / ( $maxscreen - $minscreen ) + $minfont
+@mixin scale-px($attr,$min,$max:false,$minscreen:$phone,$maxscreen:$laptop){
+	#{$attr}: $min;
+	@if $max and $min != $max {
+		$fontdiff: $max - $min;
 		$screendiff: $maxscreen - $minscreen;
-		$fontdiff: $maxfont - $minfont;
-		// y = calc( ( 100vw - $minscreen ) ( $fontdiff ) / ( $screendiff ) + $minfont );
-		// y = calc( 100vw * $fontdiff / $screendiff - $minscreen * $fontdiff / $screendiff + $minfont )
-		$slope: strip-unit( $fontdiff / $screendiff );
-		// y = calc( 100vw * $slope - $minscreen * $slope + $minfont )
-		// y = calc( 100vw * #{$slope} - #{$minscreen} * #{$slope} + #{$minfont} )
+		$slope: $fontdiff / $screendiff;
 		@media ( min-width: $minscreen ) and ( max-width: ( $maxscreen - 1px ) ) {
 			$a: 100vw * $slope;
 			$b: $minscreen * $slope;
-			font-size: calc( #{$a} - #{$b} + #{$minfont} );
+			#{$attr}: calc( #{$a} - #{$b} + #{$min} );
 		}
-		@media ( min-width: $maxscreen ) { font-size: $maxfont; }
+		@media ( min-width: $maxscreen ) { #{$attr}: $max; }
 	}
 }
 
-@mixin font-size-root(){ @include scale-text($font-size-root,$font-size-root-full); }
+@mixin scale-rem($attr,$min,$max:false,$minscreen:$mini,$maxscreen:$laptop){
+	#{$attr}: $min;
+	@if $max {
+		@if $max != $min {
+			$base: strip-unit($font-size-root);
+			$m1: strip-unit($max - $min) / strip-unit($maxscreen - $minscreen);
+			@media ( min-width: $minscreen ) and ( max-width: ( $maxscreen - 1px ) ) {
+				#{$attr}: calc( ( 100vw - #{$maxscreen} ) * #{$m1} * #{$base} + #{$max} );
+			}
+			@media ( min-width: $maxscreen ) { #{$attr}: $max; }
+		}
+	}
+}
 
-@mixin font-size-label(){ @include scale-text($font-size-label); }
-@mixin font-size-code(){ @include scale-text($font-size-code); }
-@mixin font-size-small(){ @include scale-text($font-size-small); }
-@mixin font-size-base(){ @include scale-text($font-size-base); }
-@mixin font-size-large(){ @include scale-text($font-size-large); }
+@mixin font-size-root(){ @include scale-px(font-size,$font-size-root,$font-size-root-full); }
 
-@mixin font-size-larger(){ @include scale-text($font-size-larger,$font-size-larger-full); }
-@mixin font-size-largest(){ @include scale-text($font-size-largest,$font-size-largest-full); }
-@mixin font-size-huge(){ @include scale-text($font-size-huge,$font-size-huge-full); }
-@mixin font-size-huger(){ @include scale-text($font-size-huger,$font-size-huger-full); }
-@mixin font-size-hugest(){ @include scale-text($font-size-hugest,$font-size-hugest-full); }
-@mixin font-size-h1(){ @include scale-text($font-size-h1,$font-size-h1-full); }
-@mixin font-size-h2(){ @include scale-text($font-size-h2,$font-size-h2-full); }
-@mixin font-size-h3(){ @include scale-text($font-size-h3,$font-size-h3-full); }
-@mixin font-size-h4(){ @include scale-text($font-size-h4,$font-size-h4-full); }
-@mixin font-size-h5(){ @include scale-text($font-size-h5,$font-size-h5-full); }
-@mixin font-size-h6(){ @include scale-text($font-size-h6,$font-size-h6-full); }
+@mixin font-size-label(){ @include scale-rem(font-size,$font-size-label); }
+@mixin font-size-code(){ @include scale-rem(font-size,$font-size-code); }
+@mixin font-size-small(){ @include scale-rem(font-size,$font-size-small); }
+@mixin font-size-base(){ @include scale-rem(font-size,$font-size-base); }
+@mixin font-size-large(){ @include scale-rem(font-size,$font-size-large); }
+
+@mixin font-size-larger(){ @include scale-rem(font-size,$font-size-larger,$font-size-larger-full); }
+@mixin font-size-largest(){ @include scale-rem(font-size,$font-size-largest,$font-size-largest-full); }
+@mixin font-size-huge(){ @include scale-rem(font-size,$font-size-huge,$font-size-huge-full); }
+@mixin font-size-huger(){ @include scale-rem(font-size,$font-size-huger,$font-size-huger-full); }
+@mixin font-size-hugest(){ @include scale-rem(font-size,$font-size-hugest,$font-size-hugest-full); }
+@mixin font-size-h1(){ @include scale-rem(font-size,$font-size-h1,$font-size-h1-full); }
+@mixin font-size-h2(){ @include scale-rem(font-size,$font-size-h2,$font-size-h2-full); }
+@mixin font-size-h3(){ @include scale-rem(font-size,$font-size-h3,$font-size-h3-full); }
+@mixin font-size-h4(){ @include scale-rem(font-size,$font-size-h4,$font-size-h4-full); }
+@mixin font-size-h5(){ @include scale-rem(font-size,$font-size-h5,$font-size-h5-full); }
+@mixin font-size-h6(){ @include scale-rem(font-size,$font-size-h6,$font-size-h6-full); }
 
 
 

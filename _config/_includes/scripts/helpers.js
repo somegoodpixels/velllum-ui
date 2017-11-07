@@ -17,13 +17,14 @@ if ( 'ontouchstart' in window ) { $('html').addClass('touch'); } else { $('html'
 function is_touch(){ return ( 'ontouchstart' in window ); }
 
 // ------------------------------------ TABS ------------------------------------
-
-var hash = window.location.hash, tab = $('.nav-tabs a[href="'+hash+'"]'), pane = $(hash);
-if ( hash && tab.length && pane.length ) {
-	tab.closest('li').addClass('active').siblings('li').removeClass('active');
-	pane.addClass('active in').siblings('.tab-pane').removeClass('active in');
-	$("html, body").scrollTop( tab.closest('.nav-tabs').offset().top );
-}
+$(document).ready(function(){
+	var hash = window.location.hash, tab = $('.nav-tabs a[href="'+hash+'"]'), pane = $(hash);
+	if ( hash && tab.length && pane.length ) {
+		tab.closest('li').addClass('active').siblings('li').removeClass('active');
+		pane.addClass('active in').siblings('.tab-pane').removeClass('active in');
+		$("html, body").scrollTop( tab.closest('.nav-tabs').offset().top );
+	}
+});
 
 // ------------------------------------ SHOWHIDE ------------------------------------
 
@@ -100,25 +101,27 @@ $(document).on('change','input[type="file"]',function(){
 //
 // Set Focus on Ready
 // --------------------------------------------------
-
-var focus = $('.ready-focus').find('input, select, textarea').filter(':visible').filter(':first');
-if ( focus ) { focus.focus(); }
+$(document).ready(function(){
+	var focus = $('.ready-focus').find('input, select, textarea').filter(':visible').filter(':first');
+	if ( focus ) { focus.focus(); }
+});
 
 //
 // Albums
 // --------------------------------------------------
-
-$('.album').each(function(){
-	var images = $(this).find('.album-image > img');
-	var size = $(this).hasClass('album-small') ? 15 : 25;
-	images.each(function(){
-		var item = $(this).closest('.album-image');
-		var width = $(this).attr('width');
-		var height = $(this).attr('height');
-		var grow = width / height;
-		var shrink = 1;
-		var basis = (grow*size)+'vmin'
-		item.css('flex',grow +' '+ shrink +' '+ basis);
+$(document).ready(function(){
+	$('.album').each(function(){
+		var images = $(this).find('.album-image > img');
+		var size = $(this).hasClass('album-small') ? 15 : 25;
+		images.each(function(){
+			var item = $(this).closest('.album-image');
+			var width = $(this).attr('width');
+			var height = $(this).attr('height');
+			var grow = width / height;
+			var shrink = 1;
+			var basis = (grow*size)+'vmin'
+			item.css('flex',grow +' '+ shrink +' '+ basis);
+		});
+		$(this).addClass('album-ready');
 	});
-	$(this).addClass('album-ready');
 });

@@ -5,8 +5,11 @@
 .parallax-content {
 	@include fill;
 	perspective: 2px;
-	overflow-x: hidden;
-	overflow-y: auto;
+	@include scroll;
+}
+
+[class*="parallax-layer"] {
+	position: -webkit-sticky;
 }
 
 .parallax-layer {
@@ -18,7 +21,7 @@
 	.parallax-layer-#{$i} {
 		@include transform( translateZ( ( $i * -1px ) ) );
 		.parallax-scale & {
-			@include transform( translateZ( ( $i * -1px ) ) scale( ( $i + .5 ) ) );
+			@include transform( translateZ( ( $i * -1px ) ) scale( ( $i/2 + 1 ) ) );
 		}
 		z-index: ( 10 - $i );
 	}

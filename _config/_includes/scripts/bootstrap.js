@@ -2,7 +2,7 @@
 // Tab Hash
 // --------------------------------------------------
 
-$('.nav-tabs a[data-toggle="tab"]').click(function(e) {
+$(document).on('click','.nav-tabs a[data-toggle="tab"]',function(e) {
 	var scroll = $(document).scrollTop();
 	var tabs = $(this).closest('.nav-tabs');
 	window.location.hash = this.hash;
@@ -46,11 +46,13 @@ if ( !is_touch() ) {
 //
 // Popover
 // --------------------------------------------------
-
-$('[data-toggle=popover]').popover({container: 'body', html: true});
+$(document).ready(function(){
+	$('[data-toggle=popover]').popover({container: 'body', html: true});
+})
 
 //
 // Carousels
 // --------------------------------------------------
-
-$('[data-carousel]').carousel();
+$(document).ready(function(){
+	$('[data-carousel]').carousel();
+});

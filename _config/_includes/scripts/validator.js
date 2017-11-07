@@ -2,4 +2,6 @@
 // Validation
 // --------------------------------------------------
 
-$('[data-toggle="validator"]').validator();
+$(document).ready(function(){
+	$('[data-toggle="validator"]').validator();
+});

@@ -32,9 +32,11 @@ $.extend($.ui.autocomplete.prototype.options, {
 	}
 });
 
-$('[data-toggle="autocomplete"]').each(function(){
-	var source = $(this).data('autocomplete-source');
-	if ( source ) {
-		$(this).autocomplete({ source: eval('('+source+')') });
-	}
+$(document).ready(function(){
+	$('[data-toggle="autocomplete"]').each(function(){
+		var source = $(this).data('autocomplete-source');
+		if ( source ) {
+			$(this).autocomplete({ source: eval('('+source+')') });
+		}
+	});
 });
