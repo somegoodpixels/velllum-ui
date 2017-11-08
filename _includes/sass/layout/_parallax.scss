@@ -1,3 +1,4 @@
+
 .parallax {
 	overflow: hidden;
 }
@@ -5,11 +6,8 @@
 .parallax-content {
 	@include fill;
 	perspective: 2px;
-	@include scroll;
-}
-
-[class*="parallax-layer"] {
-	position: -webkit-sticky;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 .parallax-layer {
@@ -25,4 +23,8 @@
 		}
 		z-index: ( 10 - $i );
 	}
+}
+
+.parallax-scrolling {
+	* { pointer-events: none !important; }
 }

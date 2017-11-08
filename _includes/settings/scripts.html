@@ -8,4 +8,4 @@
 		</script>
 		{% endif %}
 		{% comment %} SCRIPTS {% endcomment %}
-		<script async src="{{site.baseurl}}/ui/js/scripts.js"></script>
+		<script async src="{{site.baseurl}}/ui/js/scripts.js?{{site.time | date: '%s%N'}}"></script>

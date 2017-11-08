@@ -18,7 +18,7 @@
 	}
 }
 
-@mixin scale-rem($attr,$min,$max:false,$minscreen:$mini,$maxscreen:$laptop){
+@mixin scale-rem($attr,$min,$max:false,$minscreen:$phone,$maxscreen:$laptop){
 	#{$attr}: $min;
 	@if $max {
 		@if $max != $min {

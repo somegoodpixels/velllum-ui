@@ -19,3 +19,5 @@ layout: raw
 {% include scripts/suggest.js %}
 
 {% include vendors/tiltjs/src/tilt.jquery.js %}
+
+{% include scripts/parallax.js %}
