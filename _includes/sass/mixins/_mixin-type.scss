@@ -1,6 +1,6 @@
 @mixin line-height($height){
 	$slope: -1 * ( 1 - $height ) / strip-unit( $line-height-max - 1rem );
-	line-height: calc( 1em + #{$slope} * ( #{$line-height-max} - 1em ) );
+	line-height: calc(1em + #{$slope} * (#{$line-height-max} - 1em));
 }
 
 @mixin scale-px($attr,$min,$max:false,$minscreen:$phone,$maxscreen:$laptop){
@@ -12,7 +12,7 @@
 		@media ( min-width: $minscreen ) and ( max-width: ( $maxscreen - 1px ) ) {
 			$a: 100vw * $slope;
 			$b: $minscreen * $slope;
-			#{$attr}: calc( #{$a} - #{$b} + #{$min} );
+			#{$attr}: calc(#{$a} - #{$b} + #{$min});
 		}
 		@media ( min-width: $maxscreen ) { #{$attr}: $max; }
 	}
@@ -25,7 +25,8 @@
 			$base: strip-unit($font-size-root);
 			$m1: strip-unit($max - $min) / strip-unit($maxscreen - $minscreen);
 			@media ( min-width: $minscreen ) and ( max-width: ( $maxscreen - 1px ) ) {
-				#{$attr}: calc( ( 100vw - #{$maxscreen} ) * #{$m1} * #{$base} + #{$max} );
+				$factor: $m1 * $base;
+				#{$attr}: calc((100vw - #{$maxscreen}) * #{$factor} + #{$max});
 			}
 			@media ( min-width: $maxscreen ) { #{$attr}: $max; }
 		}

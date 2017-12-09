@@ -3,9 +3,6 @@
 
 title: Velllum Interface Framework
 description: Clean Modular CSS Interface Framework for Responsive Web Apps
-owner: http://github.com/velllum
-repo: velllum-ui
-branch: gh-pages
 robots: false
 
 # --------------------------------------------------
@@ -21,16 +18,18 @@ poster: /ui/img/graph/poster.jpg
 baseurl: "/velllum-ui"
 
 # --------------------------------------------------
-# Google fonts
+# Includes
 
+bootstrap: false
 google_fonts: false
 typekit: false
+inliner: true
 
 # --------------------------------------------------
 # Build settings
 
 sass:
-#  style: compressed
+  style: compressed
   sass_dir: _includes
 
 collections:

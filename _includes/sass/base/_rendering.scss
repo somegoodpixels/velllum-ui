@@ -1,3 +1,7 @@
+*, *:before, *:after {
+  position: relative;
+  outline: none !important;
+}
 
 html {
 	-ms-text-size-adjust: 100%;
@@ -12,28 +16,14 @@ body, *, *:before, *:after {
 	font-smoothing: grayscale;
 }
 
-*, *:before, *:after {
-  position: relative;
-  //@include transition(none .2s cubic-bezier(0,.5,.5,1));
-  outline: none !important;
+body, html {
+	width: 100%;
+	height: 100%;
 }
-
-body,html { width: 100%; height: 100%; }
-
-iframe { margin: 0; }
-
-.page { background: white; }
 
 body {
-	position: relative;
 	background: $body-bg;
-	&.transparent {
-		&, .page { background: transparent; }
-	}
-	&.white {
-		background: white;
-	}
+	&:not(.transparent) {
+		background: $body-bg;
+	} 
 }
-
-.transitions { @include transitions(.5s); }
-.object { @include shadow; }

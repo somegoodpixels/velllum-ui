@@ -1,0 +1,29 @@
+$entypo: false;
+$blank: false;
+$arrows: true;
+
+@charset "utf-8";
+@import "sass/reset/reset";
+@import "sass/effects/effects";
+@import "sass/variables/variables";
+
+// tools for web apps
+@import "vendors/jqueryui/jquery-ui-1.12.1/jquery-ui.structure.min";
+@import "vendors/bootstrap/bootstrap-sass/bootstrap";
+@import "vendors/bootstrap-suggest/css/bootstrap-suggest";
+
+// all
+@import "sass/mixins/mixins";
+@import "sass/fonts/fonts";
+@import "sass/base/base";
+
+// web apps
+@import "sass/bootstrap/bootstrap";
+@import "sass/components/components";
+@import "sass/layout/layout";
+@import "sass/widgets/widgets";
+
+// simple
+// @import "sass/simple/forms";
+
+@import "sass/custom/custom";

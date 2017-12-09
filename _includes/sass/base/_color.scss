@@ -1,7 +1,6 @@
 $colors: ("red":$red,"orange":$orange,"yellow":$yellow,"green":$green,"blue":$blue,"purple":$purple,"navy":$navy,"gray":$gray);
 
 @each $var, $color in $colors {
-
 	.text-#{$var} { color: $color; }
 	.text-#{$var}-dark { color: dark($color); }
 	.text-#{$var}-darker { color: darker($color); }
@@ -19,8 +18,17 @@ $colors: ("red":$red,"orange":$orange,"yellow":$yellow,"green":$green,"blue":$bl
 	.bg-#{$var}-lighter { background: lighter($color); }
 	.bg-#{$var}-lightest { background: lightest($color); }
 	.bg-#{$var}-highlight { background: highlight($color); }
-
 }
+
+
+.text-success { color: $brand-success !important; }
+.text-danger { color: $brand-danger !important; }
+.text-warning { color: $brand-warning !important; }
+.text-info { color: $brand-info !important; }
+
+.text-white { color: white; }
+.text-light { color: $light; }
+.text-dark { color: $dark; }
 
 .text-silver { color: $silver; }
 .text-silver-light { color: $silver-light; }
@@ -33,3 +41,12 @@ $colors: ("red":$red,"orange":$orange,"yellow":$yellow,"green":$green,"blue":$bl
 .bg-silver-dark { background: $silver-dark; }
 .bg-silver-darker { background: $silver-darker; }
 .bg-silver-darkest { background: $silver-darkest; }
+
+::selection {
+  background: $selection-bg;
+	color: selection-text;
+}
+::-moz-selection {
+  background: $selection-bg;
+	color: selection-text;
+}

@@ -37,6 +37,8 @@ $link:                                           $blue;
 $brand:                                          $blue;
 $hover-bg:                                       $silver;
 $hover-text:                                     $dark;
+$selection-bg:                                   $blue;
+$selection-text:                                 white;
 $active-bg:                                      $blue;
 $active-text:                                    white;
 $disabled-text:                                  $light;
@@ -46,8 +48,9 @@ $disabled-bg:                                    $silver-light;
 // Fonts
 // --------------------------------------------------
 $font-family-serif:                              serif;
-$font-family-sans-serif:                         -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-family-blank: 							 "blank";
 $font-family-monospace:                          monospace;
+$font-family-sans-serif:                         -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $font-family-base:                               $font-family-sans-serif;
 
 //

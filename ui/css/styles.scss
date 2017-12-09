@@ -2,17 +2,4 @@
 # The main stylesheet
 ---
 
-@import "sass/effects/effects";
-@import "sass/variables/variables";
-
-@import "vendors/jqueryui/jquery-ui-1.12.1/jquery-ui.structure.min";
-@import "vendors/bootstrap/bootstrap-sass/bootstrap";
-@import "vendors/bootstrap-suggest/css/bootstrap-suggest";
-
-@import "sass/functions/functions";
-@import "sass/fonts/fonts";
-@import "sass/base/base";
-@import "sass/components/components";
-@import "sass/layout/layout";
-@import "sass/widgets/widgets";
-@import "sass/custom/custom";
+@import "sass/stylesheet";

@@ -1,0 +1,64 @@
+
+$arr: (
+	"up":"a",
+	"right":"b",
+	"down":"c",
+	"left":"d",
+	"close":"e",
+	"vertical":"f",
+	"horizontal":"g",
+	"north":"h",
+	"west":"i",
+	"south":"j",
+	"east":"k",
+	"check":"l",
+	"moveup":"m",
+	"moveright":"n",
+	"movedown":"o",
+	"moveleft":"p"
+);
+
+@mixin arrow-styles(){
+	font-family: "arrows";
+	text-transform: none;
+	font-style: normal;
+}
+
+@mixin arrow($type,$position:after,$large:false){
+	&:#{$position} {
+		@include arrow-styles;
+		@each $var, $glyph in $arr {
+			@if $var == $type {
+				content: " #{$glyph} ";
+			}
+		}
+		@if $large {
+			text-transform: uppercase;
+		}
+	}
+}
+
+@if $arrows {
+
+	@include font-face-woff("arrows","../fonts/arrows/arrows.woff");
+	@include font-face-woff("arrows","../fonts/arrows/arrows-bold.woff",bold);
+
+	[class*="arrow-"]:not([class*="arrow-before"]) {
+		&:after { @include arrow-styles; }
+		&.arrow-large:after { text-transform: uppercase; }
+	}
+	[class*="arrow-before-"] {
+		&:before { @include arrow-styles; }
+		&.arrow-large:before { text-transform: uppercase; }
+	}
+
+	@each $var, $glyph in $arr {
+		.arrow-#{$var}:after {content: " #{$glyph} "; }
+		.arrow-before-#{$var}:before {content: " #{$glyph} "; }
+	}
+
+	.btn-mixin-class {
+		@include arrow(check,before);
+	}
+
+}

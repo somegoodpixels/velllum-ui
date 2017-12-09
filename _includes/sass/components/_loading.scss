@@ -13,7 +13,7 @@
 		border: 1px solid;
 		border-top-color: $outline;
 		border-right-color: $outline;
-		@include spinning;
+		@include spin;
 	}
 	&.loading-inline {
 		height: 10px;

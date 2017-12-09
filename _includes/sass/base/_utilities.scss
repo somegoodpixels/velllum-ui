@@ -1,0 +1,6 @@
+.clear { @include clear; }
+.clean { @include clean; }
+.fill { @include fill; }
+.transitions { @include transitions(.5s); }
+.block { display: block !important; }
+.object { @include shadow; }
