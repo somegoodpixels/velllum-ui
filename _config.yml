@@ -20,10 +20,12 @@ baseurl: "/velllum-ui"
 # --------------------------------------------------
 # Includes
 
-bootstrap: false
-google_fonts: false
 typekit: false
-inliner: true
+googlefonts: false
+bootstrap: true
+jqueryui: true
+svgicons: true
+inliner: false
 
 # --------------------------------------------------
 # Build settings

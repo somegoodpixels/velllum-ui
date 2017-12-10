@@ -2,4 +2,4 @@
 # The main stylesheet
 ---
 
-@import "sass/stylesheet";
+{% include sass/sass.scss %}
