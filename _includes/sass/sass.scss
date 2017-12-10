@@ -27,7 +27,8 @@ $arrows: true;
 {% endif %}
 
 {% unless site.bootstrap %}
-	@import "sass/simple/forms";
+	@import "sass/reset/columns";
+	@import "sass/reset/forms";
 {% endunless %}
 
 @import "sass/custom/custom";

@@ -21,11 +21,11 @@ b, strong, .b, .strong, .text-bold { font-weight: bold; }
 
 // MARGINS -------------------------------------------------------
 
-hr { margin: 3em 0; }
+hr { margin: 3em 0; border-top: 1px solid $hr-border; }
 iframe { margin: 0; }
-ul, ol, p { margin: 2rem 0; }
-#{h()}, blockquote { margin: 2em 0 .5em; }
-#{h()}, blockquote, ul, ol, p, hr { @include bookend; }
+#{h()}, blockquote, ul, ol, p, .field { margin: 1.5em 0; }
+#{h()}, blockquote { margin-bottom: .5em; }
+#{h()}, blockquote, ul, ol, p, hr, .field { @include bookend; }
 ul, ol { padding-left: 1.25em; }
 dl { dt + dd { margin-bottom: 1em; } }
 

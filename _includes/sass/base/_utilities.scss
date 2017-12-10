@@ -3,4 +3,6 @@
 .fill { @include fill; }
 .transitions { @include transitions(.5s); }
 .block { display: block !important; }
-.object { @include shadow; }
+.object { @include shadow; background: white; border-radius: $border-radius-base; }
+.hidden { display: none; }
+.invisible { visibility: hidden; }

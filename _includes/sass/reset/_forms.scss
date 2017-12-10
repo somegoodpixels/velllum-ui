@@ -1,3 +1,13 @@
+@mixin btn-colors($bg,$color,$color-active:$color) {
+	background: $bg;
+	color: $color;
+	@include active {
+		color: $color-active;
+		background: darker($bg);
+		@content;
+	}
+}
+
 
 .label {
 	font-weight: bold;
@@ -12,6 +22,7 @@
 	height: $component-height-base;
 	padding: $padding-base-vertical $padding-base-horizontal;
 	line-height: $line-height-base;
+	border-radius: $border-radius-base;
 	display: inline-block;
 	cursor: pointer;
 }
@@ -29,26 +40,31 @@
 }
 
 .btn {
-	word-spacing: 0;
 	text-align: center;
 	border-radius: $border-radius-base;
 	&-block { display: block; }
-	&-default { background: $btn-default-bg; color: $btn-default-color; }
-	&-white { background: white; color: $normal; @include shadow; }
-	&-primary { background: $btn-primary-bg; color: $btn-primary-color; }
-	&-success { background: $btn-success-bg; color: $btn-success-color; }
-	&-warning { background: $btn-warning-bg; color: $btn-warning-color; }
-	&-danger { background: $btn-danger-bg; color: $btn-danger-color; }
-	&-info { background: $btn-info-bg; color: $btn-info-color; }
-	&-red { background: $red; color: white; }
-	&-orange { background: $orange; color: white; }
-	&-yellow { background: $yellow; color: white; }
-	&-green { background: $green; color: white; }
-	&-blue { background: $blue; color: white; }
-	&-purple { background: $purple; color: white; }
-	&-navy { background: $navy; color: white; }
+	&-default { @include btn-colors($btn-default-bg,$btn-default-color,$dark); }
+	&-primary { @include btn-colors($btn-primary-bg,$btn-primary-color); }
+	&-success { @include btn-colors($btn-success-bg,$btn-success-color); }
+	&-warning { @include btn-colors($btn-warning-bg,$btn-warning-color); }
+	&-danger { @include btn-colors($btn-danger-bg,$btn-danger-color); }
+	&-info { @include btn-colors($btn-info-bg,$btn-info-color); }
+	&-red { @include btn-colors($red,white); }
+	&-orange { @include btn-colors($orange,white); }
+	&-yellow { @include btn-colors($yellow,white); }
+	&-green { @include btn-colors($green,white); }
+	&-blue { @include btn-colors($blue,white); }
+	&-purple { @include btn-colors($purple,white); }
+	&-navy { @include btn-colors($navy,white); }
 	&-text { background: transparent; color: inherit; }
 	&-link { background: transparent; color: $link; }
+	&-text, &-link { padding-left: .25em; padding-right: .25em; }
+	&-white {
+		@include shadow;
+		@include btn-colors(white,$normal,$dark){
+			@include shadow(10px);
+		};
+	}
 	&-outline {
 		&:before {
 			content: '';
@@ -80,10 +96,15 @@ textarea.input {
 
 
 .btns {
-	word-spacing: .5rem;
-	margin: 1rem 0;
-	@include bookend;
+	@include clear;
+	margin: .75rem -.25rem;
+	.btn {
+		display: block;
+		float: left;
+		margin: .25rem;
+	}
 }
+
 
 .fields {
 	@include flex-row;
@@ -91,6 +112,7 @@ textarea.input {
 	margin: 0 -.5rem;
 	.field {
 		@include flex(1,0,200px);
+		margin: 0;
 		padding: 0 .5rem .5rem;
 	}
 }
