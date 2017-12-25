@@ -1,7 +1,6 @@
 		{% capture title %}{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}{% endcapture %}
 		{% capture description %}{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}{% capture image %}{{ site.baseurl }}{% if page.poster %}{{ page.poster }}{% else %}{{ site.poster }}{% endif %}{% endcapture %}{% capture url %}{{ site.baseurl }}{{ page.url }}{% endcapture %}
 		<meta charset="utf-8">
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1" />
 		{% comment %} METADATA {% endcomment %}
 		<title>{{ title }}</title>

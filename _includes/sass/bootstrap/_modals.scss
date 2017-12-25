@@ -19,9 +19,9 @@
 		.modal-footer { text-align: left; }
 	}
 	.modal-dialog {
-		.modal-content { width: $modal-md; }
-		&.modal-sm { .modal-content { width: $modal-sm; } }
-		&.modal-lg { .modal-content { width: $modal-lg; } }
+		.modal-content { max-width: $modal-md; }
+		&.modal-sm { .modal-content { max-width: $modal-sm; } }
+		&.modal-lg { .modal-content { max-width: $modal-lg; } }
 		.modal-flush, .modal-flush-top { padding-top: 0; }
 		.modal-flush, .modal-flush-bottom { padding-bottom: 0; }
 	}

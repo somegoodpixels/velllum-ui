@@ -10,7 +10,7 @@ robots: false
 
 favicon: /ui/img/graph/favicon.png
 avatar: /ui/img/graph/avatar.png
-poster: /ui/img/graph/poster.jpg
+poster: /ui/img/graph/poster.png
 
 # --------------------------------------------------
 # the subpath of your site, e.g. /blog

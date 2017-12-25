@@ -81,9 +81,9 @@
 }
 
 @mixin active(){
-  &:hover, &:focus {
-    @content;
-  }
+	&:hover, &:focus {
+		@content;
+	}
 }
 
 @mixin stoic(){
@@ -111,70 +111,77 @@
 }
 
 @mixin placeholder($color) {
-  &::-webkit-input-placeholder { color: $color; font-style: $input-style-placeholder; }
-  &:-moz-placeholder { color: $color; font-style: $input-style-placeholder; }
-  &::-moz-placeholder { color: $color; font-style: $input-style-placeholder; }
-  &:-ms-input-placeholder { color: $color; font-style: $input-style-placeholder; }
+	&::-webkit-input-placeholder { color: $color; font-style: $input-style-placeholder; }
+	&:-moz-placeholder { color: $color; font-style: $input-style-placeholder; }
+	&::-moz-placeholder { color: $color; font-style: $input-style-placeholder; }
+	&:-ms-input-placeholder { color: $color; font-style: $input-style-placeholder; }
 }
 
 
 @mixin clean() { 
-  margin: 0; 
-  padding: 0; 
-  border: 0;
-  list-style-type: none; 
-  li { 
-    margin: 0; 
-    padding: 0; 
-    list-style-type: none; 
-  }
+	margin: 0; 
+	padding: 0; 
+	border: 0;
+	list-style-type: none; 
+	li { 
+		margin: 0; 
+		padding: 0; 
+		list-style-type: none; 
+	}
 }
 
 @mixin inlinelist($dir:false) { 
-  @include clean;
-  @if $dir { text-align: $dir; }
-  > li {
-    display: inline-block;
-    @if $dir == 'left' { margin-right: 1.5em; }
-    @if $dir == 'right' { margin-left: 1.5em; }
-    @if $dir == 'center' { margin-right: .75em; margin-left: .75em; }
-    > a { display: block; }
-  }
+	@include clean;
+	@if $dir { text-align: $dir; }
+	> li {
+		display: inline-block;
+		@if $dir == 'left' { margin-right: 1.5em; }
+		@if $dir == 'right' { margin-left: 1.5em; }
+		@if $dir == 'center' { margin-right: .75em; margin-left: .75em; }
+		> a { display: block; }
+	}
 }
 
 @mixin typography(){
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: grayscale;
 }
 
 @mixin smallcaps() { 
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: $light;
-  font-weight: bold;
-  font-style: normal;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	color: $light;
+	font-weight: bold;
+	font-style: normal;
 }
 
 
-@mixin ellipsis(){
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+@mixin ellipsis($lines:1){
+	overflow: hidden;
+	text-overflow: ellipsis;
+	@if $lines == 1 {
+		white-space: nowrap;
+	} @else {
+		display: block;
+		display: -webkit-box;
+		height: line-height($line-height-base*$lines);
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: $lines;
+	}
 }
-
 
 @mixin check(){
-  content: '';
-  display: inline-block;
-  border: 2px solid;
-  border-top-width: 0;
-  border-right-width: 0;
-  height: 6px;
-  width: 12px;
-  @include transform(rotate(-45deg));
-  margin: -6px .75em 0 0;
-  vertical-align: middle;
+	content: '';
+	display: inline-block;
+	border: 2px solid;
+	border-top-width: 0;
+	border-right-width: 0;
+	height: 6px;
+	width: 12px;
+	@include transform(rotate(-45deg));
+	margin: -6px .75em 0 0;
+	vertical-align: middle;
 }

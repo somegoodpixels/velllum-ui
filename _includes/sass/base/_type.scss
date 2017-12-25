@@ -64,6 +64,7 @@ blockquote { @include clean; font-size: inherit; }
 .text-huge { @include font-size-huge; }
 .text-huger { @include font-size-huger; }
 .text-hugest { @include font-size-hugest; }
+.text-transparent { opacity: .5; }
 
 // ALIGNMENT -------------------------------------------------------
 

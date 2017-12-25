@@ -13,6 +13,13 @@ $(document).on('ready',function(){ $('html').addClass('ready'); });
 $(window).on('load',function(){ $('html').addClass('loaded'); });
 $('html').toggleClass('click',!is_touch());
 $('html').toggleClass('touch',is_touch());
+function updateRatio(){
+	var portrait = ( $(window).height() > $(window).width() );
+	$('html').toggleClass('portrait',portrait);
+	$('html').toggleClass('landscape',!portrait);
+}
+$(window).resize(updateRatio);
+updateRatio();
 
 // ------------------------------------ TABS ------------------------------------
 $(document).ready(function(){
@@ -49,8 +56,8 @@ function updateScroll(){
 	prevscroll = nextscroll;
 }
 $(window).scroll(updateScroll);
+$(window).resize(updateScroll);
 $(document).ready(updateScroll);
-$(document).resize(updateScroll);
 
 // ------------------------------------ FOCUS SET ------------------------------------
 $(document).on('click','[data-focus]',function(){ var el = $(this); var timer = setTimeout(function(){ $(el.attr('data-focus')).find('input:visible:first').focus(); },1); });

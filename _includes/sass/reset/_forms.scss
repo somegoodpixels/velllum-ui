@@ -3,7 +3,8 @@
 	color: $color;
 	@include active {
 		color: $color-active;
-		background: darker($bg);
+		//background: darker($bg);
+		background: $bg;
 		@content;
 	}
 }
@@ -25,18 +26,16 @@
 	border-radius: $border-radius-base;
 	display: inline-block;
 	cursor: pointer;
-}
-
-.btn-lg, .input-lg {
-	@include font-size-large;
-	height: $component-height-large;
-	padding: $padding-large-vertical $padding-large-horizontal;
-}
-
-.btn-sm, .input-sm {
-	@include font-size-small;
-	height: $component-height-small;
-	padding: $padding-small-vertical $padding-small-horizontal;
+	&-lg {
+		@include font-size-large;
+		height: $component-height-large;
+		padding: $padding-large-vertical $padding-large-horizontal;
+	}
+	&-sm {
+		@include font-size-small;
+		height: $component-height-small;
+		padding: $padding-small-vertical $padding-small-horizontal;
+	}
 }
 
 .btn {
@@ -66,10 +65,11 @@
 		};
 	}
 	&-outline {
+		color: inherit !important;
 		&:before {
 			content: '';
 			@include fill;
-			opacity: .333;
+			opacity: .25;
 			border: 1px solid;
 			@include transitions;
 		}
