@@ -12,19 +12,28 @@
 				<div class="col-lg-3 three col">
 					<div class="pad">
 						<ul class="nav nav-pills nav-stacked">
-							{% assign guides = site.docs | where: 'type' , 'styleguide' | sort: 'order' %}
+							
+							{% assign guides = site.docs | where: 'type' , 'docs' | sort: 'order' %}
+							{% assign styles = site.docs | where: 'type' , page.styles | sort: 'order' | reverse | group_by: 'section' %}
+
 							{% for guide in guides %}
-								<li>
-									<a href="{{site.baseurl}}{{guide.url}}">{{guide.title}}</a>
-									{% if guide.url == page.url %}
-										<ul class="nav nav-pills nav-stacked">
-											{% assign styles = site.docs | where: 'type' , page.styles | sort: 'order' | reverse | group_by: 'section' %}
-											{% for type in styles %}
-												<li><a href="#{{ type.name | slugify }}">{{ type.name | capitalize }}</a></li>
-											{% endfor %}
-										</ul>
-									{% endif %}
-								</li>
+								{% unless site.bootstrap == false and guide.require_bootstrap == true %}
+									<li>
+										<a href="{{site.baseurl}}{{guide.url}}">{{guide.title}}</a>
+										{% if guide.url == page.url %}
+											<ul class="nav nav-pills nav-stacked flush">
+												{% for type in styles %}
+													{% assign entries = type.items | sort: "title" %}
+													{% for entry in entries %}
+														{% unless site.jqueryui == false and entry.require_jqueryui == true %}
+															<li><a href="#{{ entry.title | slugify }}">{{ entry.title | capitalize }}</a></li>
+														{% endunless %}
+													{% endfor %}
+												{% endfor %}
+											</ul>
+										{% endif %}
+									</li>
+								{% endunless %}
 							{% endfor %}
 						</ul>
 					</div>
@@ -32,12 +41,13 @@
 				<div class="col-lg-9 nine col">
 					<div class="pad">
 						{% for type in styles %}
-							<h3 id="{{ type.name | slugify }}" class="margin-bottom">{{ type.name | capitalize }}</h3>
+							<div id="{{ type.name | slugify }}"></div>
 							{% assign entries = type.items | sort: "title" %}
 							{% for entry in entries %}
-								{% include styles/spec.html %}
+								{% unless site.jqueryui == false and entry.require_jqueryui == true %}
+									{% include styles/spec.html %}
+								{% endunless %}
 							{% endfor %}
-							<hr/>
 						{% endfor %}
 					</div>
 				</div>

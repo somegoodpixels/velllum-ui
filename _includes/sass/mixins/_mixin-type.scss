@@ -165,11 +165,11 @@
 	@if $lines == 1 {
 		white-space: nowrap;
 	} @else {
-		display: block;
-		display: -webkit-box;
-		height: line-height($line-height-base*$lines);
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: $lines;
+		//display: block;
+		//display: -webkit-box;
+		max-height: line-height($line-height-base*$lines);
+		//-webkit-box-orient: vertical;
+		//-webkit-line-clamp: $lines;
 	}
 }
 

@@ -1,7 +1,8 @@
 ---
 title: Widgets
-type: styleguide
+type: docs
 styles: widgets
+require_bootstrap: true
 layout: docs
 order: 4
 ---

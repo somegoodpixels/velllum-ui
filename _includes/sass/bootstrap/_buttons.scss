@@ -65,6 +65,11 @@
 		padding-left: 10px;
 		padding-right: 10px;
 	}
+	&.btn-white {
+		color: $btn-default-color;
+		background: white;
+		@include shadow;
+	}
 	&.btn-default {
 		font-weight: normal;
 		display: inline-block;
@@ -88,17 +93,19 @@
 	}
 }
 
-.btn-link {
-	//font-style: oblique;
-	padding-left: 5px !important;
-	padding-right: 5px !important;
+.btn-clear {
+	background: transparent !important;
+}
+
+.btn-link,
+.btn-text {
+	padding-left: $padding-base-horizontal/2 !important;
+	padding-right: $padding-base-horizontal/2 !important;
 }
 
 .btn-text {
 	background: transparent;
 	font-weight: normal;
-	padding-left: $padding-base-horizontal/2 !important;
-	padding-right: $padding-base-horizontal/2 !important;
 	color: $normal;
 	strong {
 		font-weight: inherit;

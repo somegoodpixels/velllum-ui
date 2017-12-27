@@ -2,6 +2,7 @@
 title: Datepicker
 type: widgets
 section: datepicker
+require_jqueryui: true
 ---
 
 <form class="form-grid">

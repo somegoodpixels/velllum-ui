@@ -1,6 +1,6 @@
 ---
 title: Forms
-type: basics
+type: styles
 section: forms
 order: 96
 ---

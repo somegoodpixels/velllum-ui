@@ -1,5 +1,5 @@
 ---
-title: Suggest @mentions
+title: Mentions
 type: widgets
 section: typeahead
 ---

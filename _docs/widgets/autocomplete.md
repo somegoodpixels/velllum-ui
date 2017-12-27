@@ -2,6 +2,7 @@
 title: Autocomplete
 type: widgets
 section: autocomplete
+require_jqueryui: true
 ---
 
 <label>Name a common web dev language</label>

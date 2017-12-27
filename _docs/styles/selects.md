@@ -1,6 +1,6 @@
 ---
 title: Selects
-type: basics
+type: styles
 section: forms
 ---
 

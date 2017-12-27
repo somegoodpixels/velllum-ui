@@ -1,6 +1,6 @@
 ---
 title: Radios and Checkboxes
-type: basics
+type: styles
 section: forms
 ---
 

@@ -10,27 +10,34 @@ $icon-base: 24px;
 	-webkit-backface-visibility: hidden; 
 	@include transform(translateZ(0));
 
-	&.icon-left {
+	&-left {
 		left: -1em*(3/24);
 	}
-	&.icon-right {
+	&-right {
 		left: 1em*(3/24);
 	}
 	use {
 		fill: currentColor;
 	}
-	&.icon-middle {
+	&-middle {
 		margin-top: -.5em;
 		margin-bottom: -.5em;
 	}
-	&.icon-md {
+	&-md {
 		$icon-scale: 1.5;
 		font-size: $icon-base*$icon-scale;
 		@include transform((scale($icon-scale) translateZ(0)),(0 0));
 	}
-	&.icon-lg {
+	&-lg {
 		$icon-scale: 2;
 		font-size: $icon-base*$icon-scale;
 		@include transform((scale($icon-scale) translateZ(0)),(0 0));
+	}
+	&-bold {
+		use {
+			stroke: currentColor;
+			stroke-width: 1px;
+			@include transform( translateX(0.5px) translateY(0.5px) );
+		}
 	}
 }

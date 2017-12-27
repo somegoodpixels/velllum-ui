@@ -1,8 +1,8 @@
 ---
-title: Bootstrap
+title: Styles
 type: docs
-styles: bootstrap
+styles: styles
 require_bootstrap: true
 layout: docs
-order: 1
+permalink: /docs/
 ---

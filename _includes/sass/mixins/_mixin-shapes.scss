@@ -1,5 +1,5 @@
-@mixin shadow($height:3px,$border:rgba(0,0,0,.05),$shade:transparent) {
-  $darkness: clamp( integer($height)*.02 , .1 , .5 );
+@mixin shadow($height:3px,$border:rgba(0,0,0,.0125),$shade:transparent) {
+  $darkness: clamp( integer($height)*.01 , .1 , .5 );
   box-shadow:
     0 0 0 1px $border,
     0 1px 3px $shade,
@@ -11,7 +11,6 @@
   border-width: 0;
   @include shadow();
   border-radius: $component-border-radius;
-  //@include transitions(.375s);
   background: white;
 }
 

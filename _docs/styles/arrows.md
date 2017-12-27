@@ -1,6 +1,6 @@
 ---
 title: Arrows
-type: basics
+type: styles
 section: icons
 order: 98
 ---

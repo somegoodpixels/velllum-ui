@@ -1,6 +1,6 @@
 ---
 title: Basic Type
-type: basics
+type: styles
 section: typography
 order: 99
 ---

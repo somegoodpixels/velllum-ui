@@ -1,6 +1,6 @@
 ---
 title: Code
-type: basics
+type: styles
 section: code
 ---
 

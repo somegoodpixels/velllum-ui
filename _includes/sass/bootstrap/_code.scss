@@ -10,6 +10,7 @@ pre {
 	resize: vertical;
 	border-radius: $border-radius-base;
 	margin: 1em 0;
+	@include bookend;
 	-moz-tab-size: 2;
 	-o-tab-size: 2;
 	tab-size: 2;

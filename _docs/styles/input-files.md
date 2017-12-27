@@ -1,6 +1,6 @@
 ---
 title: File Inputs
-type: basics
+type: styles
 section: forms
 ---
 

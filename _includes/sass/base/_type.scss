@@ -49,6 +49,7 @@ dl { dt + dd { margin-bottom: 1em; } }
 
 // SIZES -------------------------------------------------------
 
+#{h()} { small { @include font-size-small; margin-left: .5em; } }
 #{h(1)} { @include font-size-h1; }
 #{h(2)} { @include font-size-h2; }
 #{h(3)} { @include font-size-h3; }

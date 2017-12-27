@@ -1,6 +1,6 @@
 ---
 title: Buttons
-type: basics
+type: styles
 section: forms
 ---
 

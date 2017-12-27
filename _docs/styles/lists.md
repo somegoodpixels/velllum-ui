@@ -1,6 +1,6 @@
 ---
 title: Lists (basic)
-type: basics
+type: styles
 section: typography
 ---
 

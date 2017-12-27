@@ -2,9 +2,6 @@
 
 .message {
 	margin: 20px 0;
-	.scroller & {
-		margin: 10px 0;
-	}
 	.message-content {
 		@include flex-row;
 		> * {

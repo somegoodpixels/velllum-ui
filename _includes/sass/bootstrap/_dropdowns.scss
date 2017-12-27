@@ -2,7 +2,7 @@
 .dropdown-menu {
 	@include transform(scale(.75),(0 0));
 	@include transition(all .1875s $bezier-bounce);
-	@include shadow(10px);
+	@include shadow(20px);
 	@include font-size-base;
 	pointer-events: none;
 	margin: 0;
