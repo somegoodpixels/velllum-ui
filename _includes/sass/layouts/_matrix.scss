@@ -3,7 +3,9 @@
 	@include flex-row;
 	@include flex-align(stretch);
 	@include flex-wrap;
-	&.matrix-nowrap { @include flex-wrap(nowrap); }
+	&.matrix-nowrap {
+		@include flex-wrap(nowrap);
+	}
 	.matrix-item {
 		padding: $component-buffer/2;
 		@include flex-column;

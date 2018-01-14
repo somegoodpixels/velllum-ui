@@ -1,8 +1,11 @@
+$card-controls: ".btn, .form-control, .input-group-addon, .form-control-static";
+
 .card {
 	@include component;
 	margin: 20px 0;
 	@include flex-column;
-	> .card-header, > .card-footer {
+	> .card-header,
+	> .card-footer {
 		@include flex(0,0);
 	}
 	> .card-body {
@@ -30,10 +33,7 @@
 
 .card-control {
 	display: block;
-	.btn,
-	.form-control,
-	.input-group-addon,
-	.form-control-static {
+	#{$card-controls} {
 		display: block;
 		margin: 0 !important;
 		height: $input-height-large;
@@ -60,8 +60,16 @@
 	}
 	&.card-footer {
 		.card-control {
-			&:first-child { .btn, .form-control, .input-group-addon, .form-control-static { border-bottom-left-radius: $component-border-radius; } }
-			&:last-child { .btn, .form-control, .input-group-addon, .form-control-static { border-bottom-right-radius: $component-border-radius; } }
+			&:first-child {
+				#{$card-controls} {
+					border-bottom-left-radius: $component-border-radius;
+				}
+			}
+			&:last-child {
+				#{$card-controls} {
+					border-bottom-right-radius: $component-border-radius;
+				} 
+			}
 		}
 	}
 }

@@ -14,8 +14,10 @@ layout: raw
 {% if site.bootstrap %}
 	{% include vendors/bootstrap/js/bootstrap.min.js %}
 	{% include scripts/bootstrap.js %}
+	
 	{% include vendors/bootstrap-validator/dist/validator.min.js %}
 	{% include scripts/validator.js %}
+	
 	{% include vendors/bootstrap-suggest/js/bootstrap-suggest.js %}
 	{% include scripts/suggest.js %}
 {% endif %}

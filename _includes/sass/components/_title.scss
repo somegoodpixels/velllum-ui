@@ -4,7 +4,7 @@
 	@include flex-wrap;
 	@include flex-justify(space-between);
 	@include flex-align(center);
-	&.title-buffer {
+	&-buffer {
 		margin-top: $component-buffer;
 		margin-bottom: $component-buffer;
 	}
@@ -12,7 +12,13 @@
 		padding: 5px 0;
 		margin: 0 10px;
 	}
-	.title-header { @include flex(0,1,auto); }
-	.title-body { @include flex(1,1,auto); }
-	.title-actions { @include flex(0,1,auto); }
+	.title-header {
+		@include flex(0,1,auto);
+	}
+	.title-body {
+		@include flex(1,1,auto);
+	}
+	.title-actions {
+		@include flex(0,1,auto);
+	}
 }

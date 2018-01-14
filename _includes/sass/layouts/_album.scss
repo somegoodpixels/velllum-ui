@@ -1,7 +1,9 @@
 .album {
 	margin: 0 $component-buffer/-2;
 	visibility: hidden;
-	&.album-ready { visibility: visible; }
+	&.album-ready {
+		visibility: visible;
+	}
 	.album-content {
 		@include flex-row;
 		@include flex-wrap;

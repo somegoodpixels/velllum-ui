@@ -65,8 +65,16 @@ $option-bg-checked: $blue;
 	cursor: pointer;
 	display: block;
 	margin: 6px 0;
-	&-sm { font-size: $font-size-small; }
-	&-lg { font-size: $font-size-large; }
+	line-height: $component-line-height;
+	padding: $padding-base-vertical 0;
+	&-sm {
+		@include font-size-small;
+		padding: $padding-small-vertical 0;
+	}
+	&-lg {
+			@include font-size-large;
+			padding: $padding-large-vertical 0;
+		}
 	.form-inline & {
 		margin-top: 0;
 		margin-bottom: 0;
@@ -86,6 +94,9 @@ $option-bg-checked: $blue;
 		.option-icon {
 			margin-right: .5em;
 		}
+	}
+	&-minimal {
+		padding: 0;
 	}
 	input {
 		position: absolute;
