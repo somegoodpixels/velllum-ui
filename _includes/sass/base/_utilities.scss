@@ -1,8 +1,12 @@
+.fill { @include fill; }
 .clear { @include clear; }
 .clean { @include clean; }
-.fill { @include fill; }
+.component { @include component; }
 .transitions { @include transitions(.5s); }
+
 .block { display: block !important; }
-.object { @include shadow; background: white; border-radius: $border-radius-base; }
-.hidden { display: none; }
+.inline { display: inline !important; }
+.inline-block { display: inline-block !important; }
+
 .invisible { visibility: hidden; }
+.hidden { display: none; }

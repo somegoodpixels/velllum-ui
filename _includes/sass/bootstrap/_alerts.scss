@@ -1,14 +1,15 @@
-
 .alert {
-	&.alert-default {
-		background: $silver-light;
-		color: $light;
-	}
 	border: 0;
 	font-style: oblique;
-	margin-bottom: 12px;
+	@include bookend {
+		margin: 1em 0;
+	}
 	strong {
 		color: inherit;
 		font-style: normal;
+	}
+	&-default {
+		background: $silver-light;
+		color: $light;
 	}
 }

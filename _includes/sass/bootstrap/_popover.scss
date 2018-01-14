@@ -1,31 +1,30 @@
 .popover {
-	@include shadow;
-	@include round;
-	border-width: 0 !important;
-	padding: 0;
+	@include shadow(20px);
 	@include font-size-base;
-	.arrow { 
-		background: $popover-bg;
-		box-shadow: 0 0 0 1px rgba(0,0,0,.0875);
-		border-radius: 2px;
-		width: 12px;
-		height: 12px;
-		border-width: 0;
-		@include transform(rotate(45deg));
-		&:after {
-			display: none;
-		}
+	border-width: 0 !important;
+	color: $popover-color;
+	padding: 0;
+	&, .popover-content, .arrow {
+		@include round;
 	}
-	&.top .arrow { margin-bottom: 3px; }
-	&.bottom .arrow { margin-top: 3px; }
-	&.left .arrow { margin-right: 3px; }
-	&.right .arrow { margin-left: 3px; }
 	.popover-content {
 		@include round;
 		margin: 0 !important;
 	}
 	.popover-title, .popover-content {
-		padding: $padding-large-vertical $padding-base-horizontal;
+		padding: $padding-large-vertical $padding-large-horizontal;
 		background: $popover-bg;
 	}
+	.arrow { 
+		width: 20px;
+		height: 20px;
+		background: $popover-bg;
+		@include shadow(20px);
+		@include transform(rotate(45deg));
+		&:after { display: none; }
+	}
+	&.top .arrow { margin: -10px; margin-bottom: -4px; }
+	&.bottom .arrow { margin: -10px; margin-top: -4px; }
+	&.left .arrow { margin: -10px; margin-right: -4px; }
+	&.right .arrow { margin: -10px; margin-left: -4px; }
 }

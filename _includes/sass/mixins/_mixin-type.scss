@@ -1,5 +1,5 @@
 @mixin line-height($height){
-	$slope: -1 * ( 1 - $height ) / strip-unit( $line-height-max - 1rem );
+	$slope: -1 * ( 1 - $height ) / integer( $line-height-max - 1rem );
 	line-height: calc(1em + #{$slope} * (#{$line-height-max} - 1em));
 }
 
@@ -22,8 +22,8 @@
 	#{$attr}: $min;
 	@if $max {
 		@if $max != $min {
-			$base: strip-unit($font-size-root);
-			$m1: strip-unit($max - $min) / strip-unit($maxscreen - $minscreen);
+			$base: integer($font-size-root);
+			$m1: integer($max - $min) / integer($maxscreen - $minscreen);
 			@media ( min-width: $minscreen ) and ( max-width: ( $maxscreen - 1px ) ) {
 				$factor: $m1 * $base;
 				#{$attr}: calc((100vw - #{$maxscreen}) * #{$factor} + #{$max});
@@ -81,7 +81,8 @@
 }
 
 @mixin active(){
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		@content;
 	}
 }
@@ -89,7 +90,9 @@
 @mixin stoic(){
 	&:hover,
 	&:active,
-	&:focus { text-decoration: none; }
+	&:focus {
+		text-decoration: none;
+	}
 }
 
 @mixin columns($count:4,$width:100px,$gap:0){
@@ -142,13 +145,6 @@
 	}
 }
 
-@mixin typography(){
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-smoothing: grayscale;
-}
-
 @mixin smallcaps() { 
 	font-size: 10px;
 	text-transform: uppercase;
@@ -165,23 +161,12 @@
 	@if $lines == 1 {
 		white-space: nowrap;
 	} @else {
-		//display: block;
-		//display: -webkit-box;
 		max-height: line-height($line-height-base*$lines);
-		//-webkit-box-orient: vertical;
-		//-webkit-line-clamp: $lines;
 	}
 }
 
-@mixin check(){
-	content: '';
-	display: inline-block;
-	border: 2px solid;
-	border-top-width: 0;
-	border-right-width: 0;
-	height: 6px;
-	width: 12px;
-	@include transform(rotate(-45deg));
-	margin: -6px .75em 0 0;
-	vertical-align: middle;
+@mixin tab-size($n:2) {
+	-moz-tab-size: $n;
+	-o-tab-size: $n;
+	tab-size: $n;
 }

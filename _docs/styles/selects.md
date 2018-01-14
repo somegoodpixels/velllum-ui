@@ -6,8 +6,8 @@ section: forms
 
 <h6>Select Single</h6>
 
-<div class="select text-sm">
-	<select class="form-control input-sm input-margin">
+<div class="select input-sm margin-small">
+	<select class="form-control input-sm">
 		<option>Small Select</option>
 		<option>Option 2</option>
 		<option>Option 3</option>
@@ -16,8 +16,8 @@ section: forms
 	</select>
 </div>
 
-<div class="select">
-	<select class="form-control input-margin">
+<div class="select margin-small">
+	<select class="form-control">
 		<option>Basic Select</option>
 		<option>Option 2</option>
 		<option>Option 3</option>
@@ -26,8 +26,8 @@ section: forms
 	</select>
 </div>
 
-<div class="select text-lg">
-	<select class="form-control input-lg input-margin">
+<div class="select input-lg margin-small">
+	<select class="form-control input-lg">
 		<option>Large Select</option>
 		<option>Option 2</option>
 		<option>Option 3</option>

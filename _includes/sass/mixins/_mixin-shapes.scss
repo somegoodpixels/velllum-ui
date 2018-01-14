@@ -1,21 +1,25 @@
-@mixin shadow($height:3px,$border:rgba(0,0,0,.0125),$shade:transparent) {
-  $darkness: clamp( integer($height)*.01 , .1 , .5 );
-  box-shadow:
-    0 0 0 1px $border,
-    0 1px 3px $shade,
-    0 $height $height $height*-.5 rgba(0,0,0,$darkness);
-}
-
+//
+// Components
+// --------------------------------------------------
 @mixin component(){
-  display: block;
-  border-width: 0;
-  @include shadow();
-  border-radius: $component-border-radius;
-  background: white;
+	display: block;
+	border-width: 0;
+	background: white;
+	@include shadow();
+	border-radius: $component-border-radius;
 }
 
-@mixin circle() { border-radius: 50%; }
+//
+// Corners
+// --------------------------------------------------
+@mixin circle() {
+	border-radius: 50%;
+}
 
-@mixin round() { border-radius: $border-radius-base; }
+@mixin round() {
+	border-radius: $border-radius-base;
+}
 
-@mixin pill($important: null) { border-radius: 200px $important; }
+@mixin pill($important:'') {
+	border-radius: 200px #{$important};
+}

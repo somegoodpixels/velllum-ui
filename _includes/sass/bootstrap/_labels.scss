@@ -1,16 +1,15 @@
 .label {
 	@include labels;
 	@include transitions;
-	//background: transparent !important;
 	display: inline-block;
 	text-align: inherit;
 	padding: 6px 0;
 	border: 0;
-	&.label-default { color: $label-color; }
-	&.label-success { color: #{dark($green)}; }
-	&.label-info { color: #{dark($blue)}; }
-	&.label-warning { color: #{dark($yellow)}; }
-	&.label-danger { color: #{dark($red)}; }
+	&-default { color: $label-color; }
+	&-success { color: #{dark($green)}; }
+	&-info { color: #{dark($blue)}; }
+	&-warning { color: #{dark($yellow)}; }
+	&-danger { color: #{dark($red)}; }
 	+ .label {
 		&:not(.block) {
 			margin-left: 1.5em;

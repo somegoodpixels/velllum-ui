@@ -2,8 +2,8 @@
 	font-size: 40px;
 	img {
 		display: block;
-		width: 1em;
-		height: 1em;
 		@include circle;
+		height: 1em;
+		width: 1em;
 	}
 }

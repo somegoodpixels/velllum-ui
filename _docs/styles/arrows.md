@@ -24,6 +24,23 @@ These are inline symbols intended to decorate other elements. These symbols inhe
 <span class="arrow-movedown"></span>
 <span class="arrow-moveleft"></span>
 
+###### Inherited Font Weight (bold)
+
+<div class="text-bold">
+	<span class="arrow-up"></span>
+	<span class="arrow-right"></span>
+	<span class="arrow-down"></span>
+	<span class="arrow-left"></span>
+	<span class="arrow-close"></span>
+	<span class="arrow-vertical"></span>
+	<span class="arrow-horizontal"></span>
+	<span class="arrow-check"></span>
+	<span class="arrow-moveup"></span>
+	<span class="arrow-moveright"></span>
+	<span class="arrow-movedown"></span>
+	<span class="arrow-moveleft"></span>
+</div>
+
 ###### Large Variants
 
 <span class="arrow-up arrow-large"></span>
@@ -77,5 +94,5 @@ These are inline symbols intended to decorate other elements. These symbols inhe
 		@include arrow(check,before);
 	}
 
-<span class="btn btn-default btn-mixin-class">Check</span>
+<span class="btn btn-default arrow-mixin">Check</span>
 

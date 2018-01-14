@@ -1,108 +1,95 @@
 @mixin focus-shadow($color){
-	@include shadow(15px,$color,transparent);
+	@include shadow(15px,$color);
+}
+
+.form-control,
+.input-group-addon,
+.form-control-static {
+	@include font-size-base;
+	.form-group-lg &,
+	.input-group-lg & {
+		@include font-size-large;
+	}
+	.form-group-sm &,
+	.input-group-sm & {
+		@include font-size-small;
+	}
+	&.input-lg {
+		@include font-size-large;
+	}
+	&.input-sm {
+		@include font-size-small;
+	}
+}
+
+.form-control,
+.form-control-static,
+textarea.form-control {
+	height: $input-height-base;
+	line-height: $component-line-height !important;
+	padding: $padding-base-vertical $padding-base-horizontal;
+	border: 0;
+	&.input-sm {
+		height: $input-height-small;
+		padding: $padding-small-vertical $padding-small-horizontal;
+	}
+	&.input-lg {
+		height: $input-height-large;
+		padding: $padding-large-vertical $padding-large-horizontal;
+	}
 }
 
 
-.form-control, .input-group-addon { @include font-size-base; }
-.form-group-lg, .input-group-lg { .input-group-addon, .form-control { @include font-size-large; } }
-.input-lg { @include font-size-large; }
-.form-group-sm, .input-group-sm { .input-group-addon, .form-control { @include font-size-small; } }
-.input-sm { @include font-size-small; }
 
+textarea.form-control {
+	&:not(.form-control-height) {
+		height: $textarea-height;
+	}
+}
 
 .form-control {
-	@include box-shadow(none);
 	@include placeholder($input-color-placeholder);
 	@include transitions(.25s);
-	text-overflow: ellipsis;
-	color: $dark;
-	box-shadow: none;
+	@include box-shadow(none);
 	-webkit-appearance: none;
-	&.input-margin { margin: 10px 0; }
+	text-overflow: ellipsis;
+	box-shadow: none;
+	color: $dark;
+
+	&.input-white { background: white; }
 	&.input-short { width: 64px; }
 	&.input-medium { width: 240px; }
 	&.input-long { width: 100%; }
-	&.input-white { background: white; }
-	border-width: 0;
-	&:not(disabled):not(.disabled):hover {
+	&.input-pill { @include pill(!important); }
+	&.input-dark { background: $silver-dark; }
+
+	&:not(:disabled):not(.disabled):hover {
 		background-color: $input-bg-hover;
 		@include placeholder($input-color-placeholder-hover);
-	}	
+	}
+
 	&:focus {
+		color: $input-color !important;
 		background-color: white !important;
 		@include focus-shadow($brand-primary);
-		//border: 1px solid $input-border-focus !important;
-		//box-shadow: 0 10px 15px rgba(0,0,0,.15) !important;
 		border-radius: $border-radius-base !important;
-		color: $input-color !important;
-		z-index: 3;
 		@include placeholder(($light !important));
-	}
-	// &.input-light {
-	// 	background: transparent !important;
-	// 	border-color: transparent !important;
-	// 	box-shadow: none !important;
-	// }
-	&[data-status="default"] {
-		color: $light;
-		font-style: oblique;
-	}
-	&.input-pill {
-		@include pill(!important);
-	}
-	&.input-link {
-		color: $link-color;
-		padding: 0;
-		height: auto;
-		background: transparent !important;
-		border: 0;
-		display: inline;
-		width: auto;
-		cursor: pointer;
-	}
-	&[type="number"]:not(.spinner) {
-		&::-webkit-inner-spin-button,
-		&::-webkit-outer-spin-button {
-			-webkit-appearance: none;
-			margin: 0;
-		}
-	}
-	&.input-dark {
-		background: $silver-dark;
-	}
-	&.input-light {
-		background: white;
+		z-index: 3;
 	}
 }
 
-textarea.form-control { 
-	height: $textarea-height; 
-	&.form-control-height {
-		height: $input-height-base;
-		&.input-lg { height: $input-height-large; }
-		&.input-sm { height: $input-height-small; }
+.form-control[type="number"]:not(.spinner) {
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
 	}
 }
-
-
 
 .form-control-static {
 	display: block;
-	height: $input-height-base;
-	border: 1px solid transparent;
-	padding-top: 6px; 
-	&:empty {
-		&:before {
-			content: attr(placeholder);
-			color: $light;
-			font-style: oblique;
-		}
-	}
-	a {
-		font-style: oblique;
-	}
+	@include ellipsis;
 }
-
 
 @mixin form-control-variation($bg,$text,$border){
 	.input-group-addon,
@@ -117,10 +104,10 @@ textarea.form-control {
 	.select {
 		color: $text;
 	}
-	.form-control:not(disabled):not(.disabled) {
+	.form-control:not(:disabled):not(.disabled) {
 		&:hover {
 			@include placeholder(mix($text,white,75%));
-			background-color: darker($bg);
+			background-color: darkest($bg);
 			color: darker($text);
 		}
 		&:focus {

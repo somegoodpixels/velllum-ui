@@ -1,0 +1,25 @@
+@function clamp($number, $min, $max) {
+	@return min(max($number, $min), $max);
+}
+
+@function integer($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+	@return $number;
+}
+
+@function rem($size){
+	$remsize: $size / $font-size-root;
+	@return $remsize * 1rem;
+}
+
+@function rem-full($size){
+	$remsize: $size / $font-size-root-full;
+	@return $remsize * 1rem;
+}
+
+@function rem-multiply($size,$mult){
+	$unit: integer($size) * $mult;
+	@return #{$unit}rem;
+}

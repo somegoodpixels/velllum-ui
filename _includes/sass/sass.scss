@@ -1,34 +1,30 @@
 $entypo: true;
-$blank: true;
 $arrows: true;
 
 @charset "utf-8";
-@import "sass/reset/reset";
-@import "sass/effects/effects";
+@import "sass/maths/maths";
 @import "sass/variables/variables";
 
-{% if site.jqueryui %}
-	@import "vendors/jqueryui/jquery-ui-1.12.1/jquery-ui.structure.min";
-{% endif %}
 {% if site.bootstrap %}
-	@import "vendors/bootstrap/bootstrap-sass/bootstrap";
-	@import "vendors/bootstrap-suggest/css/bootstrap-suggest";
+@import "vendors/bootstrap/bootstrap-sass/bootstrap";
+@import "vendors/bootstrap-suggest/css/bootstrap-suggest";
+{% else %}
+@import "sass/reset/reset";
 {% endif %}
 
 @import "sass/mixins/mixins";
 @import "sass/fonts/fonts";
 @import "sass/base/base";
 
-{% if site.bootstrap %}
-	@import "sass/bootstrap/bootstrap";
-	@import "sass/components/components";
-	@import "sass/layout/layout";
-	@import "sass/widgets/widgets";
+{% if site.jqueryui %}
+@import "vendors/jqueryui/jquery-ui-1.12.1/jquery-ui.structure.min";
+@import "sass/widgets/jqueryui";
 {% endif %}
 
-{% unless site.bootstrap %}
-	@import "sass/reset/columns";
-	@import "sass/reset/forms";
-{% endunless %}
+{% if site.bootstrap %}
+@import "sass/bootstrap/bootstrap";
+@import "sass/components/components";
+@import "sass/layouts/layouts";
+{% endif %}
 
 @import "sass/custom/custom";

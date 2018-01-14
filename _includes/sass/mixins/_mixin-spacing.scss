@@ -1,94 +1,88 @@
 @mixin clear() { 
-  &:after { 
-    display: table; 
-    content: ''; 
-    clear: both; 
-  } 
+	&:after { 
+		display: table; 
+		content: ''; 
+		clear: both; 
+	} 
 }
 
-@mixin fill() {
-  position: absolute;
-  display: block;
-  left: 0; 
-  top: 0;
-  bottom: 0;
-  right: 0;
+@mixin fill($type:false) {
+	display: block;
+	position: absolute;
+	@if $type != right { left: 0; }
+	@if $type != bottom { top: 0; }
+	@if $type != top { bottom: 0; }
+	@if $type != left { right: 0; }
 }
 
 @mixin cover($offset: 0) {
-  position: absolute;
-  display: block;
-  bottom: $offset;
-  right: $offset; 
-  left: $offset; 
-  top: $offset;
+	display: block;
+	position: absolute;
+	bottom: $offset;
+	right: $offset; 
+	left: $offset; 
+	top: $offset;
 }
 
-@mixin middle() {
-  position: absolute;
-  display: block;
-  left: 0; 
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
+@mixin center($type:false){
+	@include fill($type);
+	margin: auto;
 }
 
 @mixin bookend(){
-  &:first-child { margin-top: 0; }
-  &:last-child { margin-bottom: 0; }
+	@content;
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
 @mixin middle-child(){
-  &:not(:first-child):not(:last-child) { @content; }
+	&:not(:first-child):not(:last-child) {
+		@content;
+	}
 }
 
 @mixin trim() { 
-  > * { @include bookend; }
+	> * {
+		@include bookend;
+	}
 }
 
 @mixin compact() { 
-  * {
-    margin-top: 0; 
-    margin-bottom: 0; 
-  }
+	* {
+		margin-top: 0; 
+		margin-bottom: 0; 
+	}
 }
 
 @mixin snug() { 
-  * {
-    margin-top: .5rem; 
-    margin-bottom: .5rem; 
-    @include bookend;
-  }
+	* {
+		@include bookend {
+			margin-top: .5rem; 
+			margin-bottom: .5rem;
+		}
+	}
 }
 
 
 @mixin clip($lines:2){
-  height: $line-height-base * $font-size-base * $lines;
-  overflow: hidden;
+	height: $line-height-base * $font-size-base * $lines;
+	overflow: hidden;
 }
-
-@mixin lockup($padding:0) {
-  text-align: justify; font-size: 1px;
-  > * { display: inline-block; @include font-size-base; padding: $padding; text-align: left; }
-  &:after { content: ""; width: 100%; display: inline-block; }
-}
-
 
 @mixin relative() {
 	position: relative;
-  * { 
+	* { 
 		position: relative; 
 	}
 }
 
-@mixin center(){
-  position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0;
-}
-
 @mixin box-normal() {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
 }
 

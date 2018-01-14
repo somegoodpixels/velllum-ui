@@ -1,28 +1,25 @@
 .ui-widget {
 	@include font-size-base;
+	@include shadow(20px);
 	background: $dropdown-bg;
-	border-width: 0;
-	@include shadow(15px);
 	border-radius: $border-radius-base;
-	z-index: $zindex-modal !important; 
+	z-index: $zindex-modal !important;
+	border-width: 0;
 	.ui-state-active,
 	.ui-state-focus {
 		margin: 0;
 		background: $component-active-bg;
-		&, * { color: $component-active-color; }
+		&, * {
+			color: $component-active-color;
+		}
 	}
 	&.ui-datepicker {
 		padding-left: 10px;
 		padding-right: 10px;
-		th, td a { text-align: center; }
-		td a { padding: .3em; }
-		@include transform(scale(.75),(0 0));
 		@include transition(all .1875s $bezier-bounce);
-		-webkit-transition-property: -webkit-transform;
-		-moz-transition-property: -moz-transform;
-		-ms-transition-property: -ms-transform;
-		-o-transition-property: -o-transform;
-		transition-property: transform;
+		@include transform(scale(.75),(0 0));
+		-webkit-transition-property: opacity, -webkit-transform;
+		transition-property: opacity, transform;
 		&.ui-widget-active {
 			@include transform(scale(1),(0 0));
 		}
@@ -36,6 +33,12 @@
 		}
 		.ui-datepicker-month {
 			font-weight: bold;
+		}
+		tr > * a {
+			text-align: center;
+		}
+		td a {
+			padding: .3em;
 		}
 	}
 	&.ui-autocomplete {
@@ -59,28 +62,28 @@
 
 	.ui-icon {
 		overflow: visible;
-		&.ui-icon-circle-triangle-w,
-	  &.ui-icon-circle-triangle-e {
-	    &:after {
-	      content: '';
-	      display: block;
-	      border: 5px solid;
-	      width: 0;
-	      height: 0;
-	      border-top-color: transparent;
-	      border-bottom-color: transparent;
-	      position: absolute;
-	      top: 5px;
-	      left: 0;
-	    }
-	  }
-	  &.ui-icon-circle-triangle-w:after {
-	    border-left-color: transparent;
-	  }
-	  &.ui-icon-circle-triangle-e:after {
-	    border-right-color: transparent;
-	    left: 5px;
-	  }
+		&-circle-triangle {
+			&-w:after,
+			&-e:after {
+				content: '';
+				display: block;
+				border: 5px solid;
+				border-top-color: transparent;
+				border-bottom-color: transparent;
+				position: absolute;
+				width: 0;
+				height: 0;
+				top: 5px;
+				left: 0;
+			}
+			&-w:after {
+				border-left-color: transparent;
+			}
+			&-e:after {
+				border-right-color: transparent;
+				left: 5px;
+			}
+		}
 	}
 }
 
@@ -96,8 +99,14 @@ tr.ui-sortable-helper {
 	z-index: 2;
 	> td, th {
 		border: 0 !important;
-		&:first-child { border-top-left-radius: $border-radius-base; border-bottom-left-radius: $border-radius-base; }
-		&:last-child { border-top-right-radius: $border-radius-base; border-bottom-right-radius: $border-radius-base; }
+		&:first-child {
+			border-top-left-radius: $border-radius-base;
+			border-bottom-left-radius: $border-radius-base;
+		}
+		&:last-child {
+			border-top-right-radius: $border-radius-base;
+			border-bottom-right-radius: $border-radius-base;
+		}
 	}
 }
 

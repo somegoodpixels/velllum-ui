@@ -1,4 +1,13 @@
-$colors: ("red":$red,"orange":$orange,"yellow":$yellow,"green":$green,"blue":$blue,"purple":$purple,"navy":$navy,"gray":$gray);
+$colors: (
+	"red":$red,
+	"orange":$orange,
+	"yellow":$yellow,
+	"green":$green,
+	"blue":$blue,
+	"purple":$purple,
+	"navy":$navy,
+	"gray":$gray
+);
 
 @each $var, $color in $colors {
 	.text-#{$var} { color: $color; }

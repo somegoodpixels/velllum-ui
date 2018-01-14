@@ -57,7 +57,7 @@ section: forms
 
 <div class="input-group margin-small-bottom">
   <span class="input-group-addon">
-  	<label class="option">
+  	<label class="option option-minimal">
     	<input type="checkbox" >
     	<i class="option-icon"></i>
     </label>
@@ -66,7 +66,7 @@ section: forms
 </div>
 <div class="input-group margin-small-bottom">
   <span class="input-group-addon">
-  	<label class="option">
+  	<label class="option option-minimal">
     	<input type="checkbox" checked>
     	<i class="option-icon"></i>
     </label>
@@ -75,7 +75,7 @@ section: forms
 </div>
 <div class="input-group margin-small-bottom">
   <span class="input-group-addon">
-  	<label class="option">
+  	<label class="option option-minimal">
     	<input type="checkbox" checked disabled>
     	<i class="option-icon"></i>
     </label>
@@ -84,7 +84,7 @@ section: forms
 </div>
 <div class="input-group margin-small-bottom">
   <span class="input-group-addon">
-  	<label class="option">
+  	<label class="option option-minimal">
     	<input type="checkbox" disabled>
     	<i class="option-icon"></i>
     </label>

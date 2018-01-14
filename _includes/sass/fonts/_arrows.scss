@@ -1,22 +1,4 @@
-
-$arr: (
-	"up":"a",
-	"right":"b",
-	"down":"c",
-	"left":"d",
-	"close":"e",
-	"vertical":"f",
-	"horizontal":"g",
-	"north":"h",
-	"west":"i",
-	"south":"j",
-	"east":"k",
-	"check":"l",
-	"moveup":"m",
-	"moveright":"n",
-	"movedown":"o",
-	"moveleft":"p"
-);
+$arr: ( "up":"a", "right":"b", "down":"c", "left":"d", "close":"e", "vertical":"f", "horizontal":"g", "north":"h", "west":"i", "south":"j", "east":"k", "check":"l", "moveup":"m", "moveright":"n", "movedown":"o", "moveleft":"p" );
 
 @mixin arrow-styles(){
 	font-family: "arrows";
@@ -24,6 +6,32 @@ $arr: (
 	font-style: normal;
 }
 
+//
+// Classes
+// --------------------------------------------------
+@if $arrows {
+	@include font-face-woff("arrows","../fonts/arrows/arrows.woff");
+	@include font-face-woff("arrows","../fonts/arrows/arrows-bold.woff",bold);
+	
+	[class*="arrow-before-"]:before,
+	[class*="arrow-"]:not([class*="before"]):after {
+		@include arrow-styles;
+	}
+	@each $var, $glyph in $arr {
+		.arrow-before-#{$var}:before,
+		.arrow-#{$var}:after {
+			content: " #{$glyph} ";
+		}
+	}
+	.arrow-large:before,
+	.arrow-large:after {
+		text-transform: uppercase !important;
+	}
+}
+
+//
+// Mixins
+// --------------------------------------------------
 @mixin arrow($type,$position:after,$large:false){
 	&:#{$position} {
 		@include arrow-styles;
@@ -39,26 +47,7 @@ $arr: (
 }
 
 @if $arrows {
-
-	@include font-face-woff("arrows","../fonts/arrows/arrows.woff");
-	@include font-face-woff("arrows","../fonts/arrows/arrows-bold.woff",bold);
-
-	[class*="arrow-"]:not([class*="arrow-before"]) {
-		&:after { @include arrow-styles; }
-		&.arrow-large:after { text-transform: uppercase; }
-	}
-	[class*="arrow-before-"] {
-		&:before { @include arrow-styles; }
-		&.arrow-large:before { text-transform: uppercase; }
-	}
-
-	@each $var, $glyph in $arr {
-		.arrow-#{$var}:after {content: " #{$glyph} "; }
-		.arrow-before-#{$var}:before {content: " #{$glyph} "; }
-	}
-
-	.btn-mixin-class {
+	.arrow-mixin {
 		@include arrow(check,before);
 	}
-
 }

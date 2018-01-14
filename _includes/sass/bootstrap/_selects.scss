@@ -1,40 +1,37 @@
-
-
-
-
 .select {
 	@include arrow(down);
+	padding: 0;
 	&:after {
 		pointer-events: none;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		margin: auto;
-		height: $line-height-base * 1em;
-		padding: 0 $padding-base-horizontal;
+		@include center(right);
+		line-height: 1;
+		height: 1em;
+		padding: 0 $padding-base-horizontal 0 0;
+	}
+	&.input-sm:after {
+		padding: 0 $padding-small-horizontal;
+	}
+	&.input-lg:after {
+		padding: 0 $padding-large-horizontal;
+	}
+	select.form-control {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		text-indent: .01px !important;
+		text-overflow: '';
+		padding-right: 2em;
+		&::-ms-expand {
+			display: none;
+		}
+		&[multiple] {
+			height: $textarea-height;
+			padding-top: $padding-large-vertical;
+			padding-bottom: $padding-large-vertical;
+		}
+		&[data-status="default"] {
+			color: $light;
+			font-style: oblique;
+		}
 	}
 }
 
-select.form-control {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	text-indent: .01px !important;
-	text-overflow: '';
-	line-height: 1;
-	.select & {
-		padding-right: 28px;
-	}
-	&::-ms-expand {
-		display: none;
-	}
-	&[multiple] {
-		height: $textarea-height;
-		padding-top: $padding-large-vertical;
-		padding-bottom: $padding-large-vertical;
-	}
-	&[data-status="default"] {
-		color: $light;
-		font-style: oblique;
-	}
-}

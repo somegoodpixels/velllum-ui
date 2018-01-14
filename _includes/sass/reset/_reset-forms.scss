@@ -3,12 +3,10 @@
 	color: $color;
 	@include active {
 		color: $color-active;
-		//background: darker($bg);
 		background: $bg;
 		@content;
 	}
 }
-
 
 .label {
 	font-weight: bold;
@@ -85,8 +83,13 @@
 	color: $input-color;
 	background: $input-bg;
 	@include placeholder($input-color-placeholder);
-	&:hover {  background: $input-bg-hover; }
-	&:focus { background: white; @include shadow(5px,$brand-primary); }
+	&:hover {
+		background: $input-bg-hover;
+	}
+	&:focus {
+		background: white;
+		@include shadow(5px,$brand-primary);
+	}
 }
 
 textarea.input {
@@ -111,8 +114,8 @@ textarea.input {
 	@include flex-wrap;
 	margin: 0 -.5rem;
 	.field {
-		@include flex(1,0,200px);
 		margin: 0;
+		@include flex(1,0,200px);
 		padding: 0 .5rem .5rem;
 	}
 }

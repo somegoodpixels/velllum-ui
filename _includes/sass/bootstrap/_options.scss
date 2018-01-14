@@ -1,129 +1,134 @@
-$option-size:          17px;
-$option-bg:            $silver-dark;
-$option-bg-hover:      $silver-darkest;
-$option-bg-disabled:   $lighter;
-$option-color:         white;
-$option-bg-checked:    $blue;
+$option-size: 17px;
+$option-bg: $silver-dark;
+$option-bg-hover: $silver-darkest;
+$option-bg-disabled: $lighter;
+$option-color: white;
+$option-bg-checked: $blue;
 
 @mixin option-colors($default-bg, $hover-bg, $focus-bg, $checked-bg, $disabled-bg) {
-  @if $default-bg { .option-icon { background-color: $default-bg; } }
-
-  &:hover input:not(:disabled) ~ .option-icon,
-  input:not(:disabled):focus ~ .option-icon { background: $hover-bg; }
-
-  input:focus:not(:disabled) ~ .option-icon { background: focus-bg; }
-  
-  // standard checked options
-  input:checked:not(:disabled) ~ .option-icon { background: $checked-bg; }
-  
-  &:hover input:checked:not(:disabled) ~ .option-icon,
-  input:checked:not(:disabled):focus ~ .option-icon { background: darker($checked-bg); }
-  
-  // disabled unchecked options
-  input:disabled ~ .option-icon { background: $disabled-bg; }
-  // disabled checked options
-  input:checked:disabled ~ .option-icon { background: $disabled-bg; }
+	@if $default-bg {
+		.option-icon {
+			background-color: $default-bg;
+		}
+	}
+	// hover
+	&:hover input:not(:disabled) ~ .option-icon {
+		background: $hover-bg;
+	}
+	// focus
+	input:not(:disabled):focus ~ .option-icon {
+		background: focus-bg;
+	}
+	// checked enabled
+	input:not(:disabled):checked ~ .option-icon {
+		background: $checked-bg;
+	}
+	// checked hovered
+	&:hover input:not(:disabled):checked ~ .option-icon,
+	input:not(:disabled):checked:focus ~ .option-icon {
+		background: darker($checked-bg);
+	}
+	// unchecked disabled
+	input:disabled ~ .option-icon {
+		background: $disabled-bg;
+	}
+	// checked disabled
+	input:disabled:checked ~ .option-icon {
+		background: $disabled-bg;
+	}
 }
 
 @mixin option-check(){
-  display: block;
-  border: 2px solid;
-  border-top-width: 0;
-  border-left-width: 0;
-  height: 10px;
-  width: 5px;
-  @include transform(rotate(45deg));
-  margin-left: 6px;
-  margin-top: 2px;
+	@include transform(rotate(45deg));
+	margin: 2px 0 0 6px;
+	border: 2px solid;
+	display: block;
+	border-left: 0;
+	border-top: 0;
+	height: 10px;
+	width: 5px;
 }
 
 @mixin option-dot(){
-  display: block;
-  width: ( $option-size - 12 );
-  height: ( $option-size - 12 );
-  background: currentColor;
-  @include middle;
-  @include circle;
+	display: block;
+	width: ( $option-size - 12 );
+	height: ( $option-size - 12 );
+	background: currentColor;
+	@include center;
+	@include circle;
 }
 
 .option {
-  &.option-lg { font-size: $font-size-large; }
-  margin: 6px 0;
-  font-weight: normal;
-  position: relative;
-  vertical-align: middle;
-  display: block;
-  cursor: pointer;
+	font-weight: normal;
+	vertical-align: middle;
+	position: relative;
+	cursor: pointer;
+	display: block;
+	margin: 6px 0;
+	&-sm { font-size: $font-size-small; }
+	&-lg { font-size: $font-size-large; }
 	.form-inline & {
 		margin-top: 0;
 		margin-bottom: 0;
 	}
-  .option-icon {
-    display: inline-block;
-    vertical-align: middle;
-    background: $option-bg;
-    width: $option-size;
-    height: $option-size;
-    margin-right: .5em;
-    color: $option-color;
-    @include transitions(.25s);
-    @include box-sizing(content-box);
-    margin-top: -2px;
-  }
-  
-  @include option-colors(false, $option-bg-hover, $option-color, $option-bg-checked, $option-bg-disabled);
-
-  input {
-    position: absolute;
-    left: 0;
-    opacity: .01;
-    &[type="checkbox"] {
-      ~ .option-icon { border-radius: $input-border-radius; }
-      &:checked ~ .option-icon:after {
-        content: '';
-        color: white;
-        @include option-check;
-      }
-    }
-    &[type="radio"] {
-      ~ .option-icon {
-        @include circle;
-        //padding: 1px;
-        //top: 0;
-        //left: -1px;
-      }
-      &:checked ~ .option-icon:after {
-        content: '';
-        color: white;
-        @include option-dot;
-      }
-    }
-  }
-  .form-inline & {
-    display: inline-block;
-  }
-  &:not(.option-inline) {
-    //&:first-child { margin-top: 10px; }
-    //&:last-child { margin-bottom: 10px; }
-  }
-  &.option-inline {
-    display: inline-block;
-    margin-right: 1em;
-    vertical-align: top;
-  }
+	.option-icon {
+		display: inline-block;
+		vertical-align: middle;
+		background: $option-bg;
+		width: $option-size;
+		height: $option-size;
+		color: $option-color;
+		@include transitions(.25s);
+		@include box-sizing(content-box);
+		margin-top: -2px;
+	}
+	&:not(&-minimal) {
+		.option-icon {
+			margin-right: .5em;
+		}
+	}
+	input {
+		position: absolute;
+		opacity: 0;
+		&[type="checkbox"] {
+			~ .option-icon {
+				border-radius: $input-border-radius;
+			}
+			&:checked ~ .option-icon:after {
+				@include option-check;
+				color: white;
+				content: '';
+			}
+		}
+		&[type="radio"] {
+			~ .option-icon {
+				@include circle;
+			}
+			&:checked ~ .option-icon:after {
+				@include option-dot;
+				color: white;
+				content: '';
+			}
+		}
+	}
+	.form-inline & {
+		display: inline-block;
+	}
+	&-inline {
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 1em;
+	}
+	@include option-colors(false, $option-bg-hover, $option-color, $option-bg-checked, $option-bg-disabled);
+	.has-error & { @include option-colors($state-danger-bg, darken($state-danger-bg,7%), white, $brand-danger, darken($state-danger-bg,7%) ); }
 }
 
-.has-error .option {
-  @include option-colors($state-danger-bg, darken($state-danger-bg,7%), white, $brand-danger, darken($state-danger-bg,7%) );
-}
 
 .input-group-addon {
-  .option {
-    margin: 0;
-    height: 20px;
-    top: -2px;
-    .option-icon {
-      background: white;
-    }
-  }
+	.option {
+		margin: 0;
+		.option-icon {
+			background: white;
+		}
+	}
 }

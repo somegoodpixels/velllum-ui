@@ -48,26 +48,36 @@ $disabled-bg:                                    $silver-light;
 // Fonts
 // --------------------------------------------------
 $font-family-serif:                              serif;
-$font-family-blank: 							 "blank";
-$font-family-monospace:                          monospace;
+$font-family-blank:                              "blank";
+$font-family-monospace:                          "Monaco", monospace;
 $font-family-sans-serif:                         -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $font-family-base:                               $font-family-sans-serif;
 
 //
+// Screen Sizes
+// --------------------------------------------------
+
+$mini:                                           400px;
+$phone:                                          540px;
+$phablet:                                        768px;
+$tablet:                                         960px;
+$laptop:                                         1280px;
+$desktop:                                        1600px;
+
+//
 // Type Sizes
 // --------------------------------------------------
+$icon-size:                                      24px;
+
 $font-size-root:                                 16px;
 $font-size-root-full:                            14px;
-@function strip-unit($number) { @if type-of($number) == 'number' and not unitless($number) { @return $number / ($number * 0 + 1); } @return $number; }
-@function rem($size){ $remsize: $size / $font-size-root ; @return $remsize * 1rem; }
-@function rem-full($size){ $remsize: $size / $font-size-root-full ; @return $remsize * 1rem; }
-@function rem-multiply($size,$mult){ $unit: strip-unit($size) * $mult; @return #{$unit}rem; }
 
 $font-size-base:                                 1rem; // base
-$font-size-label:                                rem-full(9px); // label
 $font-size-small:                                rem-full(13px); // small
 $font-size-large:                                rem-full(18px); // large
-$font-size-code:                                 14px; // code
+
+$font-size-label:                                rem-full(9px); // label
+$font-size-code:                                 rem-full(12px); // code
 
 $font-size-larger:                               rem(24px); // larger
 $font-size-largest:                              rem(32px); // largest
@@ -127,7 +137,7 @@ $bezier-bounce:                                  cubic-bezier(.25,0,0,1.375);
 $body-bg:                                        $silver-light;
 $text-color:                                     $normal;
 $link-color:                                     $link;
-$link-hover-color:                                darker($link-color);
+$link-hover-color:                               darker($link-color);
 $link-hover-decoration:                          none;
 
 //
@@ -143,9 +153,9 @@ $padding-xs-vertical:                            $padding-small-vertical;
 $padding-xs-horizontal:                          $padding-small-horizontal;
 $line-height-large:                              $line-height-base;
 $line-height-small:                              $line-height-base;
-$border-radius-base:                             4px;
-$border-radius-large:                            4px;
-$border-radius-small:                            4px;
+$border-radius-base:                             3px;
+$border-radius-large:                            3px;
+$border-radius-small:                            3px;
 
 $component-padding-vertical:                     15px;
 $component-padding-horizontal:                   25px;
@@ -250,10 +260,10 @@ $zindex-modal:                                   1050;
 //
 // Media
 // --------------------------------------------------
-$screen-xs:                                      400px;
-$screen-sm:                                      540px;
-$screen-md:                                      768px;
-$screen-lg:                                      960px;
+$screen-xs:                                      $mini;
+$screen-sm:                                      $phone;
+$screen-md:                                      $phablet;
+$screen-lg:                                      $tablet;
 
 //
 // Grid
@@ -378,51 +388,31 @@ $state-danger-text:                              darker($red);
 $state-danger-bg:                                highlight($red);
 $state-danger-border:                            transparent;
 
-//== Tooltips
 //
-//##
-
-//** Tooltip max width
-// $tooltip-max-width:           200px
-//** Tooltip text color
-// $tooltip-color:               #fff
-//** Tooltip background color
-// $tooltip-bg:                  #000
-// $tooltip-opacity:             .9
-
-//** Tooltip arrow width
-// $tooltip-arrow-width:         5px
-//** Tooltip arrow color
-// $tooltip-arrow-color:         $tooltip-bg
+// Tooltips
+// --------------------------------------------------
+$tooltip-max-width:                              $mini/2;
+$tooltip-color:                                  white;
+$tooltip-bg:                                     $brand;
+$tooltip-opacity:                                1;
+$tooltip-arrow-width:                            5px;
+$tooltip-arrow-color:                            $tooltip-bg;
 
 
-//== Popovers
 //
-//##
-
-//** Popover body background color
-// $popover-bg:                          #fff
-//** Popover maximum width
-// $popover-max-width:                   276px
-//** Popover border color
-// $popover-border-color:                rgba(0,0,0,.2)
-//** Popover fallback border color
-// $popover-fallback-border-color:       #ccc
-
-//** Popover title background color
-// $popover-title-bg:                    darken($popover-bg, 3%)
-
-//** Popover arrow width
-// $popover-arrow-width:                 10px
-//** Popover arrow color
-// $popover-arrow-color:                 $popover-bg
-
-//** Popover outer arrow width
-// $popover-arrow-outer-width:           ($popover-arrow-width + 1)
-//** Popover outer arrow color
-// $popover-arrow-outer-color:           fade_in($popover-border-color, 0.05)
-//** Popover outer arrow fallback color
-// $popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%)
+// Popovers
+// --------------------------------------------------
+$popover-bg:                                     $brand;
+$popover-color:                                  white;
+$popover-max-width:                              $mini;
+$popover-border-color:                           transparent;
+$popover-fallback-border-color:                  transparent;
+$popover-title-bg:                               transparent;
+$popover-arrow-width:                            10px;
+$popover-arrow-color:                            $popover-bg;
+$popover-arrow-outer-width:                      0;
+$popover-arrow-outer-color:                      transparent;
+$popover-arrow-outer-fallback-color:             transparent;
 
 
 //
@@ -439,18 +429,18 @@ $label-color:                                    $light;
 //
 // Modals
 // --------------------------------------------------
-$modal-inner-padding:                            $component-padding-vertical $component-padding-horizontal $component-padding-horizontal;
-$modal-title-padding:                            $component-padding;
-$modal-content-bg:                               white;
+$modal-inner-padding:                            0;
+$modal-title-padding:                            0;
+$modal-content-bg:                               transparent;
 $modal-content-border-color:                     transparent;
 $modal-content-fallback-border-color:            transparent;
 $modal-backdrop-bg:                              $navy;
-$modal-backdrop-opacity:                         .75;
+$modal-backdrop-opacity:                         .875;
 $modal-header-border-color:                      $modal-content-border-color;
 $modal-footer-border-color:                      $modal-content-border-color;
-$modal-lg:                                       960px;
-$modal-md:                                       640px;
-$modal-sm:                                       320px;
+$modal-lg:                                       $tablet;
+$modal-md:                                       $phablet;
+$modal-sm:                                       $mini;
 
 //
 // Alerts

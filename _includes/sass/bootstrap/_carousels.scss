@@ -2,8 +2,8 @@
 	.carousel-control {
 		background: transparent;
 		&:after {
-			@include middle;
 			width: 1em;
+			@include center;
 			height: $line-height-base * 1em;
 			font-size: 2rem;
 		}
@@ -12,12 +12,12 @@
 		bottom: 10px;
 		li {
 			background: $carousel-indicator-active-bg;
-			opacity: .25;
 			@include transitions;
-			border: 0;
-			width: 8px;
-			height: 8px;
 			margin: 0 2px;
+			opacity: .25;
+			height: 8px;
+			width: 8px;
+			border: 0;
 			&.active {
 				opacity: 1;
 			}

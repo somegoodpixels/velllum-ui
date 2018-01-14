@@ -8,7 +8,7 @@ robots: false
 # --------------------------------------------------
 # Site imagery
 
-favicon: /ui/img/graph/favicon.png
+favicon: /favicon.ico
 avatar: /ui/img/graph/avatar.png
 poster: /ui/img/graph/poster.png
 

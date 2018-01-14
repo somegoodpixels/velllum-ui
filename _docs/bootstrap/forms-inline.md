@@ -27,7 +27,7 @@ section: forms
 <form class="form-inline margin">
 	<div class="form-group">
 		<label for="exampleInputEmail2">Email</label>
-		<input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+		<input type="email" class="form-control" placeholder="jane.doe@example.com">
 	</div>
 	<button type="submit" class="btn btn-default">Invite</button>
 </form>
@@ -57,7 +57,7 @@ section: forms
 <form class="form-inline margin">
 	<div class="form-group form-group-lg">
 		<label for="exampleInputEmail2">Email</label>
-		<input type="email" class="form-control input-lg" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+		<input type="email" class="form-control input-lg" placeholder="jane.doe@example.com">
 	</div>
 	<button type="submit" class="btn btn-default btn-lg">Invite</button>
 </form>

@@ -1,15 +1,12 @@
-$icon-base: 24px;
-
 .icon {
-	font-size: $icon-base;
+	font-size: $icon-size;
+	top: -1px;
 	width: 1em;
 	height: 1em;
 	display: inline-block;
 	vertical-align: middle;
-	top: -1px;
 	-webkit-backface-visibility: hidden; 
 	@include transform(translateZ(0));
-
 	&-left {
 		left: -1em*(3/24);
 	}
@@ -25,12 +22,12 @@ $icon-base: 24px;
 	}
 	&-md {
 		$icon-scale: 1.5;
-		font-size: $icon-base*$icon-scale;
+		font-size: $icon-size*$icon-scale;
 		@include transform((scale($icon-scale) translateZ(0)),(0 0));
 	}
 	&-lg {
 		$icon-scale: 2;
-		font-size: $icon-base*$icon-scale;
+		font-size: $icon-size*$icon-scale;
 		@include transform((scale($icon-scale) translateZ(0)),(0 0));
 	}
 	&-bold {

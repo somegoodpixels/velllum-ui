@@ -55,7 +55,7 @@
 		margin: 0;
 		opacity: 1;
 		&:after {
-			@include middle;
+			@include center;
 		}
 	}
 }

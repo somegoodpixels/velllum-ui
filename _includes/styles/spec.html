@@ -14,7 +14,7 @@
 		>view code</a>
 	</div>
 	<div class="panel-footer panel-flush pad {{ entry.title | slugify }}-code hidden" id="{{ entry.title | slugify }}-code">
-		<div class="code code-large">
+		<div class="code panel-code">
 			{% highlight html %}{{ entry.content }}{% endhighlight %}
 		</div>
 	</div>

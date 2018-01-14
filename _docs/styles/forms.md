@@ -11,6 +11,8 @@ order: 96
 	<p class="help-block">Example block-level help text here.</p>
 	<label>Password</label>
 	<input type="password" class="form-control" placeholder="Password">
+	<label>Message</label>
+	<textarea class="form-control" placeholder="Message..."></textarea>
 	<label class="option">
 		<input type="checkbox" />
 		<i class="option-icon"></i>

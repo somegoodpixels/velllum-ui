@@ -11,17 +11,15 @@
 			<div class="row">
 				<div class="col-lg-3 three col">
 					<div class="pad">
-						<ul class="nav nav-pills nav-stacked">
-							
+						<ul class="nav nav-stacked">
 							{% assign guides = site.docs | where: 'type' , 'docs' | sort: 'order' %}
 							{% assign styles = site.docs | where: 'type' , page.styles | sort: 'order' | reverse | group_by: 'section' %}
-
 							{% for guide in guides %}
 								{% unless site.bootstrap == false and guide.require_bootstrap == true %}
 									<li>
 										<a href="{{site.baseurl}}{{guide.url}}">{{guide.title}}</a>
 										{% if guide.url == page.url %}
-											<ul class="nav nav-pills nav-stacked flush">
+											<ul class="nav nav-stacked flush">
 												{% for type in styles %}
 													{% assign entries = type.items | sort: "title" %}
 													{% for entry in entries %}
