@@ -1,5 +1,5 @@
 <h3 id="{{ entry.title | slugify }}">{{ entry.title | capitalize }} <small><a href="{{site.baseurl}}{{entry.url}}">open</a></small></h3>
-<div class="panel panel-large mobile-expand object">
+<div class="panel panel-large mobile-expand object {{entry.class}}">
 	<div class="panel-body pad">
 		<div id="{{ entry.title | slugify }}-example">
 			{% capture baseui %}="{{site.baseurl}}/ui{% endcapture %}

@@ -1,5 +1,5 @@
 .matrix {
-	margin: 0 $component-buffer/-2;
+	margin: 0 $component-buffer/-4;
 	@include flex-row;
 	@include flex-align(stretch);
 	@include flex-wrap;
@@ -7,7 +7,7 @@
 		@include flex-wrap(nowrap);
 	}
 	.matrix-item {
-		padding: $component-buffer/2;
+		padding: $component-buffer/4;
 		@include flex-column;
 		@include flex(1,1,$component-break);
 		> * {

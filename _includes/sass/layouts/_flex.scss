@@ -15,12 +15,12 @@ $basis: $component-break + $component-buffer;
 }
 
 .flex-buffer {
-	margin: 0 $component-buffer/-2;
+	margin: 0 $component-buffer/-4;
 }
 
 .flex-item {
 	.flex-column > & { @include flex(1,1,auto); }
 	.flex-row > & { @include flex(1,0,$component-break); }
-	.flex-buffer & { margin: $component-buffer/2; }
+	.flex-buffer & { margin: $component-buffer/4; }
 }
 

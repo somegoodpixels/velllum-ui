@@ -4,7 +4,7 @@ $basis: $component-break + $component-buffer;
 	@include flex-column;
 	@include flex-align(stretch);
 	&-buffer {
-		margin: 0 $component-buffer/-2;
+		margin: 0 $component-buffer/-4;
 	}
 }
 
@@ -37,6 +37,6 @@ $basis: $component-break + $component-buffer;
 		@include flex(1,0,$component-break);
 	}
 	.mosaic-buffer & {
-		margin: $component-buffer/2;
+		margin: $component-buffer/4;
 	}
 }

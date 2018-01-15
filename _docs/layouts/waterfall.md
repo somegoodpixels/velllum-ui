@@ -3,6 +3,7 @@ title: Waterfall
 type: layouts
 section: grids
 order: 1
+class: bg-silver-dark
 ---
 
 <h6>Waterfall with Previews</h6>

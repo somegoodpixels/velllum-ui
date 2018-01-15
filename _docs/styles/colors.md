@@ -3,6 +3,7 @@ title: Colors
 type: styles
 section: color
 order: 100
+class: bg-silver-dark
 ---
 
 <h6>Hues</h6>

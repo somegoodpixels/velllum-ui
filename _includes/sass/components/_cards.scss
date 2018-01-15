@@ -43,10 +43,21 @@ $card-controls: ".btn, .form-control, .input-group-addon, .form-control-static";
 	}
 	.form-control {
 		background: white;
+		&:not(:disabled):not(.disabled):hover {
+			background-color: $silver;
+		}
 	}
 	.btn,
 	.input-group-addon {
 		text-align: center;
+	}
+	.card-footer & {
+		&:first-child { #{$card-controls} { border-bottom-left-radius: $component-border-radius; } }
+		&:last-child { #{$card-controls} { border-bottom-right-radius: $component-border-radius; } }
+	}
+	.card-body & {
+		&:first-child { #{$card-controls} { border-top-left-radius: $component-border-radius; } }
+		&:last-child { #{$card-controls} { border-top-right-radius: $component-border-radius; } }
 	}
 }
 
@@ -57,20 +68,6 @@ $card-controls: ".btn, .form-control, .input-group-addon, .form-control-static";
 	.card-control {
 		display: block;
 		@include flex(1,0,auto);
-	}
-	&.card-footer {
-		.card-control {
-			&:first-child {
-				#{$card-controls} {
-					border-bottom-left-radius: $component-border-radius;
-				}
-			}
-			&:last-child {
-				#{$card-controls} {
-					border-bottom-right-radius: $component-border-radius;
-				} 
-			}
-		}
 	}
 }
 
