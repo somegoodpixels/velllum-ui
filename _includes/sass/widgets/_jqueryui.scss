@@ -17,11 +17,11 @@
 		padding-left: 10px;
 		padding-right: 10px;
 		@include transition(all .1875s $bezier-bounce);
-		@include transform(scale(.75),(0 0));
+		@include transform(scale(.75));
 		-webkit-transition-property: opacity, -webkit-transform;
 		transition-property: opacity, transform;
 		&.ui-widget-active {
-			@include transform(scale(1),(0 0));
+			@include transform(scale(1));
 		}
 		.ui-datepicker-prev {
 			top: 2px !important;

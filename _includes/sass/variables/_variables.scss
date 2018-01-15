@@ -144,11 +144,11 @@ $link-hover-decoration:                          none;
 // Spacing
 // --------------------------------------------------
 $padding-small-vertical:                         ( $component-height-small - $font-size-small * $component-line-height ) / 2;
-$padding-small-horizontal:                       .625rem;
+$padding-small-horizontal:                       .5rem;
 $padding-base-vertical:                          ( $component-height-base - $font-size-base * $component-line-height ) / 2;
-$padding-base-horizontal:                        .8rem;
+$padding-base-horizontal:                        .875rem;
 $padding-large-vertical:                         ( $component-height-large - $font-size-large * $component-line-height ) / 2;
-$padding-large-horizontal:                       1.375rem;
+$padding-large-horizontal:                       1.5rem;
 $padding-xs-vertical:                            $padding-small-vertical;
 $padding-xs-horizontal:                          $padding-small-horizontal;
 $line-height-large:                              $line-height-base;

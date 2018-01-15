@@ -1,6 +1,6 @@
 
 .dropdown-menu {
-	@include transform(scale(.75),(0 0));
+	@include transform(scale(.75));
 	@include transition(all .1875s $bezier-bounce);
 	@include font-size-base;
 	@include shadow(20px);
@@ -53,7 +53,7 @@
 	}
 	.dropdown.open > & {
 		pointer-events: auto;
-		@include transform(scale(1),(0 0));
+		@include transform(scale(1));
 		opacity: 1;
 		left: 0;
 		&-right {
