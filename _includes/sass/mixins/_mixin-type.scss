@@ -97,13 +97,10 @@
 
 @mixin columns($count:4,$width:100px,$gap:0){
 	-webkit-column-count: $count;
-	-moz-column-count: $count;
 	column-count: $count;
 	-webkit-column-gap: $gap;
-	-moz-column-gap: $gap;
 	column-gap: $gap;
 	-webkit-column-width: $width;
-	-moz-column-width: $width;
 	column-width: $width;
 }
 
@@ -115,8 +112,7 @@
 
 @mixin placeholder($color) {
 	&::-webkit-input-placeholder { color: $color; font-style: $input-style-placeholder; }
-	&:-moz-placeholder { color: $color; font-style: $input-style-placeholder; }
-	&::-moz-placeholder { color: $color; font-style: $input-style-placeholder; }
+	&::-ms-input-placeholder { color: $color; font-style: $input-style-placeholder; }
 	&:-ms-input-placeholder { color: $color; font-style: $input-style-placeholder; }
 }
 
