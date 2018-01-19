@@ -12,7 +12,7 @@ layout: raw
 {% endif %}
 
 {% if site.bootstrap %}
-	{% include vendors/bootstrap/js/bootstrap.min.js %}
+	{% include vendors/bootstrap-3.3.7/js/bootstrap.min.js %}
 	{% include scripts/bootstrap.js %}
 	
 	{% include vendors/bootstrap-validator/dist/validator.min.js %}

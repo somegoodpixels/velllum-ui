@@ -21,7 +21,7 @@
 		-webkit-transition-property: opacity, -webkit-transform;
 		transition-property: opacity, transform;
 		&.ui-widget-active {
-			@include transform(scale(1));
+			@include transform(scale(1),(50% 0));
 		}
 		.ui-datepicker-prev {
 			top: 2px !important;

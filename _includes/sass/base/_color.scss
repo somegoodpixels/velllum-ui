@@ -51,6 +51,8 @@ $colors: (
 .bg-silver-darker { background-color: $silver-darker !important; }
 .bg-silver-darkest { background-color: $silver-darkest !important; }
 
+.bg-transparent { background-color: transparent !important; }
+
 ::selection {
   background: $selection-bg;
 	color: selection-text;

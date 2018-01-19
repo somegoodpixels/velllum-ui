@@ -172,6 +172,8 @@
 					this.hide();
 					return;
 				case 13:
+				// josh
+				case 9:
 					return true;
 			}
 			
@@ -180,13 +182,16 @@
 			var $el = this.$element,
 			val = $el.val(),
 			currentPos = this.__getSelection($el.get(0)).start;
+			// josh
+			var len = this.key.length;
 			for (var i = currentPos; i >= 0; i--) {
 				var subChar = $.trim(val.substring(i-1, i));
 				if (!subChar) {
 					this.hide();
 					break;
 				}
-				if (subChar === this.key && $.trim(val.substring(i-2, i-1)) == '') {
+				// josh if (subChar === this.key && $.trim(val.substring(i-2, i-1)) == '') {
+				if ($.trim(val.substring(i-len, i)) === this.key && $.trim(val.substring(i-len-1, i-len)) == '') {
 					this.query = val.substring(i, currentPos);
 					this._queryPos = [i, currentPos];
 					this._keyPos = i;
@@ -229,6 +234,8 @@
 				if (that.isShown) {
 					switch (e.keyCode) {
 						case 13: // enter key
+						// josh
+						case 9:
 							$visibleItems = that.__getVisibleItems();
 							$visibleItems.each(function(index) {
 								if ($(this).is('.active'))
@@ -549,7 +556,8 @@
 		var createSuggest = function(el, suggestions) {
 			var newData = {};
 			$.each(suggestions, function(keyChar, options) {
-				var key =  keyChar.toString().charAt(0);
+				// josh var key =  keyChar.toString().charAt(0);
+				var key =  keyChar.toString();
 				newData[key] = new Suggest(el, key, typeof options == 'object' && options);
 			});
 			

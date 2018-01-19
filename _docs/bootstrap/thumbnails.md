@@ -2,7 +2,7 @@
 title: Thumbnails
 type: bootstrap
 section: sections
-class: bg-silver-dark
+class: bg-transparent
 ---
 
 <div class="row">

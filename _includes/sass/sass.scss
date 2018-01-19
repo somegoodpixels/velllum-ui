@@ -6,8 +6,9 @@ $arrows: true;
 @import "sass/variables/variables";
 
 {% if site.bootstrap %}
-@import "vendors/bootstrap/bootstrap-sass/bootstrap";
+@import "sass/bootstrap/bootstrap-sass";
 @import "vendors/bootstrap-suggest/css/bootstrap-suggest";
+@import "sass/widgets/suggest";
 {% else %}
 @import "sass/reset/reset";
 {% endif %}

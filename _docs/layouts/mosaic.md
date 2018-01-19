@@ -3,7 +3,7 @@ title: Mosaic
 type: layouts
 section: grids
 order: 2
-class: bg-silver-dark
+class: bg-transparent
 ---
 
 <h6>Mosaic</h6>
