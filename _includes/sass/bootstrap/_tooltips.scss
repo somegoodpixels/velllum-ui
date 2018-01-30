@@ -18,7 +18,7 @@
 	&.right .tooltip-arrow { margin-left: -3px; }
 	.tooltip-inner {
 		@include font-size-small;
-		padding: 6px 16px 7px;
+		padding: $padding-base-vertical $padding-base-horizontal;
 		margin: 0 !important;
 		font-style: normal;
 	}

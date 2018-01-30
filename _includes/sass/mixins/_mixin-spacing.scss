@@ -24,6 +24,12 @@
 	top: $offset;
 }
 
+@mixin stretch() {
+	@include fill;
+	width: 100%;
+	height: 100%;
+}
+
 @mixin center($type:false){
 	@include fill($type);
 	margin: auto;
@@ -59,7 +65,7 @@
 }
 
 @mixin snug() { 
-	* {
+	> * {
 		@include bookend {
 			margin-top: .5rem; 
 			margin-bottom: .5rem;

@@ -7,7 +7,7 @@ section: dropdowns
 ###### Bootstrap Dropdowns
 
 <div class="dropdown dropdown-inline">
-	<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Dropdown<span class="caret"></span></button>
+	<button class="btn btn-default arrow-down" type="button" data-toggle="dropdown">Dropdown</button>
 	<ul class="dropdown-menu">
 		<li><a href="#">Action</a></li>
 		<li><a href="#">Another action</a></li>
@@ -18,7 +18,7 @@ section: dropdowns
 </div>
 
 <div class="dropdown dropdown-inline">
-	<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">New<span class="caret"></span></button>
+	<button class="btn btn-primary arrow-down" type="button" data-toggle="dropdown">New</button>
 	<ul class="dropdown-menu">
 		<li>
 			<a href="#">

@@ -3,7 +3,7 @@ title: Matrix
 type: layouts
 section: grids
 order: 3
-class: bg-transparent
+class: bg-silver-light
 ---
 
 <h6>Matrix with Previews</h6>

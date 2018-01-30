@@ -37,6 +37,7 @@ $colors: (
 
 .text-white { color: white !important; }
 .text-light { color: $light !important; }
+.text-lighter { color: $lighter !important; }
 .text-dark { color: $dark !important; }
 
 .text-silver { color: $silver !important; }
@@ -55,9 +56,9 @@ $colors: (
 
 ::selection {
   background: $selection-bg;
-	color: selection-text;
+	color: $selection-text;
 }
 ::-moz-selection {
   background: $selection-bg;
-	color: selection-text;
+	color: $selection-text;
 }

@@ -35,7 +35,7 @@ $(document).ready(function(){
 $(document).on('click','[data-toggle="slide"]',function(){ var targets = $($(this).attr('data-target')); targets.each(function(){ if ( $(this).is(':visible') ) { $(this).hide(); } else { $(this).removeClass('hidden').removeAttr('hidden').show(); } }); return false; });
 
 // ------------------------------------ ANCHORS ------------------------------------
-$(document).on('click','a[href^="#"]:not("[data-toggle]")',function(e){ var target = $($(this).attr('href')); if (target.length === 0) { return; } e.preventDefault(); var timer = setTimeout(function(){ $('html,body').animate({scrollTop:(target.offset().top)},750,'swing'); },1); });
+$(document).on('click','a[href^="#"]:not("[data-toggle]"):not("[href=\'#\']")',function(e){ var target = $($(this).attr('href')); if (target.length === 0) { return; } e.preventDefault(); var timer = setTimeout(function(){ $('html,body').animate({scrollTop:(target.offset().top)},750,'swing'); },1); });
 
 // ------------------------------------ SCROLLING ------------------------------------
 var prevscroll = 0;
@@ -58,6 +58,10 @@ function updateScroll(){
 $(window).scroll(updateScroll);
 $(window).resize(updateScroll);
 $(document).ready(updateScroll);
+
+// ------------------------------------ SHUFFLE ------------------------------------
+(function($){$.fn.shuffle = function() {var allElems = this.get(),getRandom = function(max) {return Math.floor(Math.random() * max);},shuffled = $.map(allElems, function(){var random = getRandom(allElems.length),randEl = $(allElems[random]).clone(true)[0];allElems.splice(random, 1);return randEl;});this.each(function(i){$(this).replaceWith($(shuffled[i]));});return $(shuffled);};})(jQuery);
+$(document).ready(function(){ var shuffle = $('[data-shuffle]'); var types = []; shuffle.each(function(){ var type = $(this).attr('data-shuffle'); if ( types.indexOf(type) == -1 ) { types.push(type) } }); for ( var i = 0 ; i < types.length ; i++ ) { $('[data-shuffle="'+types[i]+'"]').shuffle(); } });
 
 // ------------------------------------ FOCUS SET ------------------------------------
 $(document).on('click','[data-focus]',function(){ var el = $(this); var timer = setTimeout(function(){ $(el.attr('data-focus')).find('input:visible:first').focus(); },1); });

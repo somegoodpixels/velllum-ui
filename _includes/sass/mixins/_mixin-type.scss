@@ -1,34 +1,38 @@
 @mixin line-height($height){
-	$slope: -1 * ( 1 - $height ) / integer( $line-height-max - 1rem );
+	$slope: -1 * ( 1 - $height ) / number( $line-height-max - 1rem );
 	line-height: calc(1em + #{$slope} * (#{$line-height-max} - 1em));
 }
 
-@mixin scale-px($attr,$min,$max:false,$minscreen:$phone,$maxscreen:$laptop){
-	#{$attr}: $min;
-	@if $max and $min != $max {
-		$fontdiff: $max - $min;
-		$screendiff: $maxscreen - $minscreen;
-		$slope: $fontdiff / $screendiff;
-		@media ( min-width: $minscreen ) and ( max-width: ( $maxscreen - 1px ) ) {
-			$a: 100vw * $slope;
-			$b: $minscreen * $slope;
-			#{$attr}: calc(#{$a} - #{$b} + #{$min});
+@mixin scale-px($attrs,$min,$max:false,$minscreen:$phone,$maxscreen:$laptop){
+	@each $attr in $attrs {
+		#{$attr}: $min;
+		@if $max and $min != $max {
+			$fontdiff: $max - $min;
+			$screendiff: $maxscreen - $minscreen;
+			$slope: $fontdiff / $screendiff;
+			@media ( min-width: $minscreen ) and ( max-width: ( $maxscreen - 1px ) ) {
+				$a: 100vw * $slope;
+				$b: $minscreen * $slope;
+				#{$attr}: calc(#{$a} - #{$b} + #{$min});
+			}
+			@media ( min-width: $maxscreen ) { #{$attr}: $max; }
 		}
-		@media ( min-width: $maxscreen ) { #{$attr}: $max; }
 	}
 }
 
-@mixin scale-rem($attr,$min,$max:false,$minscreen:$phone,$maxscreen:$laptop){
-	#{$attr}: $min;
-	@if $max {
-		@if $max != $min {
-			$base: integer($font-size-root);
-			$m1: integer($max - $min) / integer($maxscreen - $minscreen);
-			@media ( min-width: $minscreen ) and ( max-width: ( $maxscreen - 1px ) ) {
-				$factor: $m1 * $base;
-				#{$attr}: calc((100vw - #{$maxscreen}) * #{$factor} + #{$max});
+@mixin scale-rem($attrs,$min,$max:false,$minscreen:$phone,$maxscreen:$laptop){
+	@each $attr in $attrs {
+		#{$attr}: $min;
+		@if $max {
+			@if $max != $min {
+				$base: number($font-size-root);
+				$m1: number($max - $min) / number($maxscreen - $minscreen);
+				@media ( min-width: $minscreen ) and ( max-width: ( $maxscreen - 1px ) ) {
+					$factor: $m1 * $base;
+					#{$attr}: calc((100vw - #{$maxscreen}) * #{$factor} + #{$max});
+				}
+				@media ( min-width: $maxscreen ) { #{$attr}: $max; }
 			}
-			@media ( min-width: $maxscreen ) { #{$attr}: $max; }
 		}
 	}
 }

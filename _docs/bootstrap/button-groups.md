@@ -52,9 +52,8 @@ section: forms
 	<button type="button" class="btn btn-default">1</button>
 	<button type="button" class="btn btn-default">2</button>
 	<div class="btn-group dropdown" >
-		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<button type="button" class="btn btn-default arrow-down" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			Dropdown
-			<span class="caret"></span>
 		</button>
 		<ul class="dropdown-menu">
 			<li><a href="#">Dropdown link</a></li>

@@ -2,6 +2,7 @@
 title: List Groups
 type: bootstrap
 section: navigation
+class: bg-silver-light
 ---
 
 <ul class="list-group">

@@ -3,7 +3,7 @@ title: Flex
 type: layouts
 section: grids
 order: 4
-class: bg-transparent
+class: bg-silver-light
 ---
 
 <h6>Flex Row</h6>

@@ -33,13 +33,13 @@ $line:                                           $borders;
 //
 // Branding
 // --------------------------------------------------
-$link:                                           $blue;
 $brand:                                          $blue;
+$link:                                           $brand;
 $hover-bg:                                       $silver;
 $hover-text:                                     $dark;
-$selection-bg:                                   $blue;
+$selection-bg:                                   $brand;
 $selection-text:                                 white;
-$active-bg:                                      $blue;
+$active-bg:                                      $brand;
 $active-text:                                    white;
 $disabled-text:                                  $light;
 $disabled-bg:                                    $silver-light;
@@ -111,7 +111,7 @@ $headings-font-weight:                           normal;
 $headings-font-family:                           $font-family-base;
 $headings-color:                                 $dark;
 $line-height-max:                                5rem;
-$component-line-height:                          1.6;
+$component-line-height:                          1.5;
 $component-height-small:                         rem-full(28px);
 $component-height-base:                          rem-full(36px);
 $component-height-large:                         rem-full(56px);
@@ -391,7 +391,7 @@ $state-danger-border:                            transparent;
 //
 // Tooltips
 // --------------------------------------------------
-$tooltip-max-width:                              $mini/2;
+$tooltip-max-width:                              $mini*3/4;
 $tooltip-color:                                  white;
 $tooltip-bg:                                     $brand;
 $tooltip-opacity:                                1;

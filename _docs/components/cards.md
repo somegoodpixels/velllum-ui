@@ -2,7 +2,7 @@
 title: Cards
 type: components
 section: blocks
-class: bg-transparent
+class: bg-silver-light
 ---
 
 <h6>Basic Card</h6>

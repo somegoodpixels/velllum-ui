@@ -2,6 +2,7 @@
 title: Panels
 type: bootstrap
 section: sections
+class: bg-silver-light
 ---
 
 <div class="panel panel-default">

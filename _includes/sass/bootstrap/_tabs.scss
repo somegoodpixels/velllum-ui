@@ -13,6 +13,7 @@
 		&:not(:first-child) { margin-left: $component-buffer/4; }
 		&:not(:last-child) { margin-right: $component-buffer/4; }
 		> a {
+			line-height: $component-line-height;
 			background: transparent !important;
 			padding: $padding-large-vertical 0;
 			margin: 0 !important;

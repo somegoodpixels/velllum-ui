@@ -5,6 +5,8 @@
 .form-control,
 .input-group-addon,
 .form-control-static {
+	line-height: $component-line-height !important;
+	border-width: 0 !important;
 	@include font-size-base;
 	.form-group-lg &,
 	.input-group-lg & {
@@ -88,7 +90,10 @@ textarea.form-control {
 
 .form-control-static {
 	display: block;
+	min-height: 0;
 	@include ellipsis;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
 }
 
 @mixin form-control-variation($bg,$text,$border){

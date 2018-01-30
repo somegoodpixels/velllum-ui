@@ -1,4 +1,6 @@
 .fill { @include fill; }
+.fullscreen { @include fill; position: fixed; }
+
 .clear { @include clear; }
 .clean { @include clean; }
 .component { @include component; }

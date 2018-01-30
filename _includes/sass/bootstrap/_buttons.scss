@@ -49,14 +49,16 @@
 		padding-right: .5em;
 	}
 	&-icon {
-		padding-left: .75em;
-		padding-right: .75em;
+		padding-left: 0;
+		padding-right: 0;
+		width: $component-height-base;
 		&.btn-sm {
-			padding-left: 0;
-			padding-right: 0;
+			width: $component-height-small;
+		}
+		&.btn-lg {
+			width: $component-height-large;
 		}
 	}
-
 	&.active, &:active {
 		@include box-shadow(none);
 	}

@@ -3,7 +3,7 @@ $option-bg: $silver-dark;
 $option-bg-hover: $silver-darkest;
 $option-bg-disabled: $lighter;
 $option-color: white;
-$option-bg-checked: $blue;
+$option-bg-checked: $link;
 
 @mixin option-colors($default-bg, $hover-bg, $focus-bg, $checked-bg, $disabled-bg) {
 	@if $default-bg {
@@ -137,7 +137,7 @@ $option-bg-checked: $blue;
 
 .input-group-addon {
 	.option {
-		margin: 0;
+		margin: -.5em 0;
 		.option-icon {
 			background: white;
 		}

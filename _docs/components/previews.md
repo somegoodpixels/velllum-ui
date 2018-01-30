@@ -2,7 +2,7 @@
 title: Previews
 type: components
 section: blocks
-class: bg-transparent
+class: bg-silver-light
 ---
 
 <h6>Responsive Preview</h6>
