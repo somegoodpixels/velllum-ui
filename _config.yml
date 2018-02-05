@@ -15,8 +15,8 @@ poster: /ui/img/graph/poster.png
 # --------------------------------------------------
 # the subpath of your site, e.g. /blog
 
-url: "https://somegoodpixels.github.io"
-baseurl: "/velllum-ui"
+url: "https://ui.velllum.com"
+baseurl: "/"
 
 # --------------------------------------------------
 # Includes
