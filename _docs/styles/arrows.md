@@ -58,10 +58,10 @@ These are inline symbols intended to decorate other elements. These symbols inhe
 
 ###### Weights and Positions
 
-<a href="#" class="btn btn-lg btn-default arrow-before-left">Regular</a>
+<a href="#" class="btn btn-lg btn-default arrow-left arrow-before">Regular</a>
 <a href="#" class="btn btn-lg btn-default arrow-right text-bold">Bold</a>
 
-<a href="#" class="btn btn-lg btn-primary arrow-before-left">Regular</a>
+<a href="#" class="btn btn-lg btn-primary arrow-left arrow-before">Regular</a>
 <a href="#" class="btn btn-lg btn-primary arrow-right text-bold">Bold</a>
 
 ###### Arrow Weights

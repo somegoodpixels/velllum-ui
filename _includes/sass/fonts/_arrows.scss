@@ -6,6 +6,12 @@ $arr: ( "up":"a", "right":"b", "down":"c", "left":"d", "close":"e", "vertical":"
 	font-style: normal;
 }
 
+@mixin arrow-pseudo(){
+	&.arrow-before:before, &:not(.arrow-before):after {
+		@content;
+	}
+}
+
 //
 // Classes
 // --------------------------------------------------
@@ -13,20 +19,16 @@ $arr: ( "up":"a", "right":"b", "down":"c", "left":"d", "close":"e", "vertical":"
 	@include font-face-woff("arrows","../fonts/arrows/arrows.woff");
 	@include font-face-woff("arrows","../fonts/arrows/arrows-bold.woff",bold);
 	
-	[class*="arrow-before-"]:before,
-	[class*="arrow-"]:not([class*="before"]):after {
-		@include arrow-styles;
-	}
-	@each $var, $glyph in $arr {
-		.arrow-before-#{$var}:before,
-		.arrow-#{$var}:after {
-			content: " #{$glyph} ";
+	[class*="arrow-"] {
+		@include arrow-pseudo { @include arrow-styles; }
+		@each $var, $glyph in $arr {
+			&.arrow-#{$var} { @include arrow-pseudo { content: " #{$glyph} "; } }
 		}
 	}
-	.arrow-large:before,
-	.arrow-large:after {
-		text-transform: uppercase !important;
-	}
+	
+	.arrow-large { @include arrow-pseudo { text-transform: uppercase !important; } }
+	.arrow-bold { @include arrow-pseudo { font-weight: bold !important; } }
+
 }
 
 //
